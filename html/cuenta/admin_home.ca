@@ -1,0 +1,121 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+
+/*
+if($_GET['geriquery'] == 'true'){
+	ca_session::set('admin_access', true);
+}
+*/
+
+
+if ( !ca_session::init( ))
+{
+	header( "Location: init_error.ca");
+	exit;
+}
+
+if(isset($_GET['logout']) && $_GET['logout'] == "1"){
+	session_destroy();
+	header("location: login.ca");
+	exit;
+}
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Loading the owner.
+if ( !base_owner::detect_and_load( ))
+{
+	trigger_error( "FATAL: Unable to auto-detect and load the owner.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Seting up the template set to use.
+if ( !smarty_setup( owner::template( )))
+{
+	trigger_error( "FATAL: Unable to set the template set.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+if(!ca_session::get('admin_access')){
+	header("location: login.ca");
+	exit;
+}
+
+db::init();
+global $dbh;
+
+$owners = $dbh->getAll("SELECT owner_id, nombre FROM owner ORDER BY nombre");
+$smarty->assign('owners', $owners);
+
+if(!empty($_POST)){
+	/*
+	echo "<pre>";
+	print_r($_POST);
+	echo "</pre>";
+	*/
+	if(isset($_POST['cliente_id']) && $_POST['cliente_id'] != ''){
+		$res = adminlogin($_POST['cliente_id']);
+		if(!$res){
+			echo "ERROR!!";
+		}else{
+			header("location: home.ca");
+		}
+		exit;
+	}
+	
+	if(isset($_POST['searchbox']) && $_POST['searchbox'] != ''){
+		$q = $dbh->qstr("%". strtolower($_POST['searchbox']) ."%");
+		$where = " AND (lower(cliente_id) LIKE ". $q ." OR lower(rsocial) LIKE ". $q . ") ";
+		$smarty->assign('search_text', $_POST['searchbox']);
+	}else{
+		$where = "";
+	}
+	
+	if(isset($_POST['owner_id']) && $_POST['owner_id'] > 0){
+		$extra_where = ' AND o.owner_id = '. (int)($_POST['owner_id']);
+		$smarty->assign('search_owner', $_POST['owner_id']);
+	}else{
+		$extra_where = '';
+	}
+	
+	
+	if($where != '' || $extra_where != ''){
+		
+		$query = "SELECT upper(cliente_id) AS cliente_id, rsocial, 
+		e.descripcion as estado_cliente, o.nombre as owner
+		FROM clientes c
+		INNER JOIN estados e ON c.estado_id = e.estado_id 
+		INNER JOIN owner o ON c.mercado = o.mercado AND c.empresa = o.empresa
+		WHERE 1=1 ". $where . $extra_where;
+		$clients = $dbh->getAll($query);
+		$smarty->assign('clients', $clients);
+		
+		//echo $query;
+	}
+	
+}
+$smarty->clear_compiled_tpl();
+
+// Showing the Login form.
+$smarty->display( "admin_home.tpl");
+
+?>

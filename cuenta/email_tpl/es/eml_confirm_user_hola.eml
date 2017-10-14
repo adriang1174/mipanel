@@ -1,0 +1,64 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Confirmación de e-mail
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.hola/top1.gif" width="500" height="64"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de Cliente:
+                [USER_ID]<br>
+Estimado/a  
+              [USER_NAME]:
+</strong>
+             <br>
+<br>
+Por favor, confirma tu dirección de e-mail <b>[USER_EMAIL]</b>. Esta dirección será la que utilizaremos para futuros trámites administrativos.<br><br>
+Para validar esta dirección, por favor, haz clic en el botón <b>Confirmar</b> o en <a href="[EML_CONFIRM_LINK]" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration:underline;" title="Haz clic en este link para confirmar tu dirección de correo electrónico">este link</a>.
+<br><br>
+<a href="[EML_CONFIRM_LINK]"><img src="bt-confirmar.gif" border="0" alt="Confirmar" /></a></td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Por  consultas, ingresa a nuestra <a href="http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html" title="Consulta las preguntas frecuentes del servicio aquí" target="_blank" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">secci&oacute;n de preguntas  frecuentes</a>, o comun&iacute;cate con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@holatel.com" title="Por consultas, escríbenos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">asistencia@holatel.com</a>.<br />
+                <br />
+Estamos a tu disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	           HolaTel<br>
+	           <a href="http://www.holatel.com" target="_blank" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;" title="Visita el sitio de HolaTel">www.holatel.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

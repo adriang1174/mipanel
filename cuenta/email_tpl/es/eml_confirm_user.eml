@@ -1,0 +1,15 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Confirmación de mail desde Mi Panel
+
+<p>Código de Cliente: <b>[USER_ID]</b></p>
+<p>Estimado/a <b>[USER_NAME]</b>,</p>
+
+<p>Por favor confirme su direcci&oacute;n de mail <b>[USER_EMAIL]</b>. Esta direcci&oacute;n ser&aacute; la que utilizaremos para futuros tr&aacute;mites administrativos.</p>
+
+<p>Para validar esta direcci&oacute;n, por favor, haga clic en el bot&oacute;n <b>Confirmar</b> o en <a href="[EML_CONFIRM_LINK]">este link</a>.</p>
+
+<p><a href="[EML_CONFIRM_LINK]"><img src="bt-confirmar.gif" border="0" /></a></p>
+
+<br />
+<p>Saludos cordiales, <br /><br />[INFO_SUPPORT]</p>

@@ -1,0 +1,19 @@
+Código de cliente: <%cliente_id%>    
+Prezado(a) Sr(a). <%rsocial%>:
+      
+Enviamos em anexo a imagem da fatura emitida em seu nome e o detalhamento das ligações a que se refere. Este documento não tem valor fiscal.
+
+Para mais esclarecimentos, entre em contato conosco respondendo a este mesmo email para atendimento@latinatel.net ou por telefone, ligando para nosso Centro de Atendimento ao cliente, de segunda a sexta-feira das 9 às 18hs pelos números 
+
+São Paulo: (5511) 3711-5737 r. 1018
+Curitiba: (5541) 3941-2653 r. 1018
+Buenos Aires: (5411) 5254-5633 r. 1018
+Miami: (1) 786 329-7169 r. 1018
+ 
+
+Estamos a sua disposição. Atenciosamente, 
+
+Centro de Atendimento ao Cliente
+Latinatel
+www.latinatel.net
+ 

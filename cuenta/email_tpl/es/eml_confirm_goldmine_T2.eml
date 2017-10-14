@@ -1,0 +1,12 @@
+From: [MAIL_FROM]
+Reply-To: [MAIL_FROM]
+Subject: Alta Contacto Administrativo Verificado desde Mi Panel
+
+Formulario=Alta Contacto Administrativo Verificado desde Mi Panel
+
+UserID=[USER_ID]
+
+Nombre=[USER_NAME]
+Telefono=[USER_PHONE]
+Email=[USER_EMAIL]
+

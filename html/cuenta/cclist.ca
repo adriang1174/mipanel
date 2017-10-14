@@ -1,0 +1,8 @@
+<?
+
+define( 'LOCATION', "cclist");
+require_once( 'initialize.ca');
+basescr::show( $scr, ca_session::get( "scr"));
+require_once( 'finalize.ca');
+
+?>

@@ -1,0 +1,169 @@
+<?
+class Mailer
+{
+	var $mensaje;	//string - linea de mensaje que se quiere mostrar dentro del template
+	var $datos;	//array asociativo con etiquetas : destinatario, nombre, apellido, ani, mail, remitente
+	var $template;  //string con el contenido del archivo de template html
+	var $imagenes;  //array con los nombres de los archivos de imágenes
+	var $adjuntos;	//array con los de los archivos adjuntos 
+	var $mem_att;	//array asociativo conteniendo las cadenas a attachear como archivos (name => ("content-type","content"))	
+	var $plano;	//string con el contenido del archivo de template plano
+	var $base;	//string con la ubicación absoluta de los archivos adjuntos y de imágenes
+	var $img_sdir;  //string con la ruta del subdir de imagenes relativa a la base
+			//(coincide con la ruta en el attr src del tag img)
+	var $att_sdir;  //string con la ruta del subdir de attachment relativa a la base	
+	var $subject;	//string con el asunto del mail
+	var $cabeceras;	//variable con las cabeceras - generada después del prepare
+	var $mail;	//variable con el contenido del mail
+	
+	function init($data,$temp_html,$imgs,$adjuntos,$temp_plano,$base,$img_sdir,$att_sdir,$str_att,$subject,$mensaje)
+	{
+		$this->datos=$data;
+		$this->mensaje=$mensaje;
+		$this->template=join("",file("$base/$temp_html"));
+		$this->plano=join("",file("$base/$temp_plano"));
+		$this->adjuntos=$adjuntos;
+		$this->subject=$subject;
+		$this->base=$base;
+		$this->imagenes=$imgs;
+		$this->img_sdir=$img_sdir;
+		$this->att_sdir=$att_sdir;
+		$this->mem_att=$str_att;
+	}
+
+	function send()
+	{
+	/*	echo "paso por acá, las cosas son así:\n";
+		echo $this->datos['destinatario']."\n\n";
+		echo $this->cabeceras."\n\n";
+		echo $this->mail."\n\n";
+	*/	
+		return mail($this->datos['destinatario'], $this->subject, $this->mail , $this->cabeceras);
+	}
+
+	function prepare()
+	{
+		foreach($this->datos as $clave => $valor)
+		{
+			$this->template=str_replace("<%$clave%>",$valor,$this->template);
+		}
+		$this->template=str_replace("<%mensaje%>",$this->mensaje,$this->template);
+	
+		$mensaje_plano=$this->mensaje;
+		$mensaje_plano=eregi_replace("<br/*>","\n",$mensaje_plano);
+		$mensaje_plano=eregi_replace("</*p/*>","\n",$mensaje_plano);
+		$mensaje_plano=eregi_replace("</*[a-zA-Z \s \" \= \']+/*>","",$mensaje_plano);
+		$mensaje_plano=html_entity_decode($mensaje_plano);
+	
+
+		foreach($this->datos as $clave => $valor)
+		{
+			$this->plano=str_replace("<%$clave%>",$valor,$this->plano);
+		}
+		
+		$this->plano=str_replace("<%mensaje%>",$mensaje_plano,$this->plano);
+		
+		$this->mail=$this->makeMail();
+	}
+
+	function image_embedding($image,$md5_id)
+	{
+        	$cid=md5 (uniqid (rand()));
+		if(eregi("\.jpg$",$image))
+		{
+			$mime="image/jpeg";
+		}
+		else if(eregi("\.gif$",$image))
+		{
+			$mime="image/gif";
+		}
+		else
+		{
+			$mime="image/png";
+		}
+        	$buff=join("",file($this->base."/".$this->img_sdir."/$image"));
+        	$image_enc64 = chunk_split(base64_encode($buff));
+        	$image_part="--=_boundary_cuerpo_$md5_id\r\nContent-Type: $mime ; name=\"$image\"\r\nContent-Transfer-Encoding: base64\r\nContent-ID: <$cid>\r\n\r\n$image_enc64\r\n\r\n";
+		
+		//echo($this->img_sdir."/"."$image"."\n\n");
+
+
+        	$this->template=eregi_replace($this->img_sdir."/"."$image","cid:$cid",$this->template);
+        	return $image_part;
+	}
+
+	function file_attaching($file,$md5_id)
+	{
+		$buff=join("",file($this->base."/".$this->att_sdir."/$file"));
+		$content_enc64 = chunk_split(base64_encode($buff));
+		$content_part="--=_boundary_$md5_id\r\nContent-Type: \"text/csv\"\r\nContent-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=\"$file\"\r\n\r\n.$content_enc64\r\n\r\n";
+		
+		return $content_part;
+	}
+
+	function string_attaching($name,$content,$mime,$md5_id)
+	{
+		$content_enc64 = chunk_split(base64_encode($content));
+		
+		$content_part = "--=_boundary_$md5_id\n";
+		$content_part .= "Content-Type: {$mime};\n";
+		$content_part .= " name=\"{$name}\"\n";
+		$content_part .= "Content-Disposition: attachment;\n";
+		$content_part .= " filename=\"{$name}\"\n";
+		$content_part .= "Content-Transfer-Encoding: base64\n\n";
+		$content_part .= $content_enc64 . "\n\n"; 
+		$content_part .= "--=_boundary_$md5_id--\n"; ;
+		return $content_part;
+	}
+
+	
+	function makeMail()
+	{
+        	$md5_id=md5 (uniqid (rand()));
+        	$this->plano = $this->plano ? $this->plano : "-\r\n\r\n";
+        	$this->cabeceras  = "MIME-Version: 1.0\r\n";
+        	$this->cabeceras .= "Content-Type: multipart/mixed;\r\n";
+        	$this->cabeceras .= "      boundary=\"=_boundary_$md5_id\"\r\n";
+        	$this->cabeceras .= "Return-Path: <rebotes_consumo@grupoalternativa.com>\n";
+        	$this->cabeceras .= "From: ".$this->datos['remitente']."\r\n";
+		if($this->datos['cc'])
+		{
+			$this->cabeceras .= "Cc: ".$this->datos['cc']."\r\n";
+		}
+		if($this->datos['cco'])
+		{
+        		$this->cabeceras .= "Bcc: ".$this->datos['cco']."\r\n";
+		}
+        	$image_part="";
+		$att_part="";
+        	foreach($this->imagenes as $image)
+        	{
+                	$aux=$this->image_embedding($image,$md5_id);
+                	$image_part.=$aux;
+        	}
+                $html = chunk_split(base64_encode($this->template));
+        	$plano = chunk_split(base64_encode($this->plano));
+        	$message_init="--=_boundary_$md5_id\r\nContent-Type: multipart/related;\r\n      boundary=\"=_boundary_cuerpo_$md5_id\"\r\n\r\n";
+        	$cuerpo_part_ini="--=_boundary_cuerpo_$md5_id\r\nContent-Type: multipart/alternative;\r\n       boundary=\"=_boundary_html_text_$md5_id\"\r\n\r\n";
+        	$plain_part="--=_boundary_html_text_$md5_id\r\nContent-Type: text/plain; charset=\"iso-8859-1\"\r\nContent-Transfer-Encoding: base64\r\n\r\n$plano\r\n\r\n";
+        	$html_part="--=_boundary_html_text_$md5_id\r\nContent-Type: text/html\r\nContent-Transfer-Encoding: base64\r\n\r\n$html\r\n\r\n";
+        	$html_plain_part_end="--=_boundary_html_text_$md5_id--\r\n\r\n";
+        	$cuerpo_part_end="--=_boundary_cuerpo_$md5_id--\r\n\r\n";
+		foreach($this->adjuntos as $adjunto)
+		{
+			$aux=$this->file_attaching($adjunto,$md5_id);
+//			$att_part.=$aux;
+		}
+		foreach($this->mem_att as $name => $spec)
+		{
+			$aux=$this->string_attaching($name,$spec[1],$spec[0],$md5_id);
+			$att_part.=$aux;
+		}
+												
+        	$message_end="--=_boundary_$md5_id--\r\n\r\n";
+        	return $message_init.$cuerpo_part_ini.$plain_part.$html_part.$html_plain_part_end.$image_part.$cuerpo_part_end.$att_part.$message_end;
+	}
+}
+
+
+?>

@@ -1,0 +1,62 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+
+
+
+// Initializing the session.
+ca_session::logout( );
+if ( !ca_session::init( false, true))
+{
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Loading the owner.
+if ( !base_owner::detect_and_load( ))
+{
+	trigger_error( "FATAL: Unable to auto-detect and load the owner.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Seting up the template set to use.
+if ( !smarty_setup( owner::template( )))
+{
+	trigger_error( "FATAL: Unable to set the template set.");
+	header( "Location: init_error.ca");
+	exit;
+}
+
+// Seteamos las variables de smarty necesarias.
+$smarty->assign( "owner", OWNER);
+
+/*
+if ( filter::flag( varconn::GET( "error")))
+	$smarty->assign( "login_error", true);
+*/
+
+
+$smarty->clear_compiled_tpl();
+// Showing the Login form.
+$smarty->display( "login.tpl");
+
+?>

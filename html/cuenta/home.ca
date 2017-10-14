@@ -1,0 +1,14 @@
+<?
+header("Location: cc.ca");
+exit;
+define( 'LOCATION', "home");
+
+//session_start();
+
+require_once( 'initialize.ca');
+
+//var_dump($scr);
+//die($scr);
+basescr::show( $scr, ca_session::get( "scr"));
+require_once( 'finalize.ca');
+?>

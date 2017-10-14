@@ -1,0 +1,286 @@
+<?
+
+class owner
+{
+	function owner_name(){
+		return "Telephone 2";
+	}
+	
+	function show_iva_details( )
+	{
+		return true;
+	}
+
+   function panel_name( )
+	{
+    return "Mi Panel";
+	}
+    
+	function info_contact( )
+	{
+	return array(
+	"Telephone2 S.A.",
+	"Humboldt 1917, C1414CTU",
+	"",
+	"www.telephone2.com"
+	);
+	}
+
+    function phone_support( )
+    {
+        return null;
+    }
+
+	function addr_www( )
+	{	
+    return "www.telephone2.com";
+	}
+    
+   function addr_support( )
+	{
+    return "asistencia@telephone2.com";
+    //return "noreply@telephone2.com";
+	}
+	
+	function addr_support_display( )
+	{
+    return "asistencia@telephone2.com";
+	}
+
+    function info_support( )
+	{
+    return array(
+        "Atención al Cliente",
+        "Telephone2",
+        "asistencia@telephone2.com"
+    );
+	}
+    
+	function info_facturation( )
+	{
+	return array(
+       "IVA Responsable Inscripto",
+       "CUIT 30-70726752-2",
+       "Ingresos Brutos 901-052300-1",
+       "Inicio de Actividades 01/07/2001"
+                );
+	}
+	
+	function botonera( )
+	{
+		 if(isset($_SESSION['admin_access'])&&$_SESSION['admin_access']==1)
+		               return array(
+                        array(
+                                "titulo" => lang("TITLE_INVOICES"),
+                                "items" => array("cc", "rates")
+                        ),
+                        array(
+                                "titulo" => lang("TITLE_SERVICES"),
+                                "items" => array("conf_services", "services", "services_removal")
+                        ),
+                        array(
+                                "titulo" => lang("TITLE_REPORTS"),
+                                "items" => array("notices", "traff_nf", "traff_f")
+                        ),
+                        array(
+                                "titulo" => lang("TITLE_VIEW_INFO"),
+                                "items" => array("email_password", "company_info")
+                        ),
+                );
+		else
+		return array(
+			array(
+				"titulo" => lang("TITLE_INVOICES"),
+				"items" => array("cc", "rates")
+			),/*
+			array(
+				"titulo" => lang("TITLE_SERVICES"),
+				"items" => array("conf_services", "services", "services_removal")
+			),*/
+			array(
+				"titulo" => lang("TITLE_REPORTS"),
+				"items" => array("notices", "traff_nf", "traff_f")
+			),
+			array(
+				"titulo" => lang("TITLE_VIEW_INFO"),
+				"items" => array("email_password", "company_info")
+			),
+		);
+	}
+
+    /*
+	function botonera( )
+	{
+		return array(
+			array(
+				"titulo_principal" => lang("TITLE_INVOICES"),
+				"titulo" => "",
+				"items" => array(),
+				"id_titulo_principal" => 1				
+			),
+			array(
+				"titulo" => lang("TITLE_INVOICE"),
+				"items" => array("ticket", "cc"),
+				"id_titulo_principal" => 1,
+				"id_sub" => 1
+			),
+			array(
+				"titulo" => lang("TITLE_PAY"),
+				"items" => array("tickets", "payment_mode"),
+				"id_titulo_principal" => 1,
+				"id_sub" => 2
+			),
+			array(
+				"titulo" => lang("TITLE_ACCOUNT_INFORMATION"),
+				"items" => array("rates", "last_traff", "payment_information"),
+				"id_titulo_principal" => 1,
+				"id_sub" => 3
+			),
+			array(
+				"titulo_principal" => lang("TITLE_SERVICES"),
+				"titulo" => "",
+				"items" => array(),
+				"id_titulo_principal" => 2
+			),
+			array(
+				"titulo" => lang("TITLE_ACCOUNT_MODIFICATION"),
+				"items" => array("email_password", "company_info"),
+				//linea original:--------------------------------------------|
+				//"items" => array("email_password", "company_info", "panel_password"),
+				"id_titulo_principal" => 2,
+				"id_sub" => 1
+			),
+			array(
+				"titulo" => lang("TITLE_SERVICES_CONF"),
+				"items" => array("conf_services", "services", "services_removal"),
+				"id_titulo_principal" => 2,
+				"id_sub" => 2
+			),
+			array(
+				"titulo_principal" => lang("TITLE_REPORTS"),
+				"subtitulos" => "",
+				"items" => array(),
+				"id_titulo_principal" => 3
+			),
+			array(
+				"titulo" => lang("TITLE_REPORTS_CONF"),
+				"items" => array("notices", "rcalllist", "cclist"),
+				"id_titulo_principal" => 3,
+				"id_sub" => 1
+			),
+			array(
+				"titulo" => lang("TITLE_REPORTS_BY_TYPE"),
+				"items" => array("traff_f", "traff_nf", "traff_p"),
+				"id_titulo_principal" => 3,
+				"id_sub" => 2
+			),
+			array(
+				"titulo_principal" => lang("TITLE_INTEREST_TOPICS"),
+				"titulo" => "",
+				"items" => array(),
+				"id_titulo_principal" => 4
+			),
+			array(
+				"titulo" => "NOTITLE",
+				"items" => array("newsletter", "news", "contactus", "faq"),
+				"id_titulo_principal" => 4,
+				"id_sub" => 1
+			)
+		);
+	}
+	*/
+	
+	/* BOTONERA ANTERIOR
+	function botonera( )
+	{
+	
+		return array(
+			array(
+				"titulo_principal" => lang("INFORMACION"),
+				"titulo" => "",
+				"items" => array(),
+				"id_titulo_principal" => 1				
+			),
+			array(
+				"titulo" => "NOTITLE",
+				"items" => array("tickets", "rates", "cc", "traff_nf", "traff_f", "traff_p"),
+				"id_titulo_principal" => 1,
+				"id_sub" => 1
+			),
+			array(
+				"titulo_principal" => lang("ADMINISTRACION"),
+				"titulo" => "",
+				"items" => array(),
+				"id_titulo_principal" => 2				
+			),
+			array(
+				"titulo" => "NOTITLE",
+				"items" => array("conf_services", "services", "notices", "rcalllist", "cclist", "email_password"),
+				"id_titulo_principal" => 2,
+				"id_sub" => 1
+			)
+		);
+	}
+	*/
+
+	function botonera_default( )
+	{
+		return "tickets";
+	}
+
+	/* Change this only if you know what are you doing. */
+	function template( )
+	{
+		return false;
+	}
+
+	function referer( )
+	{
+	return "http://www.telephone2.com/";
+	} 
+
+   function payment_gateways( )
+	{
+		return array( "pago_facil", "rapipago", "pago_mis_cuentas","pagosphone","supervielle");
+	}
+
+    function contact_url( )
+	{
+		return "http://www.telephone2.com/seccion/483/atencion-al-cliente.html";
+	}
+	
+	
+
+    function pago_universal_name( )
+    {
+        return "hola";
+    }
+	
+	
+	
+	/*
+	 * 080811
+	 * Esta funciona se asegura de que la eleccion del idioma establecida en 
+	 * ca_session este dentro del conjunto habilitado para la unidad de negocio.
+	 * @param $idiomaSeleccionado String con el idioma determinado
+	 * @ret $idiomaValido String con el idioma determinado por ca_session si 
+	 * 					  estaba en el conjunto habilitado o sino el idioma
+	 *					  por default
+	 */
+	function idiomavalido( $idiomaSeleccionado ) {
+		
+		//modelizamos de forma que el primero definido sea la opcion por 
+		//default para el caso de no encontrarse el estimado por ca_session en 
+		//el conjunto.
+		
+		$conjIdiomasHabilitados = array("es");
+		
+		if ( !in_array( $idiomaSeleccionado, $conjIdiomasHabilitados ) ) 
+			$idiomaSeleccionado = $conjIdiomasHabilitados[0];
+		return $idiomaSeleccionado;
+		
+	}
+
+}
+	
+?>

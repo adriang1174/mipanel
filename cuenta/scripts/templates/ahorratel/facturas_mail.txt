@@ -1,0 +1,17 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a.: <%rsocial%> 
+
+Le enviamos adjunta la factura emitida a su nombre y el detalle de consumo correspondiente. Para poder visualizar su comprobante, deberá tener instalada la aplicación Adobe Acrobat Reader. Si no cuenta con esta aplicación puede descargarla desde http://www.adobe.com/.
+También puede visualizar su factura y ver más reportes, accediendo a MiPanel con su usuario y contraseña.
+     
+Ante cualquier consulta, comuníquese por esta misma vía a asistencia@ahorratel.com. O a los siguientes teléfonos:
+Argentina (Buenos Aires): (+54) 11 5983 9598
+Brasil (São Paulo): (+55) 11 3957 0332
+Chile (Santiago): (+56) 2 582 1390
+México (Ciudad de México): (+52) 55 1168 9815
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Ahorratel
+www.ahorratel.com

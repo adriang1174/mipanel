@@ -1,0 +1,8 @@
+user =WWPS
+password =certQ5YH
+currency_merchant_map ['DEFAULT'] =100700
+url =https://payments2.litle.com/vap/communicator/online
+proxy =
+version = 8.13
+timeout =  65
+reportGroup = Default Report Group

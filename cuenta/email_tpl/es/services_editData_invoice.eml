@@ -1,0 +1,18 @@
+From: importaciongm@grupoalternativa.com
+Reply-To: importaciongm@grupoalternativa.com
+Subject: Mi Panel - Cambio en la configuracion de Servicios
+
+
+<table border="1"><tr><td>x</td></tr></table>
+[Instructions]
+
+
+DupCheck1=key3
+OnNewAttachTrack=Web Alta Centralizada
+SaveThis=Mi Panel - Cambio en la configuracion de Servicios
+
+[Data]
+key3=[CLIENT_ID]
+
+[DESCRIPTION_TEXT]
+fecha=[FECHA_HORA]

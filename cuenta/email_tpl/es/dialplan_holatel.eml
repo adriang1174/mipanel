@@ -1,0 +1,39 @@
+From: [from]
+Subject: [subject]
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Configuraci&oacute;n de marcado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+<div style="width:500px; margin:0 auto; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b;border:#e6e7e8 1px solid; ">
+	<img src="http://71.6.197.240/imagenes-news/mipanel.hola/top1.gif" width="500" height="64" alt="Línea IP" style="border:0;" />
+  <div style="width:450px; padding:12px 24px;">
+      <span style="font-weight:bold;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">&iexcl;Hola, [titular]! </span><br />
+<br />
+Confirmamos el cambio de opci&oacute;n de marcado en tu <strong>L&iacute;nea IP</strong>. A continuaci&oacute;n, te enviamos el detalle de tu nueva configuraci&oacute;n.<br />
+<br />
+
+		
+		Para llamar a un tel&eacute;fono IP, deb&eacute;s marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_IP] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada local, deb&eacute;s marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_LOCAL] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada de larga distancia nacional, deb&eacute;s marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_NACIONAL] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada de larga distancia internacional, deb&eacute;s marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_INTERNACIONAL] [n&uacute;mero]</strong>.<br />		
+		<br />
+Por  consultas, ingresa a nuestra <a href="http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html" title="Consulta las preguntas frecuentes del servicio aquí" target="_blank" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">secci&oacute;n de preguntas  frecuentes</a>, o comun&iacute;cate con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@holatel.com" title="Por consultas, escríbenos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">asistencia@holatel.com</a>.     <br />
+                <br />
+Estamos a tu disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	           HolaTel<br>
+             <a href="http://www.holatel.com" target="_blank" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;" title="Visita el sitio de HolaTel">www.holatel.com</a>
+               <br /><br />
+
+    </div>
+</div>
+</body>
+</html>

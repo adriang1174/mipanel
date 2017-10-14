@@ -1,0 +1,59 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+require_once( INCLUDE_PATH . 'ca_list.php');
+require_once( INCLUDE_PATH . 'data/config.php');
+require_once( INCLUDE_PATH . 'ca_form.php');
+require_once( INCLUDE_PATH . 'clientcontrol.php');
+require_once( INCLUDE_PATH . 'ca_email.php');
+
+
+// Intializing the session.
+ca_session::init( );
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+
+
+if ( !smarty_setup( "default"))
+{
+	trigger_error( "FATAL: Unable to setup smarty.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+
+display( );
+
+function display( )
+{
+    global $smarty;
+    
+    
+    db::init();
+    
+      
+    $owner_id = owner_to_ownerid($_GET['o'], true);
+        
+    $texto = db::get_rows_as_array_of_hashes("SELECT * FROM popups WHERE owner = ". (int)($owner_id) ." ORDER BY RANDOM() LIMIT 1");
+
+    $smarty->assign('texto_reemplazo', $texto[0]["texto"]);
+    $smarty->display( "popup_info_". $_GET['o'] .".tpl");
+    exit;
+}
+
+?>

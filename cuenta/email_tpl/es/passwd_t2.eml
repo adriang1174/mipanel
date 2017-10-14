@@ -1,0 +1,64 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Recordatorio de datos
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.t2/top1.gif" width="500" height="64" alt="Telephone 2"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Estimado/a Sr/a: [TITULAR]<br>
+C&oacute;digo de Cliente: [USER_ID]
+</strong>
+             <br>
+<br>De acuerdo a lo solicitado, iniciamos el proceso de creación de contraseña para su cuenta de <b>Mi Panel</b>.<br><br>
+
+Para generar una nueva clave, haga clic en <a href="[LINK]">este link</a>, que estará activo durante las próximas 48 horas. 
+<br />De no poder acceder desde el link copie el siguiente texto en su navegador [LINK]<br /><br />
+De no haber solicitado el cambio de contraseña, por favor, ignore este e-mail.<br /><br />
+            
+</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Por  consultas, ingrese a nuestra <a href="http://www.telephone2.com/seccion/486/preguntas-frecuentes.html" title="Consulte las preguntas frecuentes del servicio aquí" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">secci&oacute;n de preguntas  frecuentes</a>, o comun&iacute;quese con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@telephone2.com" title="Por consultas, escríbanos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">asistencia@telephone2.com</a>.<br>
+<br>
+Estamos a su disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	       Telephone 2<br>
+	       <a href="http://www.telephone2.com" target="_blank" class="fuente" title="Ingrese al sitio de Telephone 2" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; ">www.telephone2.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

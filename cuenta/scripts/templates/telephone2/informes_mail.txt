@@ -1,0 +1,28 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+
+Importante: Por favor, si tiene consultas o reclamos sobre el contenido de este e-mail, solicitamos que envíe un nuevo correo electrónico a asistencia@telephone2.com con el motivo de la consulta en el asunto; y, en el cuerpo del e-mail, incluya la descripción, su código de cliente, línea o servicio sobre el que realiza el reclamo, y titular de la cuenta.
+    
+Este es un envío semanal de carácter meramente informativo. 
+
+Le enviamos adjunto a este mail el informe de llamadas no facturadas hasta el <%fecha_hasta%>. Encontrará el informe en un archivo de formato CSV, que puede abrir con cualquier planilla de cálculo. 
+
+Si el archivo adjunto está vacío, es porque no hay llamadas pendientes de facturar. 
+
+Además, accediendo a Mi Panel en https://zonasegura.grupoalternativa.com/cuenta/login.ca usted puede:
+
+- Optar por recibir Alarmas de Consumo y ver el detalle de llamadas al momento.  
+- Configurar los reportes por Proyectos y Descripción de Destinos.  
+- En el ítem Facturas, puede ver todos los comprobantes, imprimirlos, recibirlos por mail, o imprimir el cupón para Pago Fácil.
+
+Para dejar de recibir estos informes ingrese en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo. 
+			
+Recuerde que para ingresar a Mi Panel debe hacerlo con su usuario, que es su código de cliente, y su contraseña. 
+   
+Por consultas, ingrese a nuestra sección de preguntas frecuentes en http://www.telephone2.com/seccion/486/preguntas-frecuentes.html, o comuníquese con nuestro Centro de Atención al Cliente por e-mail a asistencia@telephone2.com.
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Telephone 2
+www.telephone2.com

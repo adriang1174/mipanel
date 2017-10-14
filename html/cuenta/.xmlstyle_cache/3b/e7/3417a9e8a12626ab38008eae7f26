@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ca><xsl-template>proyectos</xsl-template><title id="1" href="proyectos.xsp">Referencia de llamadas</title><cliente><cliente_id>C103494</cliente_id><rsocial>Pima Textil SA</rsocial><cuit>30-63076994-5</cuit><cpebanelco>103494191</cpebanelco><cpelink>308103494191</cpelink><email>pimatex@redesdelsur.com</email><agente>102</agente><tipo>C         </tipo></cliente>
+<botonera><opcion id="1">
+  <titulo>Facturas</titulo><href>facturas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="2">
+  <titulo>Tarifas</titulo><href>tarifas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="3">
+  <titulo>Cuenta Corriente</titulo><href>cc.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="4">
+  <titulo>Consumo no facturado</titulo><href>trafico.xsp?fact=0&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="5">
+  <titulo>Consumo facturado</titulo><href>trafico.xsp?fact=1&amp;filt=0</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="6">
+  <titulo>Consumo por periodo</titulo><href>trafico.xsp?fact=1&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="7">
+  <titulo>Avisos de consumo</titulo><href>avisos.xsp</href><selected>0</selected><seccion>admin</seccion></opcion><opcion id="8">
+  <titulo>Referencia de llamadas</titulo><href>proyectos.xsp</href><selected>1</selected></opcion><opcion id="9">
+  <titulo>Centro de costos</titulo><href>centrocostos.xsp</href><selected>0</selected></opcion><opcion id="10">
+  <titulo>Modificacion de datos</titulo><href>cambiodatos.xsp</href><selected>0</selected></opcion><opcion id="11">
+  <titulo>Pedido de CallBack</titulo><href>serviciosonline.xsp</href><selected>0</selected></opcion><opcion id="12">
+  <titulo>Salir</titulo><href>logout.xsp</href><selected>0</selected></opcion></botonera><if>red</if><proyectos/></ca>

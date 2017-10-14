@@ -1,0 +1,17 @@
+From: [MAIL_FROM]
+Reply-To: [MAIL_FROM]
+Subject: [SUBJECT]
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web cambio de datos
+OnDupAttachTrack=Web cambio de datos
+SaveThis=MiPanel - Contacto
+
+[Data]
+key3=[CLIENT_ID]
+
+Nombre=[NOMBRE]
+Comentario=[COMENTARIO]
+Reclamo=[TIPO_RECLAMO]
+Fecha_envio=[FECHA_ENVIO]

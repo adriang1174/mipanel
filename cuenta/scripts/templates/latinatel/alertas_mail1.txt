@@ -1,0 +1,19 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+
+Le informamos -según usted lo solicitó a través de Mi Panel- que su consumo no facturado hasta la fecha <%fecha_hasta%> ha superado los límites establecidos por usted.
+
+<%alerta%>
+
+Ante cualquier consulta, comuníquese por esta misma vía a asistencia@latinatel.net. O a los siguientes teléfonos:
+Miami: +1 786 329 7169
+Buenos Aires: +54 11 5219 3258
+San Pablo (BRA): +55 11 3711 5737
+Curitiba (BRA): +55 41 3941 2653
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Latinatel
+www.latinatel.net
+ 

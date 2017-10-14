@@ -1,0 +1,159 @@
+body
+{
+	margin: 0px;
+	font-family: verdana;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+td
+{
+	font-family: verdana;
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.header-logo
+{
+	/* TODO: Add default style. */
+}
+
+.header-datos
+{
+	line-height: 19px;
+	padding-left: 10px;
+	font-size: 10px;
+	color: white;
+	vertical-align: bottom;
+	width: 100%;
+}
+
+.logo
+{
+	padding-top: 0px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.botonera-topbottom
+{
+	padding-left: 0px;
+}
+
+.botonera-contacto
+{
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.scr_resalt
+{
+	font-weight: bold;
+	background-color: #eee;
+}
+
+.scr_resalt3
+{
+	font-weight: bold;
+}
+
+.scr_resalt2
+{
+	background-color: #eee;
+}
+
+.login_font
+{
+	color: white;
+}
+a.login_font:link    { text-decoration: none; color: white; }
+a.login_font:visited { text-decoration: none; color: white; }
+a.login_font:hover   { text-decoration: none; color: white; }
+a.login_font:active  { text-decoration: none; color: white; }
+
+.login_error
+{
+	color: red;
+}
+
+.paginate
+{
+	color: black;
+}
+a.paginate:link    { text-decoration: underline; color: black; }
+a.paginate:visited { text-decoration: underline; color: black; }
+a.paginate:hover   { text-decoration: underline; color: black; }
+a.paginate:active  { text-decoration: underline; color: black; }
+
+select
+{
+	font-size: 9px;
+}
+
+input
+{
+	font-size: 9px;
+}
+
+.error
+{
+	font-size: 12px;
+	color: red;
+	font-weight: bold;
+}
+
+.acttitle
+{
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+
+.action_done
+{
+    color: #000000;
+    font-weight: bold;
+}
+
+.action_failed
+{
+    color: red;
+    font-weight: bold;
+}
+.popup_link
+{
+	font-family:verdana;
+	font-size:11px;
+	font-weight:normal;
+	text-decoration: none;
+	color: #000000;
+}
+
+/* */
+.logos_footer {text-align:center}
+.logos_footer img {padding:5px}
+#ahorre {background: url(../img/bg_tel.jpg) top left no-repeat; width:583px; height:58px; margin:25px 0 0 82px; font-family:Arial; font-size:11px; font-weight:bold; text-align:center; color:#000;}
+#ahorre span {line-height:20px; float:left; text-aling:center; width:100%; margin:8px 0 0;}
+#ahorre strong {color:#FF9933; font-size:20px;}
+#acordion {margin:15px 0 0 0;}
+#acordion  h3, .bloque h3 {background:#EFEFEF; margin:2px 0 0 0; padding:3px 0; border:1px solid #DFDFDF; float:left; width:745px;}
+#acordion  h3 a {color:#6F6F6F; font-weight:bold; padding:3px 5px 0 21px; background: url(../img/arrow-ac.gif) 5px -62px no-repeat;}
+#acordion  h3.activo a {background-position:5px 5px; text-decoration:underline;}
+#acordion .bloque-acordion, .bloque {background:#F9F9F9; padding:15px 22px; float:left; width:703px !important;}
+#acordion .bloque-acordion label, .bloque label {font-weight:bold; line-height:17px; width:250px; text-align:right; margin:0 10px 0 0; float:left;}
+#acordion .bloque-acordion form, .bloque form {margin-top:10px; float:left;}
+#acordion .bloque-acordion span.label, .bloque span.label {font-weight:bold; float:left; line-height:16px; width:auto; margin:0 28px 0 0;}
+#acordion .bloque-acordion span , .bloque span  {float:left; line-height:16px; width:auto; margin:0 5px 0 10px;}
+#acordion .bloque-acordion .txt , .bloque .txt {font-family:Verdana; font-size:11px; color:#6F6F6F; padding:2px 1px; float:left; border:1px solid #AFAFAF; width:220px;}
+#acordion .bloque-acordion  select, .bloque  select {font-family:Verdana; font-size:11px; color:#6F6F6F; padding:2px 1px; float:left; border:1px solid #AFAFAF; width:70px; margin:0 10px 0 0;}
+#acordion .bloque-acordion .check, .bloque .check {float:left; width:auto;}
+#acordion .margin-top , .bloque  .margin-top  {margin-top:10px; width:100%; float:left;}
+#acordion .right, .bloque .right {width:auto !important; float:right !important;}
+#acordion .checkbox {float:left; margin:3px 0 0 0;}
+#acordion em {float: left; width:670px; margin:4px 0 0 10px; display:inline;}
+#acordion .border-bottom, .bloque .border-bottom {border-bottom:1px solid #FF9933; color:#FF9933; width:703px; line-height:20px; float:left; margin:5px 0 0 0;}
+#acordion .bloque-acordion label.error, .bloque label.error {font-weight:normal !important; color:red; font-size:10px !important; line-height:17px; width:auto !important; text-align:left !important; margin:0 0 0 10px !important; float:left; position:absolute;}
+.form_ok {padding:60px 0 40px; text-align:center; font-weight:bold; color:#FF9933;}

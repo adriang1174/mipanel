@@ -1,0 +1,19 @@
+<?
+session_start();
+
+require_once( 'includepath.ca');
+include(INCLUDE_PATH . "/adodb/adodb-exceptions.inc.php");
+include(INCLUDE_PATH . "adodb/adodb.inc.php");
+$DB = NewADOConnection('postgres64');  
+$DB->debug = true;
+$DB->Connect("localhost", "famuro", "fer*123","ra_cuenta");
+
+try {
+   $res = $DB->Execute("select count(*) from clientes");
+   echo $DB->ErrorMsg();
+   var_dump($res->GetArray());
+} catch (exception $e) {
+    print_r($e);
+}
+?>
+

@@ -1,0 +1,513 @@
+﻿Array
+(
+    [0] => Array
+        (
+            [id] => 35894
+            [ca_cnro] => 4002167
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:03
+        )
+
+    [1] => Array
+        (
+            [id] => 35895
+            [ca_cnro] => 3005127
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:04
+        )
+
+    [2] => Array
+        (
+            [id] => 35896
+            [ca_cnro] => 2048082
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:04
+        )
+
+    [3] => Array
+        (
+            [id] => 35897
+            [ca_cnro] => C101712
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:05
+        )
+
+    [4] => Array
+        (
+            [id] => 35898
+            [ca_cnro] => 1381154
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:05
+        )
+
+    [5] => Array
+        (
+            [id] => 35899
+            [ca_cnro] => 4002605
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:05
+        )
+
+    [6] => Array
+        (
+            [id] => 35900
+            [ca_cnro] => C103124
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:06
+        )
+
+    [7] => Array
+        (
+            [id] => 35901
+            [ca_cnro] => C114085
+            [Usuario] => 20x49
+            [Referencia] => Alarma de Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Chequear el motivo de la baja del consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:06
+        )
+
+    [8] => Array
+        (
+            [id] => 35902
+            [ca_cnro] => 1280523
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:07
+        )
+
+    [9] => Array
+        (
+            [id] => 35903
+            [ca_cnro] => 1282589
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:07
+        )
+
+    [10] => Array
+        (
+            [id] => 35904
+            [ca_cnro] => 1319572
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:07
+        )
+
+    [11] => Array
+        (
+            [id] => 35905
+            [ca_cnro] => 1321204
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:40:07
+        )
+
+    [12] => Array
+        (
+            [id] => 35927
+            [ca_cnro] => 5001515
+            [Usuario] => 20x49
+            [Referencia] => Reclamo Pago Inicial
+            [Categoria] => Cobranzas
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Verificar servicio y Reclamar Pago Inicial para Continuar
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:57
+        )
+
+    [13] => Array
+        (
+            [id] => 35906
+            [ca_cnro] => 2030463
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 2030463 Fecha_envio: 05/04/2017 email: mariasuarez@fibertel.com.ar Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [14] => Array
+        (
+            [id] => 35907
+            [ca_cnro] => 2096654
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 2096654 Fecha_envio: 05/04/2017 email: nestorpires@hotmail.com Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [15] => Array
+        (
+            [id] => 35908
+            [ca_cnro] => 1185900
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 1185900 Fecha_envio: 05/04/2017 email: jrr@rivasprop.com Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [16] => Array
+        (
+            [id] => 35909
+            [ca_cnro] => 1220098
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 1220098 Fecha_envio: 05/04/2017 email: tpiedr@palermo.edu Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [17] => Array
+        (
+            [id] => 35910
+            [ca_cnro] => C105620
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente C105620 Fecha_envio: 05/04/2017 email: emarcelino@templadoscentro.com Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [18] => Array
+        (
+            [id] => 35911
+            [ca_cnro] => 1581580
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 1581580 Fecha_envio: 05/04/2017 email: mabelrio@fibertel.com.ar Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [19] => Array
+        (
+            [id] => 35912
+            [ca_cnro] => C107318
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente C107318 Fecha_envio: 05/04/2017 email: administracion@fcs-international.com.ar Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [20] => Array
+        (
+            [id] => 35913
+            [ca_cnro] => 2017250
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente 2017250 Fecha_envio: 05/04/2017 email: gramajoac@aol.com Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [21] => Array
+        (
+            [id] => 35914
+            [ca_cnro] => C105331
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente C105331 Fecha_envio: 05/04/2017 email: rondinella@steel.com.ar Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [22] => Array
+        (
+            [id] => 35915
+            [ca_cnro] => C101561
+            [Usuario] => 20x49
+            [Referencia] => Volver a suscribir Mail
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente C101561 Fecha_envio: 05/04/2017 email: hectorfonzo@fonzo.com.ar Motivo: Rebote soft Intento envio de SinConsumo
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:24
+        )
+
+    [23] => Array
+        (
+            [id] => 35916
+            [ca_cnro] => 1401326
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [24] => Array
+        (
+            [id] => 35917
+            [ca_cnro] => 1536721
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [25] => Array
+        (
+            [id] => 35918
+            [ca_cnro] => 1537793
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [26] => Array
+        (
+            [id] => 35919
+            [ca_cnro] => 1691113
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [27] => Array
+        (
+            [id] => 35920
+            [ca_cnro] => 2021885
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [28] => Array
+        (
+            [id] => 35921
+            [ca_cnro] => 2167594
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:36
+        )
+
+    [29] => Array
+        (
+            [id] => 35922
+            [ca_cnro] => 2178202
+            [Usuario] => 20x49
+            [Referencia] => Mandar mail ofreciendo Plan Alternativa IP
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Tiene un consumo promedio apropiado para este plan
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:43
+        )
+
+    [30] => Array
+        (
+            [id] => 35923
+            [ca_cnro] => 1192558
+            [Usuario] => 20x49
+            [Referencia] => Mandar mail ofreciendo Plan Alternativa IP
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Tiene un consumo promedio apropiado para este plan
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:43
+        )
+
+    [31] => Array
+        (
+            [id] => 35924
+            [ca_cnro] => 1888574
+            [Usuario] => 20x49
+            [Referencia] => Mandar mail ofreciendo Plan Alternativa IP
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Tiene un consumo promedio apropiado para este plan
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:43
+        )
+
+    [32] => Array
+        (
+            [id] => 35925
+            [ca_cnro] => 4002177
+            [Usuario] => 20x49
+            [Referencia] => Mandar mail ofreciendo Plan Alternativa IP
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Tiene un consumo promedio apropiado para este plan
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:43
+        )
+
+    [33] => Array
+        (
+            [id] => 35926
+            [ca_cnro] => 1170768
+            [Usuario] => 20x49
+            [Referencia] => Mandar mail ofreciendo Plan Alternativa IP
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Tiene Consumo elevado. Le va a convenir
+            [Estado] => 0
+            [FechaCreacion] => 2017-07-13 10:45:56
+        )
+
+)
+ENVIO OK. ID: 35894
+ENVIO OK. ID: 35895
+ENVIO OK. ID: 35896
+ENVIO OK. ID: 35897
+ENVIO OK. ID: 35898
+ENVIO OK. ID: 35899
+ENVIO OK. ID: 35900
+ENVIO OK. ID: 35901
+ENVIO OK. ID: 35902
+ENVIO OK. ID: 35903
+ENVIO OK. ID: 35904
+ENVIO OK. ID: 35905
+ENVIO OK. ID: 35927
+ENVIO OK. ID: 35906
+ENVIO OK. ID: 35907
+ENVIO OK. ID: 35908
+ENVIO OK. ID: 35909
+ENVIO OK. ID: 35910
+ENVIO OK. ID: 35911
+ENVIO OK. ID: 35912
+ENVIO OK. ID: 35913
+ENVIO OK. ID: 35914
+ENVIO OK. ID: 35915
+ENVIO OK. ID: 35916
+ENVIO OK. ID: 35917
+ENVIO OK. ID: 35918
+ENVIO OK. ID: 35919
+ENVIO OK. ID: 35920
+ENVIO OK. ID: 35921
+ENVIO OK. ID: 35922
+ENVIO OK. ID: 35923
+ENVIO OK. ID: 35924
+ENVIO OK. ID: 35925
+ENVIO OK. ID: 35926

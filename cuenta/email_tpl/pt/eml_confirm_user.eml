@@ -1,0 +1,15 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Confirmação de e-mail para Meu Painel 
+
+<p>Código de Cliente: <b>[USER_ID]</b><p>
+<p>Prezado(a) <b>[USER_NAME]</b>,</p>
+
+<p>Por favor confirme seu endereço de e-mail <b>[USER_EMAIL]</b>. Este endereço será utilizado para futuros trâmites administrativos. </p>
+
+<p>Para validar este endereço, por favor clique no ícone <b>Confirmar</b> ou <a href="[EML_CONFIRM_LINK]">neste link</a>.</p>
+
+<p><a href="[EML_CONFIRM_LINK]"><img src="bt-confirmar.gif" border="0" /></a></p>
+
+<br />
+<p>Atenciosamente,<br /><br /> [INFO_SUPPORT]</p>

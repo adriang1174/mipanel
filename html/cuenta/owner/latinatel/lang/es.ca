@@ -1,0 +1,32 @@
+<?
+
+define('OWNER_TPL_TEXTO_FACTURA_DIGITAL', 'Su factura digital en formato PDF tiene los mismos datos que la que usted recibe por correo tradicional y contiene los códigos 
+de barra para abonar en efectivo.<br /><br />Para ver o imprimir tu factura digital, haz clic en el ícono de PDF. Para enviar tu factura digital vía e-mail, haz clic en el botón correspondiente. Para abonarla, haz clic en el botón Pagar y elige el medio de pago habilitado para tu ciudad.');
+
+
+
+
+
+
+
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La información es presentada al sólo efecto informativo. Los datos surgen de los registros en Latinatel, salvo error u omisión involuntaria. Ante cualquier duda o discrepancia, por favor comuníquese a asistencia@holatel.com o telefónicamente, con nuestro Centro de Atención al Cliente, a través del 54-11-6393-0150.');
+define( "OWNER_TPL_RATE_MAINTENANCE", "");
+define( "OWNER_TPL_RATE_ACLARATION2", "Las tarifas no incluyen recargos por accesos");
+
+/* INSTRUCTIONS */
+define("OWNER_TPL_PLATEADA_TITLE", "TARJETA PLATEADA");
+define('OWNER_TPL_PLATEADA_INSTRUCTIONS', '
+<div style="width:450px">
+<p><b class="ticket_row_title">Instrucciones de uso</b></p><p>&nbsp;</p>
+<p><b class="ticket_row_title">1.</b> Marque el número de acceso correspondiente al país en que se encuentra.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">2.</b> Cuando el sistema se lo indique, ingrese su PIN y la clave de la tarjeta.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">3.</b> Marque el número telefónico completo al cual desea llamar + la tecla numeral (#).</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">4.</b> Escuchará el mensaje "Llamada en curso". En unos segundos se comunicarás con el destino solicitado.</p><p>&nbsp;</p>
+<p>Si desea realizar otra llamada o corregir el número telefónico ingresado, presione la tecla asterisco (*).</p><p>&nbsp;</p>
+<p>Si, al finalizar la llamada, desea realizar otra, aguarde a que su interlocutor cuelgue, y pulse dos veces la tecla asterisco (*). Escuchará el mensaje "Ingrese el número de destino", sin necesidad de colgar e iniciar el proceso nuevamente.</p><p>&nbsp;</p>
+<p>Si el destino está ocupado o no atiende, aguarde en línea y luego de unos segundos, o presionando dos veces la tecla asterisco (*), escuchará el mensaje "Ingrese el número de destino", sin necesidad de colgar e iniciar el proceso nuevamente.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">Importante: La Tarjeta Plateada no ofrece descuentos para llamadas a números locales.</b> Si la utiliza para destinos locales, deberá sumar al costo del pulso telefónico, el cargo del número de acceso.</p><p>&nbsp;</p>
+</div>
+');
+
+?>

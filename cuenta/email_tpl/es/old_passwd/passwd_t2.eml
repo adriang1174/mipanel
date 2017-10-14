@@ -1,0 +1,64 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Recordatorio de datos
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.t2/top1.gif" width="500" height="64" alt="Telephone 2"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de cliente:
+                [USER_ID]<br>
+Estimado/a Sr./a. 
+              [TITULAR]:
+</strong>
+             <br>
+<br><span style="font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; line-height: 15px;"><strong style="font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; line-height: 15px;">Importante:</strong> Por favor, si desea realizar consultas o reclamos sobre el contenido de este e-mail, solicitamos que envíe un nuevo correo electrónico a <a href="mailto:asistencia@telephone2.com" class="rojo" title="Por consultas o reclamos, contáctenos a nuestro e-mail de Asistencia" style="font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: underline;">asistencia@telephone2.com</a> con el motivo de la consulta en el asunto; y, en el cuerpo del e-mail, incluya la descripción, su código de cliente, línea o servicio sobre el que realiza el reclamo, y titular de la cuenta.</span><br><br>
+Según lo solicitó, le recordamos los datos para ingresar a Mi Panel:<br><br>
+<a style="font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: underline;" href="http://[ADDR_WWW]/">[ADDR_WWW]</a><br /><b>Usuario</b>: [USER_ID]<br /><b>Contraseña</b>: [USER_PASSWORD]
+
+</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Por  consultas, ingrese a nuestra <a href="http://www.telephone2.com/seccion/486/preguntas-frecuentes.html" title="Consulte las preguntas frecuentes del servicio aquí" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">secci&oacute;n de preguntas  frecuentes</a>, o comun&iacute;quese con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@telephone2.com" title="Por consultas, escríbanos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">asistencia@telephone2.com</a>.<br>
+<br>
+Estamos a su disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	       Telephone 2<br>
+	       <a href="http://www.telephone2.com" target="_blank" class="fuente" title="Ingrese al sitio de Telephone 2" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">www.telephone2.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

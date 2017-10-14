@@ -1,0 +1,65 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - [BTITLE]
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.hola/top1.gif" width="500" height="64"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de Cliente:
+                [CODIGO]<br>
+Estimado/a  
+              [TITULAR]:
+</strong>
+             <br>
+<br>
+Tal como solicitaste a través de Mi Panel, te enviamos adjunto a este e-mail el informe de Detalle de llamadas correspondiente a Consumo facturado. Encontrarás el informe en un archivo de formato CSV, que puedes abrir con cualquier planilla de cálculo.</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Ante cualquier consulta, comun&iacute;cate con el Centro de Atenci&oacute;n al Cliente  a <a href="mailto:asistencia@holatel.com" class="fuente" title="Por consultas, escr&iacute;benos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">asistencia@holatel.com</a>, o  a los siguientes tel&eacute;fonos, de lunes a viernes, de 12 a 21 horas (hora de Greenwich):<br>
+<br>  Buenos Aires (Argentina):  <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+54 (11) 5984 1239</strong><br />
+                Madrid (Espa&ntilde;a): <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+34 (911) 875 659</strong><br />
+                Miami (Estados Unidos): <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+1 (305) 424 1415</strong><br />
+                San Pablo (Brasil): <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+55 (11) 3957 0559</strong>                <br />
+                <br />
+Estamos a tu disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	           HolaTel<br>
+	           <a href="http://www.holatel.com" target="_blank" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;" title="Visita el sitio de HolaTel">www.holatel.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

@@ -1,0 +1,116 @@
+<?php
+
+require_once( 'includepath.ca' );
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+require_once( INCLUDE_PATH . 'ca_list.php');
+require_once( INCLUDE_PATH . 'data/config.php');
+require_once( INCLUDE_PATH . 'ca_form.php');
+require_once( INCLUDE_PATH . 'clientcontrol.php');
+require_once( INCLUDE_PATH . 'ca_email.php');
+require_once( INCLUDE_PATH . 'csv.php');
+require_once( INCLUDE_PATH . 'data/pic.php');
+
+
+// Initializing the session.
+if ( !ca_session::init( )){
+    clientcontrol::redirect( "login.ca?error=1");
+}    
+
+// Checkea de que el usuario este logueado
+if ( !ca_session::is_loggedin( )){
+
+    clientcontrol::redirect( "login.ca");
+}    
+
+//(!)cambie el orden de carga, 1ro levanto el owner y despues
+//	 intento setear el lenguaje (como esto es bastante complejo
+//	 se debe tener en mente este cambio por algun posible efecto
+//	 indeseado (si hay problemas cambiar orden de forma que quede
+//	 Loading the corresponding language. y luego Loading the owner.
+
+// Loading the owner.
+
+if ( !base_owner::detect_and_load( ))
+{
+		trigger_error( "FATAL: Unable to load the owner.");
+		clientcontrol::redirect( "init_error.ca");
+}
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+// Seting up the template set to use.
+if ( !smarty_setup( "default"))
+{
+	trigger_error( "FATAL: Unable to setup smarty.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+
+// La definicion de screens principal.
+require_once( INCLUDE_PATH . 'scr/scr.php');
+
+// Calcula la screen en la que estamos parados, y la graba en la variable de session "scr".
+// En el caso de que no haya nada seteado, usa la default que el owner especifique.
+basescr::current_scr( owner::botonera_default( ));
+
+// Ahora que ya sabemos en que screen estamos. Vamos a incluir el screen necesario.
+require_once( INCLUDE_PATH . 'scr/' . ca_session::get( "scr") . '/scr.php');
+
+// Contact info.
+$contact_url = owner::contact_url( );
+$smarty->assign( "contact_url", $contact_url);
+
+// Pagination logics.
+pagination::init( );
+
+// Ejecutamos la screen especificada.
+$scr = new scr( );
+
+if ( !basescr::exec( $scr))
+{
+	echo "Error!";
+	exit;
+}
+
+// Getting the left buttons.
+foreach( $scrs as $scr)
+{
+	$current = ca_session::get( "scr");
+	if ( $scr[ "id"] == $current)
+	{
+		//echo 'expone info:<hr /><pre>' . var_export($scr, true) . '</pre><hr />';
+		$smarty->assign( "full_scr", $scr);
+		break;
+	}
+}
+
+// Getting the user object.
+$user = new user( ca_session::get_userid( ));
+
+// Seteamos las variables de smarty necesarias.
+//echo 'expone info:' . OWNER . '<hr />';
+$smarty->assign( "owner", OWNER);
+$smarty->assign( "panel_name", owner::panel_name( ));
+//echo 'expone info:<hr /><pre>' . var_export(owner::botonera(), true) . '</pre><hr />';
+$smarty->assign( "botonera", basescr::complete_owner_scrs( owner::botonera( )));
+$smarty->assign( "scr", ca_session::get( "scr"));
+$smarty->assign( "titular", $user->get_titular( ));
+$smarty->assign( "userid", ca_session::get( "USERID"));
+$smarty->clear_compiled_tpl();
+
+?>

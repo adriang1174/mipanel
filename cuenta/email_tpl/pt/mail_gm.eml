@@ -1,0 +1,14 @@
+From: importaciongm@grupoalternativa.com
+Reply-To: importaciongm@grupoalternativa.com
+Subject: MiPanel - Cambio en la configuracion de Servicios
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web Alta Centralizada
+SaveThis=MiPanel - Cambio en la configuracion de Servicios
+
+[Data]
+key3=[CLIENT_ID]
+
+[DESCRIPTION_TEXT]
+fecha=[FECHA_HORA]

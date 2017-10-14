@@ -1,0 +1,15 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Solicitação de Serviço Adicional
+
+<p>Código de Cliente: <b>[CODIGO]</b></p>
+<p>Prezado(a) <b>[TITULAR]</b>,</p>
+
+<p>Recebemos sua solicitação para habilitação adicional de:</p>
+
+<p><b>Serviço</b>: [SERVICE_NAME]<br />
+[SERVICE_PARAMS]</p>
+
+<p>En breve procederemos com a sua habilitação.</p>
+
+<p>Atenciosamente,<br /><br /> [INFO_SUPPORT]</p>

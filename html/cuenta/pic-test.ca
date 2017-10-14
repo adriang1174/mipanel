@@ -1,0 +1,13 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'data/pic.php');
+
+$pic = new pic('C100126', 1);
+
+$servicios = $pic->get_services();
+var_dump($servicios);
+
+$pservice = $pic->get_param_by_service(1);
+var_dump($pservice);
+
+?>

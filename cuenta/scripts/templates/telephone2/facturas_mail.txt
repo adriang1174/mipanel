@@ -1,0 +1,22 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+ 
+Importante: Por favor, si tiene consultas o reclamos sobre el contenido de este e-mail, solicitamos que envíe un nuevo correo electrónico a asistencia@telephone2.com con el motivo de la consulta en el asunto; y, en el cuerpo del e-mail, incluya la descripción, su código de cliente, línea o servicio sobre el que realiza el reclamo, y titular de la cuenta.
+
+Le enviamos adjunta la factura emitida a su nombre y el detalle de consumo correspondiente. Para poder visualizar su comprobante, deberá tener instalada la aplicación Adobe Acrobat Reader. Si no cuenta con esta aplicación puede descargarla desde http://www.adobe.com/.
+También puede visualizar su factura y ver más reportes, accediendo a MiPanel con su usuario y contraseña.
+
+
+Dicha factura ya se encuentra en proceso de distribución, por lo que la recibirá en los próximos días.
+
+Usted puede abonar o imprimir el cupón de pago de esta factura o de facturas anteriores en Mi Panel en https://zonasegura.grupoalternativa.com/cuenta/login.ca, ingresando en con su usuario, que es su código de cliente, y su contraseña. Seleccione la factura a abonar, haga clic en el botón Pagar y elija el medio de pago. 
+
+Para dejar de recibir la factura vía e-mail, ingrese en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo. 
+     
+Por consultas, ingrese a nuestra sección de preguntas frecuentes en http://www.telephone2.com/seccion/486/preguntas-frecuentes.html, o comuníquese con nuestro Centro de Atención al Cliente por e-mail a asistencia@telephone2.com.
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Telephone 2
+www.telephone2.com

@@ -1,0 +1,11 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'eml_confirm.php');
+
+$url = eml_confirm::hash_get_url( "C106026", "Federico Guilleron", "+54(911)-6330-2272");
+echo "<pre>";
+var_dump( $url);
+echo "</pre>";
+
+?>

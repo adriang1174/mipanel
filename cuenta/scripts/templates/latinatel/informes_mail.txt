@@ -1,0 +1,29 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+Este es un envío semanal de carácter meramente informativo.
+
+Le enviamos adjunto a este mail el informe de llamadas no facturadas hasta el <%fecha_hasta%>. Encontrará el informe en un archivo de formato CSV, que puede abrir con cualquier planilla de cálculo.
+
+Si el archivo adjunto está vacío, es porque no hay llamadas pendientes de facturar.
+
+Además, accediendo a Mi Panel [https://zonasegura.grupoalternativa.com/cuenta/login.ca], usted puede:
+
+
+- Optar por recibir Alarmas de Consumo y ver el detalle de llamadas al momento
+- Configurar los reportes por Proyectos y Descripción de Destinos.
+- En el ítem Facturas, puede ver todos los comprobantes, imprimirlos, enviárselos por mail, etcétera.
+
+Recuerde que, para ingresar a Mi Panel, debe hacerlo con su usuario, que es su número de cliente, y su contraseña. 
+
+Ante cualquier consulta, comuníquese por esta misma vía a asistencia@latinatel.net. 
+O a los siguientes teléfonos:
+Argentina (Buenos Aires): (+54) 11 5219 3258
+Brasil (São Paulo): (+55) 11 3711 5737
+Brasil (Curitiba): (+55) 41 3941 2653
+Estados Unidos (Miami): +1 786 329 7169
+
+Estamos a su disposición. Cordialmente,
+
+Centro de Atención al Cliente
+Latinatel
+www.latinatel.net

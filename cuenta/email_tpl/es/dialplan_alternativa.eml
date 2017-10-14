@@ -1,0 +1,43 @@
+From: [from]
+Subject: [subject]
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Configuraci&oacute;n de marcado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+<div style="width:500px; margin:0 auto; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b;border:#e6e7e8 1px solid; ">
+	<img src="http://71.6.197.240/imagenes-news/mipanel.red/top.gif" width="500" height="70" alt="Línea IP" style="border:0;" />
+  <div style="width:450px; padding:12px 24px;">
+    <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de Cliente: [codigo_cliente]<br>
+Estimado/a Sr./a. [titular]:
+    </strong><br />
+<br />
+Confirmamos el cambio de opci&oacute;n de marcado en su <strong>L&iacute;nea IP</strong>. A continuaci&oacute;n, le enviamos el detalle de su nueva configuraci&oacute;n.<br />
+<br />
+
+		Para llamar a un tel&eacute;fono IP, debe marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_IP] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada local, debe marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_LOCAL] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada de larga distancia nacional, debe marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_NACIONAL] [n&uacute;mero]</strong>.<br />
+		Para realizar una llamada de larga distancia internacional, debe marcar <strong style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#58595b">[PREFIX_INTERNACIONAL] [n&uacute;mero]</strong>.<br />		
+		<br />
+
+         Ante cualquier consulta, comun&iacute;quese por esta misma v&iacute;a a <a href="mailto:asistencia@alternativa.com.ar" class="fuente" title="Por consultas, escríbanos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">asistencia@alternativa.com.ar</a> o telef&oacute;nicamente con el Centro de Atenci&oacute;n 
+	        al Cliente, de lunes a viernes de 9  a 18 hs. al <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">0810-3210-733</strong>	        o al fax <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+54 11 4110-0199</strong>.
+	        <br>
+<br>
+Estamos a su disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	          Alternativa<br>
+	          <a href="http://www.alternativa.com.ar" target="_blank" class="fuente" title="Ingrese al sitio de Alternativa" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">www.alternativa.com.ar</a>
+               <br /><br />
+
+  </div>
+</div>
+</body>
+</html>

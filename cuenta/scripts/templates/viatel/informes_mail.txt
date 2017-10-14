@@ -1,0 +1,35 @@
+Código de Cliente: <%cliente_id%>    
+Prezado(a) Sr(a). <%rsocial%>:
+      
+Este é um envio semanal de caráter meramente informativo
+
+
+Em anexo enviamos o relatório de chamadas não faturadas até <%fecha_hasta%>. O arquivo do relatório se encontra em formato CSV, que pode ser aberto em qualquer programa de planilha de cálculo.
+
+
+Se o arquivo em anexo está vazio, significa que não há chamadas pendentes para faturar
+
+Aproveitamos para informar que através do Meu Painel você pode:       
+
+- Optar por receber Alertas de Consumo e visualizar o detalhamento das chamadas até o momento.
+- Configurar relatórios por Projeto ou Descrição de Destinos
+- No item Faturas, você poderá ver seus comprovantes de pagamento, imprimir-los, enviar-los por email, etc.
+
+
+Lembre-se que para acessar o Meu Painel você deve utilizar seu login e senha de acesso.
+
+Para quaisquer dúvidas, entre em contato conosco respondendo a este mesmo email para atendimento@latinatel.com.br ou pelos telefones abaixo, de segunda a sexta-feira, das 9 às 18 horas (hora de Brasília):
+
+Argentina (Buenos Aires): (+54) 11 5219 3258
+Brasil (São Paulo): (+55) 11 3711 5737
+Brasil (Curitiba): (+55) 41 3941 2653
+Estados Unidos (Miami): +1 786 329 7169
+
+Estamos a sua disposição. Atenciosamente,
+
+Centro de Atendimento ao Cliente
+
+Latinatel
+www.latinatel.net
+ 
+

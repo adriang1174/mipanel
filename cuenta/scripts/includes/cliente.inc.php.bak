@@ -1,0 +1,89 @@
+<?php
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+
+class	Cliente
+{
+
+    function getConfigEnvioFacturas($cliente_id,$default_envio=1,$default_detalle=0)
+    {
+        $query="select * from cliente_config where cliente_id=? and clave in ('ImagenFactura','DetalleConsumo');";
+        $params=array($cliente_id);
+        $db_obj= new Db;
+        $result=$db_obj->getMultiTuplasObject($query,$params);
+        $img_factura=$default_envio;
+        $detalle_consumo=$default_detalle;
+        foreach($result as $fila)
+        {
+            if($fila->clave=='ImagenFactura')
+            {
+                $img_factura=$fila->valor;
+            }
+            else if($fila->clave=='DetalleConsumo')
+            {
+                $detalle_consumo=$fila->valor;
+            }   
+        }
+        return array($img_factura,$detalle_consumo);
+    }
+
+    #######################################################################################################################
+
+    # Devuelve un ARRAY de clientes de ese mercado para la fecha de facturacion especificada
+    
+    function buscarParaEnvioFacturas($mercado,$fecha_emision,$default_envio=1,$default_detalle=0)
+    {
+        // defino la consalta y defino los parámetros
+        
+        $query = "select mercado,sucdoc,numdoc,tipodoc,cpebanelco,cpelink,rsocial,cuit,domicilio,condpago,c.cliente_id as cliente_id,c.rsocial as rsocial,case when c.mail_admin_verif=1 then c.mail_admin else c.email end as email,condiva,neto,neto27,iva,iva27,ivani,iva27ni,(neto+neto27+iva+iva27+ivani+iva27ni) as total,moneda_id as moneda,fechemision,fechvto,(0) as detalle_consumo from factheader f,clientes c where fechemision=? and f.cliente_id = c.cliente_id and estado_id=1 and mercado=?";
+        $params=array($fecha_emision,$mercado);
+        $db_obj= new Db;
+        $parcial=$db_obj->getMultiTuplasObject($query,$params);
+        $final=array();
+        foreach($parcial as $cliente)   //por cada uno buscaré
+        {
+            $marcadores=$this->getConfigEnvioFacturas($cliente->cliente_id,$default_envio,$default_detalle);
+            if($marcadores[0])
+            {
+                if($marcadores[1])
+                {
+                    $cliente->detalle_consumo=1;
+                }
+                array_push($final,$cliente);
+            }
+        }
+        return $final;
+    }
+    
+    ##############################################################################################################################
+                                                            
+    
+    # Devuelve un ARRAY de clientes que solicitaron el envio de alertas de trafico por e-mail
+
+    function buscarConEnvioAlertas() 
+    {
+        // defino la consulta y defino los parámetros
+        
+	    $query = 'select c.cliente_id, c.password,c.rsocial,c.cuit,c.cpebanelco,c.cpelink,case when c.mail_admin_verif=1 then c.mail_admin else c.email end as email,c.agente,c.tipo,c.usuario,c.last_update,c.programa,c.pais,c.mercado,c.estado_id,c.fecha_alta,c.mail_admin,c.mail_admin_verif from clientes c, cliente_config  cc where c.cliente_id = cc.cliente_id and cc.clave = ? and cc.valor = ? and c.email is not null and c.estado_id=1 and c.cliente_id=?';
+        $params=array('AlertaConsumos', 1,'C100624');
+        $db_obj= new Db;
+        return $db_obj->getMultiTuplasObject($query,$params);
+	}
+
+                                                         
+    
+    ##############################################################################################################################
+    
+    # Devuelve un ARRAY de clientes que solicitaron el envio de informes de trafico por e-mail
+
+    function buscarConEnvioInformes()
+    {
+        // defino la consulta y defino los parámetros
+        
+        $query = 'select c.cliente_id, c.password,c.rsocial,c.cuit,c.cpebanelco,c.cpelink,case when c.mail_admin_verif=1 then c.mail_admin else c.email end as email,c.agente,c.tipo,c.usuario,c.last_update,c.programa,c.pais,c.mercado,c.estado_id,c.fecha_alta,c.mail_admin,c.mail_admin_verif from clientes c, cliente_config  cc where c.cliente_id = cc.cliente_id and cc.clave = ? and cc.valor = ? and c.email is not null and c.estado_id=1 and c.cliente_id=?';
+        $params=array('InformeConsumos', 1,'C100624');
+        $db_obj= new Db;
+        return $db_obj->getMultiTuplasObject($query,$params);
+    }
+
+ }
+                                                            

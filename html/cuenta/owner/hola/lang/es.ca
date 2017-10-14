@@ -1,0 +1,827 @@
+<?
+
+define('OWNER_TPL_TEXTO_FACTURA_DIGITAL', 'Para ver o imprimir tu factura digital, haz clic en el &iacute;cono de PDF. Para enviar tu factura digital v&iacute;a e-mail, haz clic en el bot&oacute;n correspondiente. Para abonarla, haz clic en el bot&oacute;n Pagar y elige el medio de pago habilitado para tu ciudad.');
+
+/* INSTRUCTIONS */
+define("OWNER_TPL_PLATEADA_TITLE", "TARJETA PLATEADA");
+define('OWNER_TPL_PLATEADA_INSTRUCTIONS', '
+<div style="width:450px">
+<p><b class="ticket_row_title">Instrucciones de uso</b></p><p>&nbsp;</p>
+<p><b class="ticket_row_title">1.</b> Marca el número de acceso correspondiente al país en que te encuentras.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">2.</b> Cuando el sistema te lo indique, ingresa tu PIN y la clave de la tarjeta.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">3.</b> Marca el número telefónico completo al cual deseas llamar + la tecla numeral (#).</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">4.</b> Escucharás el mensaje "Llamada en curso". En unos segundos te comunicarás con el destino solicitado.</p><p>&nbsp;</p>
+<p>Si deseas realizar otra llamada o corregir el número telefónico ingresado, presiona la tecla asterisco (*).</p><p>&nbsp;</p>
+<p>Si, al finalizar la llamada, deseas realizar otra, aguarda a que tu interlocutor cuelgue, y pulsa dos veces la tecla asterisco (*). Escucharás el mensaje "Ingrese el número de destino", sin necesidad de colgar e iniciar el proceso nuevamente.</p><p>&nbsp;</p>
+<p>Si el destino está ocupado o no atiende, aguarda en línea y luego de unos segundos, o presionando dos veces la tecla asterisco (*), escucharás el mensaje "Ingrese el número de destino", sin necesidad de colgar e iniciar el proceso nuevamente.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">Importante: La Tarjeta Plateada no ofrece descuentos para llamadas a números locales.</b> Si la utilizas para destinos locales, deberás sumar al costo del pulso telefónico, el cargo del número de acceso.</p><p>&nbsp;</p>
+</div>
+');
+
+/* ENCUESTA */
+define("OWNER_TPL_TITULO_ENCUESTA", "Encuesta de uso  > Mi Panel");
+define("OWNER_TPL_DESCRIPCION_ENCUESTA", "Te invitamos a completar la siguiente encuesta de uso sobre <b>Mi Panel</b>. Al responderla en su totalidad, obtendrás un crédito de <b>USD 4.90</b> en tu <b>HolaTel</b>.");
+define("OWNER_TPL_PREGUNTA_1", "Es ésta la primera vez que ingresas a <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_SI_1", "¿Por qué no habías ingresado antes?");
+define("OWNER_TPL_PREGUNTA_SI_2", "¿Sabes que en <b>Mi Panel</b> puedes abonar tus facturas en línea o imprimir un cupón de pago?");
+define("OWNER_TPL_PREGUNTA_SI_3", "¿Sabes que en <b>Mi Panel</b> puedes ver el detalle de tus llamadas y generar reportes?");
+define("OWNER_TPL_PREGUNTA_SI_4", "¿Sabes que en <b>Mi Panel</b> puedes consultar las tarifas de sus servicios?");
+define("OWNER_TPL_PREGUNTA_SI_5", "¿Sabes que en <b>Mi Panel</b> puedes solicitar nuevos servicios y configurar o dar de baja aquéllos a los que estás suscripto?");
+define("OWNER_TPL_PREGUNTA_SI_6", "¿Sabes que en <b>Mi Panel</b> puedes configurar avisos de consumo cuando alcanzas un monto o un límite de tiempo establecido por ti?");
+define("OWNER_TPL_PREGUNTA_SI_7", "¿Sabes que a través de <b>Mi Panel</b> puedes enviar consultas o reclamos a Atención al Cliente y recibir una respuesta con mayor celeridad?");
+define("OWNER_TPL_PREGUNTA_SI_8", "¿Crees que a partir de esta encuesta conociste más sobre <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_SI_9", "¿Crees que a partir de esta encuesta comenzarás a utilizar <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_SI", "¿Por qué no utilizas esta opción? ");
+define("OWNER_TPL_ULTIMA_SI", "Si deseas agregar un comentario, escríbelo a continuación.");
+define("OWNER_TPL_PREGUNTA_NO_1", "¿Con qué frecuencia ingresas a <b>Mi Panel</b>? ");
+define("OWNER_TPL_PREGUNTA_NO_2", "¿Para qué lo utilizas?");
+define("OWNER_TPL_PREGUNTA_NO_A", "¿Sabes cómo ver tus facturas y el detalle de sus llamadas en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_B", "¿Sabes cómo abonar tus facturas en línea o imprimir un cupón de pago en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_C", "¿Sabes cómo ver el detalle de tus llamadas y generar reportes en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_D", "¿Sabes cómo consultar las tarifas de tus servicios en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_E", "¿Sabes cómo solicitar nuevos servicios y configurar o dar de baja aquéllos a los que estássuscripto en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_F", "¿Sabes cómo configurar avisos de consumo cuando alcanzas un monto o un límite de tiempo establecido por ti en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_G", "¿Sabes cómo enviar consultas o reclamos a Atención al Cliente y recibir una respuesta con mayor celeridad en <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_H", "¿Crees que a partir de esta encuesta conociste más sobre <b>Mi Panel</b>?");
+define("OWNER_TPL_PREGUNTA_NO_I", "¿Crees que a partir de esta encuesta comenzarás a utilizar <b>Mi Panel</b> con más frecuencia?");
+define("OWNER_TPL_PREGUNTA_NO_J", "¿Qué sugerencias tienes para mejorar <b>Mi Panel</b>?");
+define("OWNER_TPL_SI", "Sí");
+define("OWNER_TPL_NO", "No");
+define("OWNER_TPL_OPCION_SI_1", "No lo necesito.");
+define("OWNER_TPL_OPCION_SI_2", "No tenía mis datos (usuario y contraseña) para ingresar.");
+define("OWNER_TPL_OPCION_SI_3", "No sabía lo que era <b>Mi Panel</b>.");
+define("OWNER_TPL_OPCION_SI_4", "No la necesito.");
+define("OWNER_TPL_OPCION_SI_5", "No la comprendo.");
+define("OWNER_TPL_OPCION_SI_6", "Utilizo otros medios de pago.");
+define("OWNER_TPL_OPCION_SI_7", "No me interesa tener reportes de mis consumos.");
+define("OWNER_TPL_OPCION_SI_8", "No me interesa conocer las tarifas de mis servicios.");
+define("OWNER_TPL_OPCION_SI_9", "No me interesa suscribirme a nuevos servicios o configurarlos.");
+define("OWNER_TPL_OPCION_SI_10", "No me interesa recibir avisos de consumo.");
+define("OWNER_TPL_OPCION_SI_11", "Utilizo otros medios para hacer mis consultas.");
+define("OWNER_TPL_OPCION_NO_1", "Varias veces en la semana.");
+define("OWNER_TPL_OPCION_NO_2", "Una vez por semana.");
+define("OWNER_TPL_OPCION_NO_3", "Una vez al mes.");
+define("OWNER_TPL_OPCION_NO_4", "Menos de una vez al mes.");
+define("OWNER_TPL_OPCION_NO_5", "Para ver mi factura o mis consumos.");
+define("OWNER_TPL_OPCION_NO_6", "Para pagar u obtener mi cupón de pago.");
+define("OWNER_TPL_OPCION_NO_7", "Para generar reportes.");
+define("OWNER_TPL_OPCION_NO_8", "Para consultar las tarifas de mis servicios.");
+define("OWNER_TPL_OPCION_NO_9", "Para configurar mis servicios o darlos de alta o de baja.");
+define("OWNER_TPL_OPCION_NO_10", "Para configurar avisos de consumo.");
+define("OWNER_TPL_OPCION_NO_11", "Para enviar consultas o reclamos a Atención al cliente.");
+define("OWNER_TPL_OPCION_NO_12", "Otros:");
+define("OWNER_TPL_NO_PREGUNTA_2", "Ingresa a <b>Facturación > Factura > Última factura</b> y elige <b>Pagar</b> para ver los medios de pago u Obtener cupón de pago para imprimirlo.");
+define("OWNER_TPL_NO_PREGUNTA_3", "Ingresa a la pestaña <b>Reportes</b> para conocer las diferentes opciones que tienes a tu disposicin.");
+define("OWNER_TPL_NO_PREGUNTA_4", "Ingresa a <b>Facturación > Información de su cuenta > Tarifario</b> para conocer las tarifas de tus servicios.");
+define("OWNER_TPL_NO_PREGUNTA_5", "Ingresa a <b>Servicios > Mis Servicios</b> para conocer estas opciones.");
+define("OWNER_TPL_NO_PREGUNTA_6", "Ingresa a <b>Reportes > Configurar reportes > Avisos de consumo</b> para conocer esta opción.");
+define("OWNER_TPL_NO_PREGUNTA_7", "Haz clic en el link <b>Atención al Cliente</b> que se encuentra en la parte superior de <b>Mi Panel</b> para acceder al formulario.");
+define("OWNER_TPL_NO_PREGUNTA_8", "Ingresa a <b>Facturación > Factura > Cuenta corriente</b> y haz clic sobre la factura que deseas ver. Y a <b>Reportes > Reporte por consumo</b> para conocer el detalle de tus llamadas.");
+define("OWNER_TPL_NO_PREGUNTA_9", "Ingresa a <b>Facturación > Factura > Última factura</b> y elige <b>Pagar</b> para ver los medios de pago u Obtener cupón de pago para imprimirlo.");
+define("OWNER_TPL_NO_PREGUNTA_10", "Ingresa a la pestaña <b>Reportes</b> para conocer las diferentes opciones que tienes a tu disposición.");
+define("OWNER_TPL_NO_PREGUNTA_11", "Ingresa a <b>Facturación > Información de su cuenta > Tarifario</b> para conocer las tarifas de tus servicios.");
+define("OWNER_TPL_NO_PREGUNTA_12", "Ingresa a <b>Servicios > Mis Servicios</b> para conocer estas opciones.");
+define("OWNER_TPL_NO_PREGUNTA_13", "Ingresa a <b>Reportes > Configurar reportes > Avisos de consumo</b> para conocer esta opción.");
+define("OWNER_TPL_NO_PREGUNTA_14", "Haz clic en el link <b>Atención al Cliente</b> que se encuentra en la parte superior de <b>Mi Panel</b> para acceder al formulario.");
+define("OWNER_TPL_ENVIAR", "Enviar");
+define("OWNER_TPL_BORRAR", "Borrar");
+define("OWNER_TPL_MJE_YAENCUESTADO", "Ya has completado esta encuesta. Muchas gracias por tu tiempo.");
+define("OWNER_TPL_MJE_ENVIADO", "Muchas gracias por tu tiempo. ¡Has obtenido un crédito de <b>USD 4.90</b> por tu colaboración!");
+
+/* COMUNICACIONES POR EMAIL */
+/*
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON_HAFULL", "Te confirmamos que has dado de alta un tel&eacute;fono al cual le creaste una regla especial en tu HolaTel.");
+define("OWNER_TPL_EMAIL_MODIF_TELEF_CON_HAFULL", "Te confirmamos que has realizado una modificaci&oacute;n en un tel&eacute;fono al cual le creaste una regla especial en tu HolaTel.");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON_HAFULL", "Te confirmamos que has dado de baja un tel&eacute;fono para el cual ten&iacute;as creada una regla especial en tu HolaTel.");
+define("OWNER_TPL_EMAIL_CONF_AUTOATENDEDOR_HAFULL", "Te confirmamos que has configurado el autoatendedor de tu HolaTel.");
+define("OWNER_TPL_EMAIL_FRANJAS_HORARIAS_HAFULL", "Te confirmamos que has modificado la grilla de configuraci&oacute;n de tu HolaTel.");
+define("OWNER_TPL_EMAIL_MODIF_CUENTAS_MAIL_ASSOC_HAFULL", "Te confirmamos que has modificado tu direcci&oacute;n de correo electr&oacute;nico asociada a tu HolaTel.");
+
+
+define("OWNER_TPL_EMAIL_ACTUALIZACION_EMAIL_OFG2", "Te confirmamos que has actualizado tu direcci&oacute;n de e-mail de tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_ALTA_INTERNO_OFG2", "Te confirmamos que has dado de alta un interno en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON_OFG2", "Te confirmamos que has dado de alta un n&uacute;mero de tel&eacute;fono al cual le creaste una regla especial en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_BAJA_INTERNO_OFG2", "Te confirmamos que has dado de baja un interno en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON_OFG2", "Te confirmamos que has dado de baja un n&uacute;mero de tel&eacute;fono al cual le creaste una regla especial en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_FRANJAS_HORARIAS_OFG2", "Te confirmamos que has modificado la grilla de configuraci&oacute;n en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_MODIF_CUENTAS_MAIL_ASSOC_OFG2", "Te confirmamos que has modificado tu direcci&oacute;n de e-mail en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_MODIF_DATOS_GENERALES_OFG2", "Te confirmamos que has modificado los datos personales en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_MODIF_REFERENCIA_OFG2", "Te confirmamos que has modificado la referencia de un interno en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_MODIF_TELEF_CON_OFG2", "Te confirmamos que has modificado un n&uacute;mero de tel&eacute;fono al cual le creaste una regla especial en tu Oficina Global Plus.");
+define("OWNER_TPL_EMAIL_MODIF_CLAVE_CUENTAS_EMAIL_OFG2", "Te confirmamos que has modificado la clave de tu cuenta de e-mail en tu Oficina Global Plus.");
+
+
+define("OWNER_TPL_EMAIL_ACTUALIZACION_EMAIL_OFG", "Te confirmamos que has actualizado tu direcci&oacute;n de e-mail en tu Oficina Global.");
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON_OFG", "Te confirmamos que has dado de alta un n&uacute;mero al cual le creaste una regla especial en tu Oficina Global.");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON_OFG", "Te confirmamos que has dado de baja un n&uacute;mero al cual le creaste una regla especial en tu Oficina Global.");
+define("OWNER_TPL_EMAIL_FRANJAS_HORARIAS_OFG", "Te confirmamos que has modificado la grilla de configuraci&oacute;n de tu Oficina Global.");
+define("OWNER_TPL_EMAIL_MODIF_CLAVE_CUENTAS_EMAIL_OFG", "Te confirmamos que has modificado la clave de tu cuenta de e-mail de tu Oficina Global.");
+define("OWNER_TPL_EMAIL_MODIF_CUENTAS_MAIL_ASSOC_OFG", "Te confirmamos que has modificado un n&uacute;mero al cual le creaste una regla especial de tu Oficina Global.");
+define("OWNER_TPL_EMAIL_MODIF_DATOS_GENERALES_OFG", "Te confirmamos que has modificado los datos generales de tu Oficina Global.");
+
+
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON", "");
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON_HAPERSONAL", "");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON", "");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON_HAPERSONAL", "");
+define("OWNER_TPL_EMAIL_FRANJAS_HORARIAS_HAPERSONAL", "");
+define("OWNER_TPL_EMAIL_MODIF_CUENTAS_MAIL_ASSOC_HAPERSONAL", "");
+define("OWNER_TPL_EMAIL_MODIF_DATOS_GENERALES_HAPERSONAL", "");
+define("OWNER_TPL_EMAIL_MODIF_TELEF_CON", "");
+define("OWNER_TPL_EMAIL_MODIF_TELEF_CON_HAPERSONAL", "");
+
+
+
+
+
+
+
+
+
+
+
+
+
+define("OWNER_TPL_EMAIL_FRANJAS_HORARIAS", "Te confirmamos que has modificado la grilla de configuraci&oacute;n de tu HolaTel.");
+define("OWNER_TPL_EMAIL_CONF_AUTOATENDEDOR", "Te confirmamos que has configurado el autoatendedor de tu HolaTel.");
+define("OWNER_TPL_EMAIL_MODIF_CUENTAS_MAIL_ASSOC", "Te confirmamos que has modificado tu direcci&oacute;n de correo electr&oacute;nico asociada a tu HolaTel.");
+define("OWNER_TPL_EMAIL_BAJA_TELEF_CON", "Te confirmamos que has dado de baja un tel&eacute;fono para el cual ten&iacute;as creada una regla especial en tu HolaTel.");
+define("OWNER_TPL_EMAIL_ALTA_TELEF_CON", "Te confirmamos que has dado de alta un tel&eacute;fono al cual le creaste una regla especial en tu HolaTel.");
+define("OWNER_TPL_EMAIL_MODIF_TELEF_CON", "Te confirmamos que has realizado una modificaci&oacute;n en un tel&eacute;fono al cual le creaste una regla especial en tu HolaTel.");
+
+*/
+
+
+define("OWNER_TPL_NETFONO_CONFIGURACION", "Configuraci&oacute;n internos L&iacute;nea IP");
+define( "OWNER_TPL_COMINGSOON", "Esta opción estará habilitada próximamente. ");
+/* El titulo (nombre del producto). */
+define( "OWNER_TPL_TITLE", "Mi Panel");
+
+/* Los nombres de los tipos de links. */
+define( "OWNER_TPL_INFORMACION", "Informaci&oacute;n");
+define( "OWNER_TPL_ADMINISTRACION", "Administraci&oacute;n");
+
+define( "OWNER_TPL_BACK", "Volver");
+
+/* Los nombres de las pantallas. */
+define( "OWNER_TPL_TICKETS", "Facturas");
+
+define( "OWNER_TPL_TRAFF_NF", "Consumo no facturado");
+define( "OWNER_TPL_TRAFF_F", "Consumo facturado");
+define( "OWNER_TPL_CC", "Cuenta corriente");
+define( "OWNER_TPL_CONSUMONOFACTURADO", "Consumo no facturado");
+define( "OWNER_TPL_CONSUMOFACTURADO", "Consumo facturado");
+define( "OWNER_TPL_CONSUMOPORPERIODO", "Consumo por per&iacute;odo");
+define( "OWNER_TPL_AVISOSDECONSUMO", "Avisos de consumo");
+define( "OWNER_TPL_REFERENCIADELLAMADAS", "Referencia llamada");
+define( "OWNER_TPL_CENTRODECOSTOS", "Centro de costos");
+define( "OWNER_TPL_MODIFICACIONDEDATOS", "Modificaci&oacute;n de datos");
+define( "OWNER_TPL_PEDIDODECALLBACK", "Pedido de Callback");
+define( "OWNER_TPL_LOGOUT", "Salir");
+
+define( "OWNER_TPL_TITLE_HOME", "Home");
+define( "OWNER_TPL_LAST_INVOICE", "Ultima factura");
+define( "OWNER_TPL_CHOOSE_INVOICE", "Elija factura");
+define( "OWNER_TPL_PAYMENT_MODE", "Medios de pago");
+define( "OWNER_TPL_TITLE_INVOICE", "Factura");
+define( "OWNER_TPL_TITLE_PAY", "Pagos");
+define( "OWNER_TPL_TITLE_ACCOUNT_INFORMATION", "Info. de su cuenta");
+define( "OWNER_TPL_TARIFAS", "Tarifario");
+define( "OWNER_TPL_LAST_TRAFF", "Ultimos consumos");
+define( "OWNER_TPL_TITLE_SERVICES", "Servicios");
+define( "OWNER_TPL_TITLE_INVOICES", "Facturación");
+define( "OWNER_TPL_TITLE_ACCOUNT_MODIFICATION", "Modificar datos");
+define( "OWNER_TPL_COMPANY_INFO", "Datos de facturaci&oacute;n");
+define( "OWNER_TPL_PANEL_PASSWORD", "Contraseña Mi Panel");
+define( "OWNER_TPL_TITLE_SERVICES_CONF", "Mis servicios");
+define( "OWNER_TPL_TITLE_SERVICES_ACTIVATION", "Alta de un servicio");
+define( "OWNER_TPL_TITLE_CONF_SERVICES", "Configurar servicio");
+define( "OWNER_TPL_TITLE_SERVICES_REMOVAL", "Baja de un servicio");
+define( "OWNER_TPL_TITLE_REPORTS", "Reportes");
+define( "OWNER_TPL_TITLE_REPORTS_CONF", "Configurar reportes");
+define( "OWNER_TPL_TITLE_REPORTS_BY_TYPE", "Reportes por consumo");
+define( "OWNER_TPL_TITLE_INTEREST_TOPICS", "Temas de interés");
+define( "OWNER_TPL_TITLE_NEWSLETTER", "Newsletter");
+define( "OWNER_TPL_TITLE_SUBSCRIBE_NEWSLETTER", "Suscribir al e-news");
+define( "OWNER_TPL_TITLE_NEWS", "Novedades");
+define( "OWNER_TPL_TITLE_CONTACTUS", "Contáctenos");
+define( "OWNER_TPL_TITLE_FAQ", "FAQ");
+
+/* Los nombres de los meses. */
+define( "OWNER_TPL_JANUARY", "Enero");
+define( "OWNER_TPL_FEBRUARY", "Febrero");
+define( "OWNER_TPL_MARCH", "Marzo");
+define( "OWNER_TPL_APRIL", "Abril");
+define( "OWNER_TPL_MAY", "Mayo");
+define( "OWNER_TPL_JUNE", "Junio");
+define( "OWNER_TPL_JULY", "Julio");
+define( "OWNER_TPL_AUGOUST", "Agosto");
+define( "OWNER_TPL_SEPTEMBER", "Septiembre");
+define( "OWNER_TPL_OCTOBER", "Octubre");
+define( "OWNER_TPL_NOVEMBER", "Noviembre");
+define( "OWNER_TPL_DECEMBER", "Diciembre");
+
+/* Iniciales de los dias de la semana. */
+define( "OWNER_TPL_SUNDAY_FIRST_LETTER", "D");
+define( "OWNER_TPL_MONDAY_FIRST_LETTER", "L");
+define( "OWNER_TPL_TUESDAY_FIRST_LETTER", "M");
+define( "OWNER_TPL_WEDNESDAY_FIRST_LETTER", "M");
+define( "OWNER_TPL_THURSDAY_FIRST_LETTER", "J");
+define( "OWNER_TPL_FRIDAY_FIRST_LETTER", "V");
+define( "OWNER_TPL_SATURDAY_FIRST_LETTER", "S");
+
+/* scr: ticket */
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La informaci&oacute;n es presentada al s&oacute;lo efecto informativo.');
+define( "OWNER_TPL_NO_IVA", 'Los importes no incluyen IVA.');
+
+define( "OWNER_TPL_TITLE_TICKETS", "Consultas de facturas");
+define( "OWNER_TPL_TITLE_TICKET", "Consultas de facturas,, &gt; [REPLACEMENT]");
+define( "OWNER_TPL_TITLE_TICKET_ITEM", "Facturas por fecha de emisi&oacute;n y n&#x00B0;,, &gt; Detalle");
+define( "OWNER_TPL_TITLE_TICKET_ITEM_TRAFF", "Facturas por fecha de emisi&oacute;n y n&#x00B0;,, &gt; Detalle de llamadas");
+define( "OWNER_TPL_TITLE_CHECKING_ACCOUNT", "Cuenta Corriente");
+define( "OWNER_TPL_TITLE_RECEIPT", "Cuenta Corriente,, &gt; [REPLACEMENT]");
+
+define( "OWNER_TPL_SELECT_BY_MONTH", "Para consultar una factura, selecci&oacute;nala por n&uacute;mero de factura o por mes de emisi&oacute;n.");
+define( "OWNER_TPL_SELECT_THE_MONTH", "Selecciona el mes de la factura que deseas visualizar");
+
+define( "OWNER_TPL_TITULAR", "Se&ntilde;or/es:");
+define( "OWNER_TPL_ADDRESS", "Domicilio:");
+define( "OWNER_TPL_CLIENT_CODE", "C&oacute;digo de cliente:");
+define( "OWNER_TPL_CUIT", "CUIT:");
+define( "OWNER_TPL_PAY_COND", "Cond. de pago:");
+define( "OWNER_TPL_IVA_COND", "Cond. frente al IVA:");
+
+define( "OWNER_TPL_DESCRIPTION", "DESCRIPCI&Oacute;N");
+define( "OWNER_TPL_UNITS", "UNIDADES");
+define( "OWNER_TPL_PRICE", "IMPORTE");
+
+define( "OWNER_TPL_NETO21", "Neto 21%");
+define( "OWNER_TPL_NETO27", "Neto 27%");
+define( "OWNER_TPL_IVA21", "IVA 21%");
+define( "OWNER_TPL_IVA27", "IVA 27%");
+define( "OWNER_TPL_IVA21NI", "IVA 21% NI");
+define( "OWNER_TPL_IVA27NI", "IVA 27% NI");
+define( "OWNER_TPL_SUBTOTAL", "Subtotal");
+define( "OWNER_TPL_TOTAL", "Total");
+
+define( "OWNER_TPL_BANELCO_KEY", "Clave de Pago Electr&oacute;nico <b>Banelco</b>:");
+define( "OWNER_TPL_LINK_KEY", "Clave de Pago Electr&oacute;nico <b>Link</b>:");
+
+define( "OWNER_TPL_TICKET_N", "Factura N");
+define( "OWNER_TPL_DATE", "Fecha");
+define( "OWNER_TPL_EXPIRE_DATE", "Vencimiento");
+
+define( "OWNER_TPL_NO_TICKET_DETAILS", "No hay detalle de consumo para esta factura.");
+
+define( "OWNER_TPL_FACTURA", "Factura:");
+define( "OWNER_TPL_RSOCIAL", "Raz&oacute;n social:");
+define( "OWNER_TPL_RELEASE_DATE", "Fecha de emisi&oacute;n:");
+
+define( "OWNER_TPL_LINE_PIN", "L&iacute;nea/Pin");
+define( "OWNER_TPL_CALLS", "Llamados");
+define( "OWNER_TPL_DURATION", "Duraci&oacute;n");
+define( "OWNER_TPL_PRICE2", "Importe");
+
+define( "OWNER_TPL_HOUR", "Hora");
+define( "OWNER_TPL_SOURCE", "Origen");
+define( "OWNER_TPL_CALLED", "N. Discado");
+define( "OWNER_TPL_TARGET", "Destino");
+
+define( "OWNER_TPL_COMPROBANT", "Comprobante");
+
+define( "OWNER_TPL_LOGIN", "Usuario:");
+define( "OWNER_TPL_PASSWORD", "Contraseña:");
+define( "OWNER_TPL_LOGIN_ERROR", "El usuario y/o la contrase&#241;a son inv&#225;lidos, o la sesi&#243;n ha expirado.");
+define( "OWNER_TPL_CHECKING_ACCOUNT", "Cuenta Corriente");
+
+define( "OWNER_TPL_PAGINATE_SEPARATOR", "&nbsp;-&nbsp;");
+define( "OWNER_TPL_PAGINATE_OF", "&nbsp;de&nbsp;");
+define( "OWNER_TPL_PAGINATE_BY_PAGE", "por p&aacute;gina:");
+
+define( "OWNER_TPL_RELEASE", "Emisi&oacute;n");
+define( "OWNER_TPL_NEGATIVE", "Debe");
+define( "OWNER_TPL_POSITIVE", "Haber");
+define( "OWNER_TPL_BALANCE", "Saldo");
+define( "OWNER_TPL_INITIAL_BALANCE", "Saldo inicial:");
+define( "OWNER_TPL_TOTAL_BALANCE", "Saldo total:");
+
+define( "OWNER_TPL_CHECKING_ACCOUNT_DESC", "Aqu&iacute; puedes ver las facturas emitidas, los pagos que hemos recibido en tu cuenta y tu saldo final.");
+define( "OWNER_TPL_RECEIPT_N", "Recibo N");
+define( "OWNER_TPL_NO_RECEIPT_DETAILS", "No hay detalle para este recibo.");
+define( "OWNER_TPL_PAY_DATE", "Fecha de pago:");
+define( "OWNER_TPL_BANK", "BANCO");
+define( "OWNER_TPL_PAYCHECK", "CHEQUE");
+
+define( "OWNER_TPL_DATE_UPPER", "FECHA");
+define( "OWNER_TPL_TITLE_TRAFF_NF", "Informes de consumo no facturado");
+define( "OWNER_TPL_TITLE_TRAFF_NF_CENTRO_COSTOS", "Informes de consumo no facturado,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_NF_DESC", "En esta secci&oacute;n, puedes consultar el detalle de las comunicaciones realizadas este mes, que a&uacute;n no han sido facturadas.");
+
+define( "OWNER_TPL_REPORT_WITH_FILTER", "Informes con filtro");
+define( "OWNER_TPL_REPORTS", "Informes:");
+define( "OWNER_TPL_DATE_FROM", "Fecha de inicio:");
+define( "OWNER_TPL_DATE_TO", "Fecha de fin:");
+define( "OWNER_TPL_DIALED_NUMBER", "N&uacute;mero discado:");
+
+/* Trafico No Facturado */
+define( "OWNER_TPL_TRAFF_NF_DETAIL_BY_CENTRO_DE_COSTO", "Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_NF_DETAIL_BY_LINE_PIN", "Detalle por L&iacute;nea/PIN");
+define( "OWNER_TPL_TRAFF_NF_DETAIL_BY_CALL_REFERENCE", "Detalle por Referencia de Llamada");
+define( "OWNER_TPL_TRAFF_NF_DETAIL_BY_LAST_CALLS", "Ultimas llamadas");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_CENTRO_DE_COSTO", "Resumen por Centro de Costos");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_LINE_PIN", "Resumen por L&iacute;nea/PIN");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_DIALED_NUMBER", "Resumen por N&uacute;mero Discado");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_CALL_REFERENCE", "Resumen por Referencia de Llamadas");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_ORIGIN_OF_CALL", "Resumen por nº de origen de llamada");
+define( "OWNER_TPL_TRAFF_NF_RESUME_BY_LOCATION", "Resumen por pa&iacute;s/localidad");
+
+define( "OWNER_TPL_TITLE_TRAFF_NF_DETAIL_BY_CENTRO_DE_COSTO", "Informes de consumo no facturado,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_NF_DETAIL_BY_LINE_PIN", "Informes de consumo no facturado,, &gt; Detalle por L&iacute;nea/PIN");
+define( "OWNER_TPL_TITLE_TRAFF_NF_DETAIL_BY_CALL_REFERENCE", "Informes de consumo no facturado,, &gt; Detalle por Referencia de Llamada");
+define( "OWNER_TPL_TITLE_TRAFF_NF_DETAIL_BY_LAST_CALLS", "Informes de consumo no facturado,, &gt; Ultimas llamadas");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_CENTRO_DE_COSTO", "Informes de consumo no facturado,, &gt; Resumen por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_LINE_PIN", "Informes de consumo no facturado,, &gt; Resumen por L&iacute;nea/PIN");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_DIALED_NUMBER", "Informes de consumo no facturado,, &gt; Resumen por N&uacute;mero Discado");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_CALL_REFERENCE", "Informes de consumo no facturado,, &gt; Resumen por Referencia de Llamadas");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_ORIGIN_OF_CALL", "Informes de consumo no facturado,, &gt; Resumen por nº de origen de llamada");
+define( "OWNER_TPL_TITLE_TRAFF_NF_RESUME_BY_LOCATION", "Informes de consumo no facturado,, &gt; Resumen por pa&iacute;s/localidad");
+
+
+define( "OWNER_TPL_DIALED_NUMBER_ACLARATION", "Ingresa el n&uacute;mero de destino tal cual ha sido marcado");
+define( "OWNER_TPL_NO_ROWS", "-No se han encontrado registros.-");
+
+define( "OWNER_TPL_NOTICES", "Avisos de consumo");
+
+define( "OWNER_TPL_YES", "S&iacute;");
+define( "OWNER_TPL_NO", "No");
+define( "OWNER_TPL_RECEIVE_REPORT_DESC", "Recibir un informe semanal de consumos por e-mail");
+define( "OWNER_TPL_RECEIVE_ALERT_DESC", "Recibir alertas por e-mail cuando tu consumo supera un l&iacute;mite");
+define( "OWNER_TPL_LIMIT_MINUTES_DESC", "L&iacute;mite en minutos");
+define( "OWNER_TPL_LIMIT_PRICE_DESC", "Importe l&iacute;mite");
+define( "OWNER_TPL_RECEIVE_IMAGE_DESC", "Recibir la imagen de la factura mensual por e-mail");
+define( "OWNER_TPL_RECEIVE_DETAIL_DESC", "Recibir el detalle de consumo por e-mail (junto a la imagen de la factura mensual)");
+
+define( "OWNER_TPL_MINUTES", "minutos");
+define( "OWNER_TPL_TITLE_NOTICES", "Avisos de consumo");
+define( "OWNER_TPL_NOTICES_ERROR", "Ha ocurrido un error al actualizar la configuraci&oacute;n");
+
+/* Trafico por Periodo */
+define( "OWNER_TPL_TRAFF_P", "Consumo por per&iacute;odo");
+
+define( "OWNER_TPL_TITLE_TRAFF_P", "Informes de consumo facturado por per&iacute;odo");
+define( "OWNER_TPL_TITLE_TRAFF_P_CENTRO_COSTOS", "Informes de consumo no facturado,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_P_DESC", "En esta secci&oacute;n, puedes consultar el resumen de las comunicaciones realizadas en meses anteriores y ya facturadas, as&iacute; como el detalle de cada una de ellas.");
+
+define( "OWNER_TPL_TRAFF_P_REPORT_ABC_BY_DEST", "ABC por Destino");
+define( "OWNER_TPL_TRAFF_P_REPORT_ABC_BY_DIALED_NUMBER", "ABC por N&uacute;mero Discado");
+define( "OWNER_TPL_TRAFF_P_REPORT_ABC_BY_ORIGIN", "ABC por Origen");
+define( "OWNER_TPL_TRAFF_P_REPORT_DETAIL_BY_COST_CENTER", "Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_P_REPORT_DETAIL_BY_LINE_PIN", "Detalle por L&iacute;nea/PIN");
+define( "OWNER_TPL_TRAFF_P_REPORT_DETAIL_BY_PROYECT", "Detalle por Proyecto");
+define( "OWNER_TPL_TRAFF_P_REPORT_SUMMARY_BY_COST_CENTER", "Resumen por Centro de Costos");
+define( "OWNER_TPL_TRAFF_P_REPORT_SUMMARY_BY_CALL_REFERENCE", "Resumen por Referencia de Llamadas");
+
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_ABC_BY_DEST", "Informes de consumo facturado por per&iacute;odo,, &gt; ABC por Destino");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_ABC_BY_DIALED_NUMBER", "Informes de consumo facturado por per&iacute;odo,, &gt; ABC por N&uacute;mero Discado");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_ABC_BY_ORIGIN", "Informes de consumo facturado por per&iacute;odo,, &gt; ABC por Origen");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_COST_CENTER", "Informes de consumo facturado por per&iacute;odo,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_LINE_PIN", "Informes de consumo facturado por per&iacute;odo,, &gt; Detalle por L&iacute;nea/PIN");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_PROYECT", "Informes de consumo facturado por per&iacute;odo,, &gt; Detalle por Proyecto");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_SUMMARY_BY_COST_CENTER", "Informes de consumo facturado por per&iacute;odo,, &gt; Resumen por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_P_REPORT_SUMMARY_BY_CALL_REFERENCE", "Informes de consumo facturado por per&iacute;odo,, &gt; Resumen por Referencia de Llamadas");
+
+/* Trafico Facturado */
+define( "OWNER_TPL_TRAFF_F_REPORT_DETAIL_BY_COST_CENTER", "Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_F_REPORT_DETAIL_BY_ACCOUNT", "Detalle por Cuenta");
+define( "OWNER_TPL_TRAFF_F_REPORT_DETAIL_BY_CALL_REFERENCE", "Detalle por Referencia de Llamada");
+define( "OWNER_TPL_TRAFF_F_REPORT_SUMMARY_BY_COST_CENTER", "Resumen por Centro de Costos");
+define( "OWNER_TPL_TRAFF_F_REPORT_SUMMARY_BY_CALL_REFERENCE", "Resumen por Referencia de llamadas");
+define( "OWNER_TPL_TRAFF_F_REPORT_SUMMARY_BY_ORIGIN_OF_CALL", "Resumen por nº de origen de llamada");
+define( "OWNER_TPL_TRAFF_F_REPORT_SUMMARY_BY_DIALED_NUMBER", "Resumen por nº destino");
+define( "OWNER_TPL_TRAFF_F_REPORT_SUMMARY_BY_LOCATION", "Resumen por pa&iacute;s/localidad");
+
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_COST_CENTER", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_ACCOUNT", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Detalle por Cuenta");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_CALL_REFERENCE", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Detalle por Referencia de Llamada");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_COST_CENTER", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Resumen por Centro de Costos");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_CALL_REFERENCE", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Resumen por Referencia de llamadas");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_ORIGIN_OF_CALL", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Resumen por nº de origen de llamada");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_DIALED_NUMBER", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Resumen por nº destino");
+define( "OWNER_TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_LOCATION", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Resumen por pa&iacute;s/localidad");
+
+define( "OWNER_TPL_TITLE_TRAFF_F", "Facturas por fecha de emisi&oacute;n y nº");
+define( "OWNER_TPL_TITLE_TRAFF_F_CENTRO_COSTOS", "Facturas por fecha de emisi&oacute;n y nº,, &gt; Detalle por Centro de Costos");
+define( "OWNER_TPL_TRAFF_F_DESC", "En esta secci&oacute;n, puedes consultar el resumen de las comunicaciones realizadas en meses anteriores y ya facturadas, as&iacute; como el detalle de cada una de ellas.");
+define( "OWNER_TPL_SIMPLE_INFORMS", "Informes simples");
+
+
+
+
+define( "OWNER_TPL_DETAIL", "Detalle");
+define( "OWNER_TPL_DIALED_NUMBER2", "N&uacute;mero marcado");
+
+define( "OWNER_TPL_DATMOD", "Datos b&#225;sicos");
+define( "OWNER_TPL_TITLE_DATMOD", "Cambio de datos");
+define( "OWNER_TPL_DATMOD_ERROR", "Ha ocurrido un error al actualizar la configuraci&oacute;n");
+
+define( "OWNER_TPL_EMAIL", "E-Mail");
+define( "OWNER_TPL_PASSWORD2", "Clave");
+define( "OWNER_TPL_PASSWORD2_CONFIRMATION", "Repite la clave");
+
+define( "OWNER_TPL_DATMOD_WRONG_CONFIRMATION", "La clave y su verificaci&oacute;n no son iguales");
+define( "OWNER_TPL_DATMOD_INVALID_EMAIL", "El e-mail ingresado es inv&aacute;lido");
+define( "OWNER_TPL_DATMOD_INVALID_PASSWORD", "La clave ingresada es inv&aacute;lida");
+
+/* Centros de costos -> Nuevo centro de costos. */
+define( "OWNER_TPL_TITLE_CCADD", "Centros de costos,, &gt; Nuevo centro de costos");
+define( "OWNER_TPL_TITLE_CCEDIT", "Centros de costos,, &gt; Edici&oacute;n");
+
+define( "OWNER_TPL_CCADD_ERROR", "Ha ocurrido un error al crear el centro de costos.");
+define( "OWNER_TPL_ACCOUNT", "Cuenta");
+define( "OWNER_TPL_TITLE_CCENTER", "Centros de costos");
+define( "OWNER_TPL_ACTIONS", "Acciones");
+define( "OWNER_TPL_CCDEL_CONFIRM", "¿Est&aacute;s seguro de que deseas borrar este centro de costos?");
+define( "OWNER_TPL_CCADD_NOFREELINES", "Sin cuentas disponibles");
+define( "OWNER_TPL_CCEDIT_ERROR", "Ha ocurrido un error al actualizar el centro de costos.");
+define( "OWNER_TPL_NOELEMENTS", "No se han encontrado datos disponibles.");
+
+
+/* Referencia de llamada. */
+define( "OWNER_TPL_TITLE_RCALL", "Referencia de llamadas");
+define( "OWNER_TPL_TITLE_RCALLADD", "Referencia de llamadas,, &gt; Nuevo proyecto");
+define( "OWNER_TPL_TITLE_RCALLEDIT", "Referencia de llamadas,, &gt; Edici&oacute;n");
+
+define( "OWNER_TPL_RCALLADD_ERROR", "Ha ocurrido un error al crear el proyecto.");
+define( "OWNER_TPL_RCALLDEL_CONFIRM", "¿Est&aacute;s seguro de que deseas borrar este proyecto?");
+define( "OWNER_TPL_PROJECT", "Proyecto");
+define( "OWNER_TPL_FIRST_NAME", "Nombre");
+define( "OWNER_TPL_LAST_NAME", "Apellido");
+define( "OWNER_TPL_COMPANY", "Empresa");
+define( "OWNER_TPL_COMPANY_TITLE", "Cargo");
+
+define( "OWNER_TPL_RCALLEDIT_ERROR", "Ha ocurrido un error al actualizar el proyecto.");
+
+/* Tarifas. */
+define( "OWNER_TPL_SERVICE", "Servicio");
+define( "OWNER_TPL_TITLE_RATES", "Tarifas");
+define( "OWNER_TPL_RATES_TIP", "Selecciona una cuenta para visualizar las tarifas:");
+define( "OWNER_TPL_RATE_PERMINUTE", "Tarifa (por minuto)");
+define( "OWNER_TPL_VIGENCY", "Vigencia");
+define( "OWNER_TPL_RATES", "tarifas");
+define( "OWNER_TPL_TARGET_NUMBER", "N&uacute;mero destino");
+define( "OWNER_TPL_VIGENCY_FORMAT", "[FROM] - [TO]");
+define( "OWNER_TPL_SPECIAL_RATE", "(Tarifa Especial)");
+define( "OWNER_TPL_PREFIX", "Prefijo");
+
+define( "OWNER_TPL_TITLE_RATE", "Tarifas,, &gt; [REPLACEMENT]");
+define( "OWNER_TPL_RATE_ACLARATION", "Si el destino alcanzado es el de un tel&eacute;fono m&oacute;vil, la tarifa estar&aacute; afectada por el recargo correspondiente.");
+define( "OWNER_TPL_RATE_ACLARATION2", "Las tarifas corresponden a llamadas cursadas por los accesos locales, cuyo cargo es de USD 0,02. No incluyen recargos por accesos a trav&eacute;s de 0800, ni desde tel&eacute;fonos p&uacute;blicos.");
+define( "OWNER_TPL_RATE_NO_IVA", "");
+define( "OWNER_TPL_TARGET_PREFIX", "Prefijo destino");
+define( "OWNER_TPL_TOTAL2", "TOTAL");
+
+define( "OWNER_TPL_EMAIL_SEND", "Env&iacute;o por e-mail");
+define( "OWNER_TPL_EMAIL_ADDRESS", "Direcci&oacute;n de correo");
+define( "OWNER_TPL_CHOOSE_PAYMENT", "Elige el medio de pago");
+define( "OWNER_TPL_CUPON_PAGO_FACIL", "Cup&oacute;n de pago para <b>Pago F&aacute;cil</b>");
+define( "OWNER_TPL_IMPORT_TO_PAY", "Importe a pagar:");
+define( "OWNER_TPL_PAGO_UNIVERSAL_TIP", "Indica el importe a abonar, y una vez que hagas clic en Pagar, la p&aacute;gina te llevar&aacute; directamente a Pago Universal.");
+
+
+define( "OWNER_TPL_PAYPAL_TIP", "Indica el importe a abonar, y una vez que hagas clic en Pagar, la p&aacute;gina te llevar&aacute; directamente a PayPal.");
+define( "OWNER_TPL_PAYPAL_ACLARATION", "A efectos de realizar este pago por PayPal, el importe se convertir&aacute; a d&oacute;lares, a la cotizaci&oacute;n vigente el d&iacute;a en que se hizo efectivo el pago.");
+define( "OWNER_TPL_PAYPAL_CONFIRM_PAYMENT", "Est&aacute;s por confirmar un pago de ");
+define( "OWNER_TPL_PAYPAL_CONFIRM_PAYMENT2", " a favor de Latinatel S.A. <br><br>Para seguir, haz clic en el bot&oacute;n Confirmar. <br>	Si deseas cancelar el pago, haz clic en Cancelar.");
+define( "OWNER_TPL_PAYPAL_CANCEL_PAYMENT", "Has cancelado la transacci&oacute;n. <br>Si deseas realizar un pago, selecciona nuevamente una factura y repite la operaci&oacute;n. <br>Ante cualquier duda, cont&aacute;cta con el Centro de Atenci&oacute;n al Cliente.");
+define( "OWNER_TPL_PAYPAL_TRANSACCION_ERROR", "Ocurri&oacute; un error al procesar la transacci&oacute;n<br>Error: ");
+define( "OWNER_TPL_PAYPAL_TRANSACCION_OK", "Has realizado el pago satisfactoriamente por ");
+define( "OWNER_TPL_PAYPAL_TRANSACCION_OK2", " a favor de Latinatel S.A. Dicho pago lo ver&aacute;s reflejado en tu cuenta corriente en las pr&oacute;ximas 24 hs.");
+
+//añadido para resolucion del bloque: forma pago: pagos_online
+define( "OWNER_TPL_CUPON_PAGOS_ONLINE", "Cup&oacute;n de pago para <b>Pagos Online</b>");
+define( "OWNER_TPL_PAGOS_ONLINE_ACLARATION", "Los pagos en Pesos Mexicanos se registran en %currency%, convirtiendo los importes a la cotizaci&oacute;n de dicha moneda, del d&iacute;a en que se hizo efectivo el pago.");
+define( "OWNER_TPL_PAGOS_ONLINE_ESPERA_RESPUESTA", "<b>Esperando confirmaci&oacute;n. Por favor, aguarda unos instantes mientras se completa la transacci&oacute;n</b>");
+define( "OWNER_TPL_PAGOS_ONLINE_RESPUESTA_EXITO", "<b>La operaci&oacute;n se ha completado exitosamente</b>");
+define( "OWNER_TPL_PAGOS_ONLINE_RESPUESTA_ERROR", "<b>La operaci&oacute;n no ha podido completarse. Por favor, vuelve a intentarlo.</b>");
+
+define( "OWNER_TPL_CUPON_DINERO_MAIL", "Cup&oacute;n de pago para <b>Dinero Mail</b>");
+define( "OWNER_TPL_CLIENT", "Cliente");
+define( "OWNER_TPL_TOTAL_TO_PAY", "Total a pagar");
+define( "OWNER_TPL_PAY_IN_BANKS", "Pago en sucursales bancarias");
+define( "OWNER_TPL_PRINT_THIS", "Imprime este cup&oacute;n.");
+define( "OWNER_TPL_PRESENT_THIS", "Pres&eacute;ntalo en cualquier sucursal Banamex indicando que deseas realizar un dep&oacute;sito referenciado. Realiza el dep&oacute;sito a nombre de <b>Digicuenta S.A. de C.V.</b>");
+
+define( "OWNER_TPL_HSBC", "HSBC (Bital)");
+define( "OWNER_TPL_BANAMEX", "Banamex");
+
+define( "OWNER_TPL_KEY_N", "Clave nº");
+define( "OWNER_TPL_ACCOUNT_N", "Cuenta nº");
+define( "OWNER_TPL_REFERENCE", "Referencia");
+define( "OWNER_TPL_DINERO_MAIL_ACLARATION", "Los pagos en Pesos Mexicanos se registran en %currency%, convirtiendo los importes a la cotizaci&oacute;n de dicha moneda, del d&iacute;a en que se hizo efectivo el pago.");
+
+define( "OWNER_TPL_EMAIL_SENT_SUCESSFULLY", "El e-mail se ha enviado satisfactoriamente.");
+define( "OWNER_TPL_EMAIL_SEND_FAILED", "No se ha podido enviar la informaci&oacute;n por e-mail. Es posible que no haya datos para enviar o que no hayas indicado tu direcci&oacute;n de correo electr&oacute;nico en Servicios > Modificar Datos > Datos b&aacute;sicos.");
+
+define( "OWNER_TPL_PAGO_UNIVERSAL_ACLARATION", "A efectos de realizar este pago por Pago Universal, se convertir&aacute; a Pesos, a la cotizaci&oacute;n vigente el d&iacute;a en que se hizo efectivo el pago.");
+define( "OWNER_TPL_RECHARGE", "Recargo celular");
+define( "OWNER_TPL_COLSULTE", "Consulta");
+
+/* E-Mail confirmation messages */
+define( "OWNER_TPL_EML_CONFIRM_OK", "Tu dirección de e-mail ha sido confirmada. Muchas gracias.");
+define( "OWNER_TPL_EML_CONFIRM_OK_TXT2", 'Por favor, haz clic <a href="home.ca" class="ticket_row_title">aqu&iacute;</a> para continuar.');
+define( "OWNER_TPL_EML_CONFIRM_ERROR_DB_SET_FAILED", "Ha ocurrido un error al confirmar tu e-mail. Por favor, int&eacute;ntalo nuevamente.");
+define( "OWNER_TPL_EML_CONFIRM_ERROR_INVALID_HASH", 'No se ha podido confirmar tu e-mail. Por favor, verifica el link que hemos enviado a tu casilla de e-mail e int&eacute;ntalo nuevamente.');
+define( "OWNER_TPL_TITLE_EMAIL", "E-mail administrativo");
+
+define( "OWNER_TPL_EML_ADMIN_TIP", '<span class="ticket_row_title">IMPORTANTE:</span> A efectos de mejorar la seguridad y facilitarte futuros trámites, te pedimos que registres aquí una <b>dirección de e-mail válida</b> para asuntos administrativos.');
+define( "OWNER_TPL_EMAIL_SET_ERROR", "Ha ocurrido un error al actualizar tu e-mail. Por favor, int&eacute;ntalo nuevamente.");
+define( "OWNER_TPL_EMAIL_SEND_ERROR", "Ha ocurrido un error al enviar el e-mail de confirmaci&oacute;n a tu casilla. Por favor, int&eacute;ntalo nuevamente.");
+define( "OWNER_TPL_PASSWORD_SET_ERROR", "Ha ocurrido un error al actualizar tu contrase&ntilde;a. Por favor, int&eacute;ntalo nuevamente.");
+define( "OWNER_TPL_PROFILE_DATA_SAVED_EML_CONFIRM", "Gracias por completar tus datos. Recibir&aacute;s un pedido de confirmaci&oacute;n en tu casilla de e-mail. Luego de esa confirmaci&oacute;n, la direcci&oacute;n de e-mail que ingresaste ser&aacute; tomada como v&aacute;lida para futuros tr&aacute;mites administrativos.");
+define( "OWNER_TPL_PROFILE_DATA_SAVED", "Gracias por completar tus datos.");
+
+/* Services */
+define( "OWNER_TPL_TITLE_SERVICES", "Habilitar servicio");
+define( "OWNER_TPL_TITLE_SERVICES_WITH_NAME", "Habilitar servicio,, &gt; [REPLACEMENT]");
+define( "OWNER_TPL_ACCEPT", "Aceptar");
+define( "OWNER_TPL_CANCEL", "Cancelar");
+define( "OWNER_TPL_SERVICES_TIP", "Por favor, selecciona el servicio que deseas habilitar:");
+define( "OWNER_TPL_ERR_EMAIL_NOT_VERIFIED", 'Estimado Cliente, no puedes acceder a este formulario porque tu e-mail a&uacute;n no ha sido verificado. &iquest;Deseas ir al formulario de registraci&oacute;n de e-mail?</a>');
+define( "OWNER_TPL_EMAIL_SEND_ERROR_2", "Ha ocurrido un error al enviar el e-mail. Por favor, int&eacute;ntalo nuevamente.");
+
+define("OWNER_TPL_SERVICE_ACTION_COMPLETED", "En breve responderemos a tu solicitud. Si deseas habilitar otro servicio, por favor, selecci&oacute;nalo a continuaci&oacute;n y haz clic en Aceptar. Por consultas, comun&iacute;cate al Centro de Atenci&oacute;n al Cliente por e-mail a [OWNER_EMAIL].");
+
+define("OWNER_TPL_SERVICE_ACTION_COMPLETED_ONLY_EMAIL", "En breve responderemos a tu solicitud. Si deseas habilitar otro servicio, por favor, selecci&oacute;nalo a continuaci&oacute;n y haz clic en Aceptar. Por consultas, comun&iacute;cate al Centro de Atenci&oacute;n al Cliente por e-mail a [OWNER_EMAIL].");
+
+/* Remember my password */
+define( "OWNER_TPL_REMEMBER_PASSWORD", "Olvid&eacute; mi contrase&ntilde;a");
+define( "OWNER_TPL_ENTER_USERNAME", "Ingresa el Usuario y Contrase&ntilde;a. Si no recuerdas tu Contrase&ntilde;a, ingresa s&oacute;lo el Usuario y luego haz clic en Olvid&eacute; mi contrase&ntilde;a");
+
+define( "OWNER_TPL_PASSWD_INVALID_USER", "Ingresa el Usuario y Contrase&ntilde;a. Si no recuerdas tu Contrase&ntilde;a, ingresa s&oacute;lo el Usuario y luego haz clic en Olvid&eacute; mi contrase&ntilde;a");
+define( "OWNER_TPL_PASSWD_UNABLE_TO_SEND_EMAIL", "Ha ocurrido un error al enviar tu contrase&ntilde;a por e-mail.");
+define( "OWNER_TPL_PASSWD_EMAIL_NOT_VERIFIED", "No est&aacute;s habilitado para recordar la contrase&ntilde;a. Por favor, comun&iacute;cate con el Centro de Atenci&oacute;n al Cliente a [OWNER_EMAIL] o telef&oacute;nicamente al [OWNER_PHONE].");
+define( "OWNER_TPL_PASSWD_EMAIL_NOT_VERIFIED_ONLY_EMAIL", "No est&aacute;s habilitado para recordar la contrase&ntilde;a. Por favor comun&iacute;cate con el Centro de Atenci&oacute;n al Cliente a [OWNER_EMAIL].");
+define( "OWNER_TPL_PASSWD_SENT", "Estimado Cliente, te hemos enviado la contrase&ntilde;a para ingresar a Mi Panel al e-mail que registraste.");
+
+
+/* Conf Services */
+
+define( "OWNER_TPL_MAIL", "(X)Mail");
+define( "OWNER_TPL_AVISO_MAIL", "(X)Mail para mensajes");
+define( "OWNER_TPL_MAIL_FAX", "Mail Fax");
+define( "OWNER_TPL_TELEFONO_ESPECIAL", "Tel&eacute;fono especial");
+define( "OWNER_TPL_TRATAMIENTO_OTROS", "Tratamiento de otros");
+define( "OWNER_TPL_AUTOATENDEDOR", "Autoatendedor");
+define( "OWNER_TPL_LINE", "L&iacute;nea");
+define( "OWNER_TPL_INTERNO", "Interno nº");
+define( "OWNER_TPL_INTERNO_TITLE", "N&uacute;mero de interno habilitado.<br> Para modificar tu configuraci&oacute;n haz clic en (icono lapicito),<br>y para borrarlo haz clic en (icono goma)");
+define( "OWNER_TPL_REFERENCIA", "Descripci&oacute;n");
+define( "OWNER_TPL_REFERENCIA_TITLE", "Coloca el nombre del interno y haz clic en Aceptar");
+define( "OWNER_TPL_EDITAR", "Editar");
+define( "OWNER_TPL_INTERNOS_LAPIZ_TITLE", "Ingreso a la grilla de Configuraci&oacute;n de internos.<br> Recuerda que el n&uacute;mero de derivaci&oacute;n debe<br> ser ingresado en formato internacional, si es<br> un n&uacute;mero telef&oacute;nico.<br> Si es un n&uacute;mero IP debes anteponer 000 al<br> n&uacute;mero asignado.");
+define( "OWNER_TPL_BORRAR", "Borrar");
+define( "OWNER_TPL_MAIL_TITLE", "La direcci&oacute;n de e-mail puede ser modificada.<br> Ingresa la nueva direcci&oacute;n y haz clic en Aceptar.");
+define( "OWNER_TPL_NUMERO", "N&uacute;mero");
+define( "OWNER_TPL_NUMERO_TITLE", "Este es tu n&uacute;mero en Oficina Virtual");
+define( "OWNER_TPL_AVANZADO_NUMERO_TITLE", "Recuerda que el n&uacute;mero debe ser ingresado en formato internacional.");
+define( "OWNER_TPL_AVANZADO_REFERENCIA_TITLE", "Escribe un nombre que describa el n&uacute;mero ingresado.");
+define( "OWNER_TPL_CLAVE", "Clave");
+
+define( "OWNER_TPL_NUMERO_INTERNO", "N&uacute;mero de interno");
+define( "OWNER_TPL_NUMERO_DERIVA", "N&uacute;mero telef&oacute;nico al que deriva *");
+define( "OWNER_TPL_NUMERO_DERIVA_HELP", "* Recuerda ingresarlo en formato internacional y sin espacios ni guiones. Por ejemplo: 541141234567");
+
+define( "OWNER_TPL_INT_MSG_ERROR", "Ingresa sólo números telefónicos sin guión (ej: 01141234567)");
+define( "OWNER_TPL_INT_MSG_ERROR_SELECTEDINT", "El interno seleccionado se encuentra en uso, por favor selecciona otro interno.");
+define( "OWNER_TPL_INT_MSG_PROMPT_TITLE", "Oficina Global Plus - Internos");
+define( "OWNER_TPL_INT_MSG_PROMPT", "Ingresa el interno que deseas programar y el n&uacute;mero telef&oacute;nico para su derivaci&oacute;n ");
+
+define( "OWNER_TPL_INT_MSG_CONFIRM", "¿Confirmas la eliminaci&oacute;n del interno?");
+define( "OWNER_TPL_MAX_INT_LIMITE", "Has superado el l&iacute;mite m&aacute;ximo de internos");
+define( "OWNER_TPL_TITLE_FH_CALLBACK", "Pasos a seguir para que tu interno sea derivado");
+define( "OWNER_TPL_TITLE_FH_FOLLOWME", "Grilla de configuraci&oacute;n");
+
+define( "OWNER_TPL_FOLLOWME_OFG2_HELP", "La grilla de configuraci&oacute;n te permite programar la recepci&oacute;n de los llamados de cada interno de tu Oficina Virtual hasta en 5 (cinco) tel&eacute;fonos diferentes, de acuerdo a una grilla por horarios y d&iacute;as establecida por ti.<br>Por ejemplo:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lunes a viernes de 8 hs a 18 hs, deriva al 54115555555.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lunes a viernes de 18 hs a 8 hs, deriva al 54114444444.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&aacute;bados y domingos deriva al 54113333333.<br>Tambi&eacute;n puedes configurar que a determinada hora y d&iacute;a atienda el Contestador o que el servicio directamente no atienda, utilizando la opci&oacute;n Bloqueado.<br>
+Si el n&uacute;mero que deseas configurar es un n&uacute;mero IP, debes anteponer 000 al n&uacute;mero asignado");
+
+define( "OWNER_TPL_FOOTER_DERIVE", "Derivar al Contestador si no se puede establecer la comunicación");
+define( "OWNER_TPL_ADD_NEW_ANI", "Ingresa el nº telef&oacute;nico en formato internacional, sin espacios, ni guiones.<br>Por ejemplo: 541141234567.");
+define( "OWNER_TPL_ADD_NEW_ANI_TITLE", "Oficina Global Plus - Avanzado");
+define( "OWNER_TPL_HA_ADD_NEW_ANI_TITLE", "Hola Argentina completo - Avanzado");
+
+define( "OWNER_TPL_OFG_GRID_HELP_MSG", "<b>Pasos a seguir para que tu interno sea derivado:</b><br><br> 
+1) Ingresa en el casillero el n&uacute;mero telef&oacute;nico al que deseas derivar tu interno, en formato internacional, sin espacios ni guiones. Por ejemplo: 541141234567.  <br>
+Si el tel&eacute;fono es un celular de la Argentina, debes ingresarlo anteponiendo al c&oacute;digo de &aacute;rea el 9, por ejemplo: 54911<br><br>
+2) Haz clic sobre el cuadrado de color del n&uacute;mero telef&oacute;nico que vas a programar.<br><br>
+3) Una vez seleccionado, haz clic en la grilla sobre los casilleros en los d&iacute;as y horarios en los que quieres recibir la derivaci&oacute;n.<br><br>
+4) Para confirmar y guardar la configuraci&oacute;n, haz clic en el bot&oacute;n Aceptar.<br><br>
+5) Recuerda que tambi&eacute;n puedes configurar que en determinados d&iacute;as y horarios atienda el Contestador, o que el servicio directamente no atienda, utilizando la opci&oacute;n Bloqueado.<br><br> <br>
+Ante cualquier consulta, llama al Centro de Atenci&oacute;n al Cliente al 0810-3210-733 de lunes a viernes de 9 hs a 18 hs o v&iacute;a e-mail a asistencia@alternativa.com.ar.");
+
+define( "OWNER_TPL_CONFIRM_DELETE_ANI", "¿Confirmas la eliminaci&oacute;n?");
+define( "OWNER_TPL_DESCRIPCION_INTERNOS", "Es posible configurar hasta 7 internos. Los internos 8 y 9 no son editables y corresponden al contestador autom&aacute;tico y al fax respectivamente. <br>Recuerda actualizar tu mensaje de Bienvenida luego de modificar tu Configuraci&oacute;n de internos. <br> Para agregar un nuevo interno, haz clic en el botón Agregar.
+");
+define( "OWNER_TPL_DESCRIPCION_AVANZADO", "Te permite establecer reglas especiales para determinados n&uacute;meros telef&oacute;nicos. <br>Si deseas agregar un nuevo n&uacute;mero, haz clic en el bot&oacute;n Agregar.");
+define( "OWNER_TPL_DESCRIPCION_INTERNOS_OFG", "Los internos 8 y 9 no son editables y corresponden al contestador autom&aacute;tico y al fax respectivamente. Recuerda actualizar tu mensaje de Bienvenida. 
+Puedes configurar tu tel&eacute;fono por horarios, para que atienda directamente el contestador autom&aacute;tico o el fax. Para editarlo, haz clic en el bot&oacute;n Configurar Franja Horaria. ");
+
+define("OWNER_TPL_REGLA", "Regla");
+define("OWNER_TPL_BLOQUEADO", "Bloqueado");
+define("OWNER_TPL_CONTESTADOR", "Contestador");
+
+define("OWNER_TPL_DESCRIPCION_GRILLA_HAFULL", "La grilla de configuraci&oacute;n te permite programar la recepci&oacute;n de las llamadas en distintas bandas horarias en hasta 5 (cinco) tel&eacute;fonos diferentes, de acuerdo a una grilla por horarios y d&iacute;as establecidos por ti.<br>
+Recuerda que los horarios deben ser ingresados en horario de la Argentina.<br>
+Ejemplo:<br>
+Lunes a viernes de 8 a 18 hs deriva al 34955555555<br>
+Lunes a viernes de 18 a 8 hs deriva al 34655555555<br>
+S&aacute;bados y Domingos deriva al 34655555555<br><br>
+Tambi&eacute;n puedes configurar que a una determinada hora y día atienda el contestador, o que el servicio directamente no atienda, utilizando la opci&oacute;n Bloqueado.<br>
+Si el n&uacute;mero que deseas configurar es un n&uacute;mero IP, debes anteponer 000 al n&uacute;mero asignado.");
+
+define("OWNER_TPL_TITLE_FH_FOLLOWME_HAFULL", "Grilla de configuraci&oacute;n para Transferencia");
+define("OWNER_TPL_TITLE_FH_FOLLOWME_HAFULL_CALLBACK", "Grilla de configuraci&oacute;n para Callback");
+
+
+define("OWNER_TPL_DESCRIPCION_GRILLA_HAFULL_CALLBACK", "La grilla de configuraci&oacute;n te permite programar la recepci&oacute;n de las llamadas de tu servicio de Callback en distintas bandas horarias, en hasta 5 (cinco) tel&eacute;fonos diferentes, de acuerdo a una grilla por horarios y d&iacute;as establecidos por ti.<br>
+Recuerda que los horarios deben ser ingresados en horario de la Argentina.<br>
+Ejemplo:<br>
+Lunes a viernes de 8 a 18 hs, deriva al 34955555555<br>
+Lunes a viernes de 18 a 8 hs, deriva al 34655555555<br>
+S&aacute;bados y Domingos, deriva al 34655555555<br>
+Si el n&uacute;mero que deseas configurar es un n&uacute;mero IP, debes anteponer 000 al n&uacute;mero asignado");
+
+/* defino los nombre de campos que estaban hardodeados originalmente */
+define( "OWNER_TPL_FIELD_NAME_NAME", "Nombre");
+define( "OWNER_TPL_FIELD_NAME_TELEPHONE", "Tel&eacute;fono");
+define( "OWNER_TPL_FIELD_NAME_EMAIL", "Direcci&oacute;n de E-mail");
+define( "OWNER_TPL_FIELD_NAME_PASS", "Contrase&ntilde;a");
+define( "OWNER_TPL_FIELD_NAME_CONFIRM_PASS", "Confirmaci&oacute;n");
+
+/* src: begin */
+define( "OWNER_TPL_BEGIN_CUSTOMER_WELLCOME", "¡Bienvenido, ");
+define( "OWNER_TPL_BEGIN_CUSTOMER_NUMBER", "Número de Cliente:");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG", "Usted tiene ");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG2", "servicio/s");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG2", "servicio/s");
+define( "OWNER_TPL_BEGIN_CUSTOMER_ATTENTION_LINK", "Atención al Cliente");
+
+/* SmartyPaginate */
+define( "SMARTY_PAGINATE_CMD_NEXT", "siguiente");
+define( "SMARTY_PAGINATE_CMD_PREV", "anterior");
+
+/* varios */
+define( "OWNER_TPL_MSG_SELECT_LINE", "Seleccionar una l&#237;nea: ");
+define( "OWNER_TPL_MSG_THERE_IS_NOT_INVOICES", "No hay facturas correspondientes al per&iacute;odo seleccionado.");
+define( "OWNER_TPL_NO_ROWS_ALT", "No se han encontrado registros.");
+
+//Conf Services (alternativo): hafull_email_asoc
+//motivo: aparentemente se reutilizo el texto p. otra ruta de accion
+//		  y probablemente al extender la leyenda uno de ellos quede
+//		  incoherente
+define( "OWNER_TPL_MAIL_ALT", "Mail para recibir los mensajes del contestador:");
+define( "OWNER_TPL_AVISO_MAIL_ALT", "Mail para recibir notificaciones sobre nuevos mensajes:");
+define( "OWNER_TPL_YES_ALT", "S&iacute;");
+define( "OWNER_TPL_NO_ALT", "No");
+define( "OWNER_TPL_POSITIVE_ALT", "Haber");
+define( "OWNER_TPL_NEGATIVE_ALT", "Debe");
+
+define("OWNER_TPL_PROFILE_DATA_SAVED_INVOICE_INFO", "Tus datos fueron enviados con éxito");
+define("OWNER_TPL_MSG_EDIT_EMAIL", "Para modificar la direcci&#243;n de e-mail donde recib&iacute;s las notificaciones relacionadas con el servicio, ingr&eacute;sala y haz clic en Aceptar. Si deseas dejar de recibir notificaciones, borra la direcci&#243;n de e-mail y haz clic en Aceptar.");
+define("OWNER_TPL_MSG_EDIT_PASSWORD", "Para modificar tu contrase&#241;a de acceso a Mi Panel, ingr&eacute;sala en los dos campos a continuaci&#243;n y haz clic en Aceptar.");
+define("OWNER_TPL_FIELD_NAME_EMAIL", "Direcci&#243;n de e-mail");
+define("OWNER_TPL_FIELD_NAME_PASSWORD", "Nueva contrase&#241;a");
+define("OWNER_TPL_FIELD_NAME_CONFIRM_PASSWORD", "Confirmaci&#243;n de nueva contrase&#241;a");
+
+define("OWNER_TPL_MSG_PASSWORD_CHANGE", "Tu contrase&#241;a ha sido modificada exitosamente.");
+define("OWNER_TPL_PROFILE_DATA_SAVED_CONFIRM", "Se confirma tu decisi&#243;n de no recibir notificaciones por e-mail.");
+
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_PRIVATE_TITLE", "Particulares");
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_PRIVATE", "Para modificar su domicilio de facturaci&#243;n, ingr&#233;selo a continuaci&#243;n y haga clic en <b>Aceptar</b>.");
+
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_STREET", "Calle");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_NUMBER", "N&#250;mero");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_FLOOR", "Piso");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_APARTMENT", "Departamento");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_CITY", "Ciudad");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_LOC", "Localidad");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_CP", "C&#243;digo postal");
+define("OWNER_TPL_INVOICEDATA_FIELD_NAME_STATE", "Provincia");
+
+define("OWNER_TPL_INVOICEDATA_DATA_ERROR", "El formulario está incompleto, o algunos datos ingresados son incorrectos.<br />Por favor, verifíquelos y vuelva a intentarlo.");
+
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_COMPANY_TITLE", "Empresas");
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_COMPANY", "Para modificar los datos de su raz&#243;n social, por favor descargue el siguiente formulario, compl&#233;telo y env&#237;elo por fax al +54 11 4110-0199 opci&#243;n 1.");
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_COMPANY_LINK1", "Descargar formulario");
+define("OWNER_TPL_MSG_EDIT_INVOICEDATA_COMPANY_LINK2", "Descargar instructivo");
+
+define("OWNER_TPL_FILE_EDIT_INVOICEDATA_COMPANY_FORMULARIO", "downloads/Solicitud Cambio de Razon Social.doc");
+define("OWNER_TPL_FILE_EDIT_INVOICEDATA_COMPANY_INSTRUCTIVO", "downloads/Instructivo para el cambio de Razon Social.doc");
+
+
+/* Servicios > Mis servicios > Modificar servicio */
+define("OWNER_TPL_MSG_EDIT_SERVICE", "Para modificar la configuraci&#243;n de sus servicios, selecciona una l&#237;nea.");
+
+/* Servicios > Mis servicios > Baja de un servicio */
+define("OWNER_TPL_MSG_DEL_SERVICE", "Para dar de baja un servicio, selecciona una l&#237;nea.");
+
+/* defino los nombre de campos que estaban harcodeados originalmente */
+define( "OWNER_TPL_FIELD_NAME_NAME", "Nombre");
+define( "OWNER_TPL_FIELD_NAME_TELEPHONE", "Tel&eacute;fono");
+define( "OWNER_TPL_FIELD_NAME_EMAIL", "Direcci&oacute;n de E-mail");
+define( "OWNER_TPL_FIELD_NAME_PASS", "Contrase&ntilde;a");
+define( "OWNER_TPL_FIELD_NAME_CONFIRM_PASS", "Confirmaci&oacute;n");
+
+/* src: begin */
+define( "OWNER_TPL_BEGIN_CUSTOMER_WELLCOME", "¡Bienvenido, ");
+define( "OWNER_TPL_BEGIN_CUSTOMER_NUMBER", "Número de Cliente:");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG", "Tienes ");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG2", "servicio/s");
+define( "OWNER_TPL_BEGIN_CUSTOMER_LINE_COUNT_MSG2", "servicio/s");
+define( "OWNER_TPL_BEGIN_CUSTOMER_ATTENTION_LINK", "Atención al Cliente");
+
+/* SmartyPaginate */
+define( "SMARTY_PAGINATE_CMD_NEXT", "siguiente");
+define( "SMARTY_PAGINATE_CMD_PREV", "anterior");
+
+/* varios */
+define( "OWNER_TPL_MSG_SELECT_LINE", "Selecciona una l&#237;nea: ");
+define( "OWNER_TPL_MSG_THERE_IS_NOT_INVOICES", "No hay facturas correspondientes al periodo seleccionado");
+define( "OWNER_TPL_NO_ROWS_ALT", "No se han encontrado registros.");
+
+//Conf Services (alternativo): hafull_email_asoc
+//motivo: aparentemente se reutilizo el texto p. otra ruta de accion
+//		  y probablemente al extender la leyenda uno de ellos quede
+//		  incoherente
+define( "OWNER_TPL_MAIL_ALT", "Mail para recibir los mensajes del contestador:");
+define( "OWNER_TPL_AVISO_MAIL_ALT", "Mail para recibir notificaciones sobre nuevos mensajes:");
+define( "OWNER_TPL_YES_ALT", "Si");
+define( "OWNER_TPL_NO_ALT", "No");
+define( "OWNER_TPL_POSITIVE_ALT", "Haber");
+define( "OWNER_TPL_NEGATIVE_ALT", "Debe");
+
+/* Temas de Interés -> Newsletter */
+define( "OWNER_TPL_FAQ_Q_1", "¿Cómo modifico mi contraseña de acceso a Mi Panel?");
+define( "OWNER_TPL_FAQ_R_1", "Para cambiar su contraseña de acceso a Mi Panel, ingrese a Servicios > Modificar datos básicos.");
+define( "OWNER_TPL_FAQ_Q_2", "¿Cómo modifico la dirección de e-mail en la cual recibo mis facturas y notificaciones?");
+define( "OWNER_TPL_FAQ_R_2", "Si desea recibir las notificaciones relacionadas con su servicio en otra casilla de e-mail, ingrese a Servicios > Modificar datos básicos.");
+define( "OWNER_TPL_FAQ_Q_3", "¿Cómo modifico los datos de mi tarjeta de crédito en la cual se realizan los débitos del servicio?");
+define( "OWNER_TPL_FAQ_R_3", "Ingrese a Facturación > Pagos > Medios de pago y complete los datos.");
+define( "OWNER_TPL_FAQ_LINKS", "Vea además:");
+define( "OWNER_TPL_FAQ_SERVICE_FAQ", "Preguntas frecuentes del servicio");
+
+/* Temas de Interés -> Contáctenos */
+
+define( "OWNER_TPL_CONTACTUS_TITLE", "Si deseas comunicarnos una inquietud o sugerencia, escr&iacute;bela aquí y haZ clic en Enviar.");
+define( "OWNER_TPL_CONTACTUS_NAME_LASTNAME", "Nombre y apellido");
+define( "OWNER_TPL_CONTACTUS_COMMENTS", "Comentarios");
+define( "OWNER_TPL_CONTACTUS_MSG_OK", "Tu mensaje ha sido enviado al Centro de Atenci&oacute;n al Cliente y ser&aacute; respondido dentro de las pr&oacute;ximas 48 horas h&aacute;biles.");
+define( "OWNER_TPL_CONTACTUS_MSG_KO", "Por favor, completa todos los campos del formulario");
+
+/* Temas de Interés -> Novedades  ------TEMPORAL------ */
+	
+define( "OWNER_TPL_NEWS_1_0", "<b>Febrero 2009</b><br><br>Toda la información que necesita, ahora con un nuevo diseño.<br><br>Mi Panel se renovó. Tiene un diseño que organiza de manera más simple y clara toda la información de su cuenta. <br><br>En Mi Panel, usted puede acceder online al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.
+");
+define( "OWNER_TPL_NEWS_2_0", "<b>Febrero 2009</b><br><br>Toda la información que necesita, ahora con un nuevo diseño.<br><br>Mi Panel se renovó. Tiene un diseño que organiza de manera más simple y clara toda la información de su cuenta. <br><br>En Mi Panel, usted puede acceder online al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.
+");
+define( "OWNER_TPL_NEWS_3_0", "<b>Febrero 2009</b><br><br>Toda la información que necesita, ahora con un nuevo diseño.<br><br>Mi Panel se renovó. Tiene un diseño que organiza de manera más simple y clara toda la información de su cuenta. <br><br>En Mi Panel, usted puede acceder online al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.
+");
+define( "OWNER_TPL_NEWS_4_0", "<b>Febrero 2009</b><br><br>Toda la información que necesita, ahora con un nuevo diseño.<br><br>Mi Panel se renovó. Tiene un diseño que organiza de manera más simple y clara toda la información de su cuenta. <br><br>En Mi Panel, usted puede acceder online al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.
+");
+define( "OWNER_TPL_NEWS_5_0", "<b>Febrero 2009</b><br><br>Toda la información que necesita, a sólo un clic.<br><br>Latinatel presenta Mi Panel, su centro de consulta online. En Mi Panel, usted puede acceder al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.");
+define( "OWNER_TPL_NEWS_1_1", "<b>Enero 2009</b><br><br>Promo Referidos: ¡exclusiva para clientes de Alternativa!<br>Recomendar Alternativa tiene premio: ¡150 minutos gratis*!<br><br>Los clientes que ya disfrutan de los servicios de Alternativa, ahora pueden ganar 150 minutos gratis* para llamar a teléfonos fijos de las principales ciudades del país. Sólo deben recomendar Alternativa a sus contactos, para que puedan beneficiarse con las tarifas económicas, y con la posibilidad de expandir sus negocios al país y al mundo con números locales en el interior y en el exterior. <br>Si usted es cliente, recomienda Alternativa a sus colegas, y ellos se suscriben, ¡usted recibirá 150 minutos gratis*! <br><br>Haga <a href='mailto:clientes@alternativa.com.ar?subject=Personas que refiero&body=Escriba los datos de sus contactos referidos'>clic aquí</a> ¡y gane!<br><br>* A los fines del cálculo se toma la tarifa promedio del minuto de llamadas nacional. Los minutos no son acumulativos.");
+define( "OWNER_TPL_NEWS_2_1", "<b>Enero 2009</b><br><br>¡Recomienda y vuela!<br><br>¿Quieres viajar a tu país, o que alguien viaje a visitarte a ti?<br>Ganar un pasaje de ida y vuelta para ti o para un familiar o amigo ¡es muy fácil! Sólo tienes que recomendar Holatel a alguien que viva en el exterior. <br><br>Por cada recomendado te damos una chance para participar del sorteo, y, si tu recomendado se hace cliente, ¡sumas 10 chances más! <br><br>Para conocer más de la promo y participar, ingresa aquí. ¡Tienes tiempo hasta el 30 de abril!");
+define( "OWNER_TPL_NEWS_3_1", "<b>Enero 2009</b><br><br>¡Recomienda y vuela!<br><br>¿Quieres viajar a tu país, o que alguien viaje a visitarte a ti?<br>Ganar un pasaje de ida y vuelta para ti o para un familiar o amigo ¡es muy fácil! Sólo tienes que recomendar Holatel a alguien que viva en el exterior. <br><br>Por cada recomendado te damos una chance para participar del sorteo, y, si tu recomendado se hace cliente, ¡sumas 10 chances más! <br><br>Para conocer más de la promo y participar, ingresa aquí. ¡Tienes tiempo hasta el 30 de abril!");
+
+/* Temas de Interés -> Newsletter */
+	
+define("OWNER_TPL_NEWSLETTER_TITLE", "Para leer el newsletter de su interés, haga clic en la imagen.");
+define("OWNER_TPL_NEWSLETTER_SUBSCRIBE", "Para suscribirse a nuestro newsletter, ingrese la dirección de e-mail donde desea recibirlo.");
+define("OWNER_TPL_NEWSLETTER_SUBSCRIBE_CONFIRM", "Su solicitud ha sido enviada con exito.");
+define("OWNER_TPL_NEWSLETTER_MSG_KO", "Por favor complete todos los campos del formulario");
+
+/* Baja de un servicio */
+
+define("OWNER_TPL_BAJA_PREG1", "¿Cuál de las siguientes opciones es el motivo principal por el cual solicitas la cancelación del servicio?");
+define("OWNER_TPL_BAJA_NECESIDADES", "El servicio no se adecua a mis necesidades");
+define("OWNER_TPL_BAJA_PROMETIDO", "El servicio no refleja lo prometido en la venta del servicio");
+define("OWNER_TPL_BAJA_NECESITO", "No lo necesito tanto como esperaba");
+define("OWNER_TPL_BAJA_INCONVENIENTES", "Inconvenientes con los pagos");
+define("OWNER_TPL_BAJA_FUNCIONAMIENTO", "Problemas relacionados al funcionamiento del servicio");
+define("OWNER_TPL_BAJA_EMPRESA", "Mejores planes de tarifas en otra empresa");
+define("OWNER_TPL_BAJA_CIERRE", "Cierre de la empresa");
+define("OWNER_TPL_BAJA_FALLECIMIENTO", "Fallecimiento del titular");
+define("OWNER_TPL_BAJA_OTRA", "Otra (especificar)");
+
+define("OWNER_TPL_BAJA_PREG2", "¿Has experimentado alguno de los siguientes problemas al usar el servicio?");
+define("OWNER_TPL_BAJA_RUIDO", "Ruido en la línea");
+define("OWNER_TPL_BAJA_ECO", "Eco en la voz");
+define("OWNER_TPL_BAJA_CORTA", "Se corta la llamada");
+define("OWNER_TPL_BAJA_OCUPADA", "Da ocupado");
+define("OWNER_TPL_BAJA_PROBLEMAS", "No experimenté problemas");
+define("OWNER_TPL_BAJA_OTROS", "Otros (especificar)");
+
+define("OWNER_TPL_BAJA_SENT", "Se ha enviado un e-mail procesando tu solicitud. Nos comunicaremos contigo a la brevedad.");
+define("OWNER_TPL_BAJA_ADARDEBAJA", "Servicio a dar de baja");
+define("OWNER_TPL_BAJA_EMAIL", "Se ha enviado la solicitud de baja del servicio. En las próximas 48 horas hábiles nos comunicaremos contigo para completar la cancelación.");
+
+?>

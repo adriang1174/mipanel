@@ -1,0 +1,433 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::trafico_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::trafico_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+$parent = __mk_element_node($document, $parent, q|xsl-template|);
+__mk_text_node($document, $parent, q|trafico|);
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('botonera():listtag=botonera:itemtag=opcion', undef(), 0, $document, $parent, CA::BaseTaglib::botonera());}
+}); # non xsp tag
+
+my %args = $r->args;
+my $tinforme_codigo = $args{'tinforme_codigo'};
+my $fact = defined($args{'fact'}) ? $args{'fact'} ? 1 : 0 : 1;
+my $filt = defined($args{'filt'}) ? $args{'filt'} ? 1 : 0 : 1;
+my $cliente = $r->pnotes('cliente');
+my $pagina = $args{'pagina'} || 1;
+my $if = $r->pnotes('if');
+$r->pnotes('pagina', $pagina);
+$r->pnotes('tinforme_codigo', $tinforme_codigo);
+$r->pnotes('tipo', $args{tipo});
+$r->pnotes('fact', $args{fact});
+$r->pnotes('paginar', 1);
+
+$parent = __mk_element_node($document, $parent, q|if|);
+__mk_text_node($document, $parent, "" . do {$if}); # non xsp tag
+$parent = $parent->getParentNode;
+
+if ((defined $args{imprimir}) and ($args{imprimir} eq '1')) {
+	$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+}
+
+if (defined($tinforme_codigo) and ($tinforme_codigo =~ /^TRAF.FACT.COMP/)) {
+$parent = __mk_element_node($document, $parent, q|facturado|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=1|);
+__mk_text_node($document, $parent, q|Facturas por fecha de emisión y nº|);
+$parent = $parent->getParentNode;
+
+	# Es uno de los informes de trafico facturado para los cuales se elige el comprobante asociado
+	my $codigo_comprobante = $args{comprobante};
+	my ($comprobante, $tipodoc, $numdoc, $sucdoc);
+	if (defined($codigo_comprobante)) {
+		($tipodoc, $sucdoc, $numdoc) = split(/-/, $codigo_comprobante);
+	}
+	if (! defined($codigo_comprobante)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Debe seleccionar un comprobante.|);
+$parent = $parent->getParentNode;
+
+	} elsif (! CA::Factura->esCodigoValido($codigo_comprobante)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Debe seleccionar un comprobante.|);
+$parent = $parent->getParentNode;
+
+	} elsif (! defined($comprobante = CA::Factura->load($tipodoc, $sucdoc, $numdoc))) { 
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente.|);
+$parent = $parent->getParentNode;
+
+	} elsif (! $cliente->esComprobantePropio($codigo_comprobante)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente.|);
+$parent = $parent->getParentNode;
+
+	} elsif (! $cliente->puedeVerInforme($tinforme_codigo)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|No tiene acceso al informe seleccionado.|);
+$parent = $parent->getParentNode;
+
+	} else {
+		# Ejecutar informe
+                my ($tiposervicio, $linea);
+                if ($args{tiposervicio} and $args{linea}) {
+                        ($tiposervicio, $linea) = ($args{tiposervicio}, $args{linea});
+                } elsif ($args{linea}) {
+                        ($tiposervicio, $linea) = (substr($args{linea}, 0, 1), substr($args{linea}, 1));
+                }
+
+		my $informe = CA::Informe->new( { comprobante => $comprobante, codigo => $tinforme_codigo, codlinea => $args{codlinea}, tiposervicio => $args{tiposervicio}, linea => $linea, tiposervicio => $tiposervicio });
+		if (defined($informe)) {
+			if ($informe->ejecutar) {
+				# Guardar en el request el informe, para poder accederlo desde los modulos
+				$r->pnotes('informe', $informe);
+				$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|2|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$informe->titulo};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+
+				if ($args{acc} eq 'mail') {
+					# Form para enviar por mail el informe
+					my $errors = {};
+					my $vars = {};
+					my $ok = 0;
+					if ($args{email}) {
+						if (! CA::Util->esEmailValido($args{email})) {
+							$errors->{email} = 'Dirección inválida';
+							$vars->{email} = $args{email};
+						} else {
+							$ok = 1; 
+						}
+					} else {
+						$vars->{email} = $cliente->email;
+					}
+					if ($ok) {
+						if (CA::Email->enviarInformeTrafico($cliente, $args{email}, $informe)) {
+							my $msg = 'El informe fue enviado exitosamente a su casilla de correo.';
+							$parent = __mk_element_node($document, $parent, q|mensaje|);
+$parent->setAttribute(q|tipo|,q|ok|);
+__mk_text_node($document, $parent, "" . do {$msg}); # non xsp tag
+$parent = $parent->getParentNode;
+
+						} else {	
+							$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error al enviarel informe por e-mail a la direccion |);
+__mk_text_node($document, $parent, "" . do {$args{email}}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+						}
+					} else {
+						# Mostrar form
+						$r->pnotes('errores', $errors);
+						$r->pnotes('vars', $vars);
+						{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_trafico_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+					}
+				} else {
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_informe_trafico.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				}
+			} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error interno al procesar el informe.|);
+$parent = $parent->getParentNode;
+
+			}
+		} else {
+			$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Informe inexistente.|);
+$parent = $parent->getParentNode;
+
+		}
+	}
+} elsif (defined($tinforme_codigo) and ($tinforme_codigo =~ /^TRAF\.(FACT|CORR)\.FILT/)) {
+	# Informes de trafico facturado por filtro
+	# Parametros: fecha desde, fecha hasta, linea/pin, destino
+
+	my $fact = ($tinforme_codigo =~ /^TRAF\.FACT\.FILT/) ? 1 : 0;
+
+	if ($fact) {
+		$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=1&filt=1|);
+__mk_text_node($document, $parent, q|Informes de consumo facturado por período|);
+$parent = $parent->getParentNode;
+
+	} else {
+		$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=0&filt=1|);
+__mk_text_node($document, $parent, q|Informes de consumo no facturado |);
+$parent = $parent->getParentNode;
+
+	}
+
+	my ($tiposervicio, $linea);
+	if ($args{linea}) {
+		($tiposervicio, $linea) = (substr($args{linea}, 0, 1), substr($args{linea}, 1));
+	}
+
+	if (! $cliente->puedeVerInforme($tinforme_codigo)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|No tiene acceso al informe seleccionado.|);
+$parent = $parent->getParentNode;
+
+	} elsif ($args{fecha_inicio} and (! CA::Fecha->esFecha($args{fecha_inicio}))) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Fecha de inicio inválida.|);
+$parent = $parent->getParentNode;
+
+	} elsif ($args{fecha_fin} and (! CA::Fecha->esFecha($args{fecha_fin}))) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Fecha de fin inválida.|);
+$parent = $parent->getParentNode;
+
+	} elsif (defined($linea) and (not $cliente->tieneLinea($tiposervicio, $linea))) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Línea inexistente.|);
+$parent = $parent->getParentNode;
+
+	} else {
+		my $data = {
+			codigo => $tinforme_codigo
+		};
+		if ($args{destino}) {
+			$data->{destino} = $args{destino};
+			$data->{destino} =~ s/\D//g;
+		}
+		if (defined($linea)) {
+			$data->{linea} = $linea;
+		}
+		if (defined($tiposervicio)) {
+			$data->{tiposervicio} = $tiposervicio;
+		}
+		if ($args{fecha_fin}) {
+			$data->{fecha_fin} = CA::Fecha->user2sql($args{fecha_fin});
+		}
+		if ($args{fecha_inicio}) {
+			$data->{fecha_inicio} = CA::Fecha->user2sql($args{fecha_inicio});
+		}
+		my $informe = CA::Informe->new($data); 
+		if (defined($informe)) {
+			if ($informe->ejecutar) {
+				$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|2|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$informe->titulo};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+
+				# Guardar en el request el informe, para poder accederlo desde los modulos
+				$r->pnotes('informe', $informe);
+				if ($args{acc} eq 'mail') {
+					# Form para enviar por mail el informe
+					my $errors = {};
+					my $vars = {};
+					my $ok = 0;
+					if ($args{email}) {
+						if (! CA::Util->esEmailValido($args{email})) {
+							$errors->{email} = 'Dirección inválida';
+							$vars->{email} = $args{email};
+						} else {
+							$ok = 1; 
+						}
+					} else {
+						$vars->{email} = $cliente->email;
+					}
+					if ($ok) {
+						if (CA::Email->enviarInformeTrafico($cliente, $args{email}, $informe)) {
+							my $msg = 'El informe fue enviado exitosamente por e-mail a la cuenta ' . $args{email} . '.';
+							$parent = __mk_element_node($document, $parent, q|mensaje|);
+$parent->setAttribute(q|tipo|,q|ok|);
+__mk_text_node($document, $parent, "" . do {$msg}); # non xsp tag
+$parent = $parent->getParentNode;
+
+						} else {	
+							$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error al enviarel informe por e-mail a la direccion |);
+__mk_text_node($document, $parent, "" . do {$args{email}}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+						}
+					} else {
+						# Mostrar form
+						$r->pnotes('errores', $errors);
+						$r->pnotes('vars', $vars);
+						{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_trafico_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+					}
+				} else {
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_informe_trafico.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				}
+			} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error interno al procesar el informe.|);
+$parent = $parent->getParentNode;
+
+			}
+		} else {
+			$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error interno al generar el informe.|);
+$parent = $parent->getParentNode;
+
+		}
+	}
+} elsif($args{filt}) {
+	# Form de informes por filtro de trafico facturado o no facturado
+	if ($fact) {
+		$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=1|);
+__mk_text_node($document, $parent, q|Informes de consumo facturado por período|);
+$parent = $parent->getParentNode;
+
+		$parent = __mk_element_node($document, $parent, q|seccion_descripcion|);
+__mk_text_node($document, $parent, q|En esta sección, usted puede consultar el resumen de las comunicaciones realizadas en meses anteriores y ya facturadas, así como el detalle de cada una de ellas.|);
+$parent = $parent->getParentNode;
+
+	} else {
+		$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=0|);
+__mk_text_node($document, $parent, q|Informes de consumo no facturado|);
+$parent = $parent->getParentNode;
+
+		$parent = __mk_element_node($document, $parent, q|seccion_descripcion|);
+__mk_text_node($document, $parent, q|En esta sección, usted puede consultar el detalle de las comunicaciones realizadas este mes, que aún no han sido facturadas.|);
+$parent = $parent->getParentNode;
+
+	}
+$parent = __mk_element_node($document, $parent, q|form|);$parent->setAttribute(q|id|, "" . do {$fact ? 'informe_trafico_facturado_filtros' : 'informe_trafico_no_facturado_filtros'});
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_desde|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('fecha_desde_trafico()', undef(), 0, $document, $parent, CA::InformesTaglib::fecha_desde_trafico());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_hasta|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('fecha_hasta_trafico()', undef(), 0, $document, $parent, CA::InformesTaglib::fecha_hasta_trafico());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+
+	if ($fact) {
+		my $tinformes = CA::Informe->tinformesTraficoFacturadoFiltros();
+		$r->pnotes('tinformes', $tinformes);
+		__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('lineas(;$cliente_id):listtag=lineas:itemtag=linea', undef(), 0, $document, $parent, CA::InformesTaglib::lineas($_args{cliente_id},));}
+}); # xsp tag
+$parent = __mk_element_node($document, $parent, q|fecha_ultima_actualizacion|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('ultima_actualizacion_trafico_facturado()', undef(), 0, $document, $parent, CA::InformesTaglib::ultima_actualizacion_trafico_facturado());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_tinformes.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+	} else {
+		my $tinformes = CA::Informe->tinformesTraficoNoFacturadoFiltros();
+		$r->pnotes('tinformes', $tinformes);
+		__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('lineas_no_facturado(;$cliente_id):listtag=lineas:itemtag=linea', undef(), 0, $document, $parent, CA::InformesTaglib::lineas_no_facturado($_args{cliente_id},));}
+}); # xsp tag
+$parent = __mk_element_node($document, $parent, q|fecha_ultima_actualizacion|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('ultima_actualizacion_trafico_no_facturado()', undef(), 0, $document, $parent, CA::InformesTaglib::ultima_actualizacion_trafico_no_facturado());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_tinformes.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+	}
+	$parent = $parent->getParentNode;
+
+} else {
+$parent = __mk_element_node($document, $parent, q|seccion_descripcion|);
+__mk_text_node($document, $parent, q|En esta sección, usted puede consultar el resumen de las comunicaciones realizadas en meses anteriores y ya facturadas, así como el detalle de cada una de ellas.|);
+$parent = $parent->getParentNode;
+
+	# Informe de trafico facturado por comprobante
+$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|trafico.xsp?fact=1|);
+__mk_text_node($document, $parent, q|Facturas por fecha de emisión y nº |);
+$parent = $parent->getParentNode;
+
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|informe_trafico_facturado_comprobante|);
+
+	my $tinformes = CA::Informe->tinformesTraficoFacturadoComprobante();
+	$r->pnotes('tinformes', $tinformes);
+	$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('facturas(;$cliente_id):listtag=comprobantes:itemtag=comprobante', undef(), 0, $document, $parent, CA::InformesTaglib::facturas($_args{cliente_id},));}
+}); # non xsp tag
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_tinformes.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+$parent = __mk_element_node($document, $parent, q|fecha_ultima_actualizacion|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('ultima_actualizacion_trafico_facturado()', undef(), 0, $document, $parent, CA::InformesTaglib::ultima_actualizacion_trafico_facturado());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+}
+$parent = $parent->getParentNode;
+
+	
+return OK;
+}

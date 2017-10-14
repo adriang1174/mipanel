@@ -1,0 +1,4 @@
+AuthName "Area privada"
+AuthType Basic
+AuthUserFile /home/httpd/zonasegura.grupoalternativa.com/.htusers
+require valid-user

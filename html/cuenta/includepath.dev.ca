@@ -1,0 +1,19 @@
+<?
+
+date_default_timezone_set('America/Buenos_Aires');
+
+define( "INCLUDE_PATH", "../../beta-cuenta/inc/");
+define( 'TPL_DIR', "../../beta-cuenta/tpl/");
+define( 'TPL_COMPILE_DIR', "../../beta-cuenta/tpl_compile/");
+define( 'PATH_LANG', INCLUDE_PATH . "lang/");
+
+define( "ABSOLUTE_PATH", "/beta-cuenta/");
+define( "COOKIE_PATH", "/beta-cuenta");
+define( "COOKIE_SECURE", true);
+define( "PATH_EMAIL_TPL", "../../beta-cuenta/email_tpl/");
+define( "PATH_IMG", "/beta-cuenta/img/");
+define( "PATH_OWNER", "/beta-cuenta/owner/");
+
+define( "PATH_HTDOCS_FROM_INC", "../../html");
+
+?>

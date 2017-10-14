@@ -1,0 +1,8 @@
+user =
+password =
+currency_merchant_map ['DEFAULT'] =
+url =https://www.testlitle.com/sandbox/communicator/online
+proxy =
+version = 8.13
+timeout =  65
+reportGroup = Default Report Group

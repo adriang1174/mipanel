@@ -1,0 +1,116 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::avisos_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::avisos_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+$parent = __mk_element_node($document, $parent, q|title|);$parent->setAttribute(q|href|, "" . do {$r->uri});
+$parent->setAttribute(q|id|, "". q|1|);
+__mk_text_node($document, $parent, q|
+		Avisos de consumo
+	|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|xsl-template|);
+__mk_text_node($document, $parent, q|cambiodatos|);
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('botonera():listtag=botonera:itemtag=opcion', undef(), 0, $document, $parent, CA::BaseTaglib::botonera());}
+}); # non xsp tag
+
+my %args = $r->args;
+my $op = $args{op};
+my $if = $r->pnotes('if');
+$op = 'e' if (not defined($op));
+my $cliente = $r->pnotes('cliente');
+
+$parent = __mk_element_node($document, $parent, q|if|);
+__mk_text_node($document, $parent, "" . do {$if}); # non xsp tag
+$parent = $parent->getParentNode;
+
+if (not defined($cliente->email) or (not $cliente->email)) {
+	$parent = __mk_element_node($document, $parent, q|sin_email|);
+$parent = $parent->getParentNode;
+
+} else {
+
+	if ($op eq 'e') {
+		my $informe = $cliente->getConfigVar('InformeConsumos');
+		my $alerta = $cliente->getConfigVar('AlertaConsumos');
+		my $alerta_importe = $cliente->getConfigVar('AlertaConsumos_LimiteImporte');
+		my $alerta_importe_moneda = $cliente->getConfigVar('AlertaConsumos_ImporteMoneda');
+		my $alerta_minutos = $cliente->getConfigVar('AlertaConsumos_LimiteMinutos');
+		my $img_factura = $cliente->getConfigVar('ImagenFactura');
+		my $detalle_consumo = $cliente->getConfigVar('DetalleConsumo');
+		$r->pnotes('errores', {});
+		$r->pnotes('vars', { informe_consumos => $informe, alerta_consumos => $alerta, alerta_limite_importe => $alerta_importe, alerta_limite_minutos => $alerta_minutos, alerta_importe_moneda => $alerta_importe_moneda , img_factura => $img_factura, detalle_consumo => $detalle_consumo});
+		{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_cambiar_datos_avisos.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+	} elsif ($op eq 'm') {
+		my %vars = $r->content;
+		my $data = {
+			informe_consumos => $vars{informe_consumos},
+			alerta_consumos => $vars{alerta_consumos},
+			img_factura => $vars{img_factura},
+			detalle_consumo => $vars{detalle_consumo},
+			alerta_limite_minutos => $vars{alerta_limite_minutos} || 0,
+			alerta_limite_importe => $vars{alerta_limite_importe} || 0,
+			alerta_importe_moneda => $vars{alerta_importe_moneda} || 0
+		};
+		my $errores = $cliente->verificarCambioDatosAvisos($data);
+		if (not %$errores) {
+			if ($cliente->cambiarDatosAvisos($data)) {
+				$parent = __mk_element_node($document, $parent, q|mensaje|);
+$parent->setAttribute(q|tipo|,q|ok|);
+__mk_text_node($document, $parent, q|Su configuración fue modificada exitosamente.|);
+$parent = $parent->getParentNode;
+
+			} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+$parent->setAttribute(q|tipo|,q|interno|);
+__mk_text_node($document, $parent, q|Ocurrió un error al modificar sus datos.|);
+$parent = $parent->getParentNode;
+
+			}
+		} else {
+			$r->pnotes('errores', $errores);
+			$r->pnotes('vars', \%vars);
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_cambiar_datos_avisos.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+		}
+	} else {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Operación desconocida|);
+$parent = $parent->getParentNode;
+
+	}
+}
+$parent = $parent->getParentNode;
+
+return OK;
+}

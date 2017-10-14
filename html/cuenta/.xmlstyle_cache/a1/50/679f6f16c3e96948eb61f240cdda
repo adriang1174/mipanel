@@ -1,0 +1,320 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::cc_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::cc_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+
+my $if = $r->pnotes('if');
+$parent = __mk_element_node($document, $parent, q|if|);
+__mk_text_node($document, $parent, "" . do {$if}); # non xsp tag
+$parent = $parent->getParentNode;
+
+$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|cc.xsp|);
+__mk_text_node($document, $parent, q|Cuenta Corriente|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|seccion_descripcion|);
+__mk_text_node($document, $parent, q|Aquí usted puede ver las facturas emitidas, los pagos que hemos recibido en su cuenta y su saldo final.|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|xsl-template|);
+__mk_text_node($document, $parent, q|cc|);
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('botonera():listtag=botonera:itemtag=opcion', undef(), 0, $document, $parent, CA::BaseTaglib::botonera());}
+}); # non xsp tag
+
+my %args = $r->args;
+my $sesion = $r->pnotes('sesion');
+my $fecha_inicio = $args{'fecha_inicio'};
+my $fecha_fin = $args{'fecha_fin'};
+	
+my $op = $args{'op'};
+my $usuario = $r->pnotes('usuario');
+my $cliente;
+if ($usuario->esAgente() and defined($args{cliente_id}) and CA::Util->esClienteIdValido($args{cliente_id})) {
+	my $c = CA::Cliente->load($args{cliente_id});
+	if (defined($c) and ($usuario->esAgenteDe($c))) {	
+		$cliente = $c;
+	}
+} elsif ($usuario->esClienteFinal()) {
+	$cliente = $usuario;
+}
+
+if (defined($cliente)) {
+	if ((defined $args{imprimir}) and ($args{imprimir} eq '1')) {
+		$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+	}
+
+	# Mostrar el form para elegir fechas
+
+	my $errores = {};
+	if ((defined $op) and ($op eq 'v')) {
+		# Comprobar que las fechas sean correctas.
+		if (not CA::Fecha->esFecha($fecha_inicio)) {
+			$fecha_inicio = CA::FechasSistema->getFechaDesde('cc');
+		} else {
+			$fecha_inicio = CA::Fecha->user2sql($fecha_inicio);
+		}
+		if (not CA::Fecha->esFecha($fecha_fin)) {
+			$fecha_fin = CA::FechasSistema->getFechaHasta('cc') || CA::FechasSistema->getFechaActual();
+		} else {
+			$fecha_fin = CA::Fecha->user2sql($fecha_fin);
+		}
+		$sesion->setVar('CC_fecha_inicio', $fecha_inicio);
+		$sesion->setVar('CC_fecha_fin', $fecha_fin);
+	} elsif ((defined $op) and ($op eq 'r')) {
+		# Visualizacion de recibo
+		my $comprobante_id = $args{'comprobante_id'};
+
+		if ((defined $args{imprimir}) and ($args{imprimir} eq '1')) {
+			$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+		}
+
+		if (defined $comprobante_id) {
+			# Mostrar un comprobante
+			my $recibo;
+			if (not CA::Recibo->esCodigoValido($comprobante_id)) {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Código de comprobante inválido|);
+$parent = $parent->getParentNode;
+
+			} elsif (not defined($recibo = CA::Recibo->buscarPorComprobanteId($comprobante_id))) {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente|);
+$parent = $parent->getParentNode;
+
+			} elsif (not $usuario->puedeVerComprobante($recibo)) {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente|);
+$parent = $parent->getParentNode;
+
+			} else {
+				$r->pnotes('recibo', $recibo);
+				$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|2|);
+__mk_text_node($document, $parent, q|Recibo |);
+__mk_text_node($document, $parent, "" . do {$recibo->comprobante_id}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_recibo.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			}
+		}
+	} else {
+		# Tratar de obtener las fechas de la sesion, y si no, del sistema
+		$fecha_inicio = $sesion->getVar('CC_fecha_inicio');
+		if (not defined($fecha_inicio)) {
+			$fecha_inicio = CA::FechasSistema->getFechaDesde('cc');
+		}
+		$fecha_fin = $sesion->getVar('CC_fecha_fin');
+		if (not defined($fecha_fin)) {
+			$fecha_fin = CA::FechasSistema->getFechaHasta('cc') || CA::FechasSistema->getFechaActual();
+		}
+	}
+
+	if ((not defined($op)) or ($op ne 'r')) {
+		my $vars = {};
+		$vars->{fecha_inicio} = $fecha_inicio;
+		$vars->{fecha_fin} = $fecha_fin;
+		if ($usuario->esAgente()) {
+			$vars->{cliente_id} = $args{cliente_id};
+		}
+		$r->pnotes('vars', $vars);
+		{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_elegir_fechas_cc.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+
+
+		if (not %$errores) {
+			$r->pnotes('cliente', $cliente);
+			my $moneda = $cliente->moneda_mercado;
+			my $simbolo = (defined $moneda) ? $moneda->simbolo : '$';
+			if ($usuario->esAgente()) {
+				$parent = __mk_element_node($document, $parent, q|title|);$parent->setAttribute(q|id|, "". q|2|);
+$parent->setAttribute(q|href|, "". q|cc.xsp?cliente_id=| . do {$cliente->cliente_id});
+__mk_text_node($document, $parent, "" . do {$cliente->rsocial . '(' . $cliente->cliente_id . ')'}); # xsp tag
+$parent = $parent->getParentNode;
+
+			}
+			$parent = __mk_element_node($document, $parent, q|cuenta_corriente|);
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			if ($args{acc} eq 'mail') {
+				# Form para enviar por mail las tarifas
+				my $errors = {};
+				my $vars = {};
+				my $ok = 0;
+				if ($args{email}) {
+					if (! CA::Util->esEmailValido($args{email})) {
+						$errors->{email} = 'Dirección inválida';
+						$vars->{email} = $args{email};
+					} else {
+						$ok = 1; 
+					}
+				} else {
+					$vars->{email} = $usuario->email;
+				}
+				if ($ok) {
+					if (CA::Email->enviarCC($cliente, $args{email}, $fecha_inicio, $fecha_fin)) {	
+						$parent = __mk_element_node($document, $parent, q|mensaje|);
+$parent->setAttribute(q|tipo|,q|ok|);
+__mk_text_node($document, $parent, q|La Cuenta Corriente fue enviada exitosamente a su carilla de correo.|);
+$parent = $parent->getParentNode;
+
+					} else {	
+						$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error al enviarla cuenta corriente por e-mail a la direccion |);
+__mk_text_node($document, $parent, "" . do {$args{email}}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+					}
+				} else {
+					# Mostrar form
+					$r->pnotes('errores', $errors);
+					$r->pnotes('vars', $vars);
+					$r->pnotes('fecha_inicio', $fecha_inicio);
+					$r->pnotes('fecha_fin', $fecha_fin);
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_cc_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				}
+			}
+			$parent = __mk_element_node($document, $parent, q|fecha_inicio|);
+__mk_text_node($document, $parent, "" . do {$fecha_inicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_fin|);
+__mk_text_node($document, $parent, "" . do {$fecha_fin}); # non xsp tag
+$parent = $parent->getParentNode;
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();
+				 $_args{fecha_inicio} = ""
+ . do {$fecha_inicio};
+
+				 $_args{fecha_fin} = ""
+ . do {$fecha_fin};
+
+			; die 'Required arg "fecha_inicio" for tag movimientos is missing' if not defined $_args{fecha_inicio};
+ die 'Required arg "fecha_fin" for tag movimientos is missing' if not defined $_args{fecha_fin};
+ Apache::AxKit::Language::XSP::TaglibHelper::handle_result('movimientos($fecha_inicio,$fecha_fin):listtag=movimientos:itemtag=movimiento', undef(), 0, $document, $parent, CA::BaseTaglib::movimientos($_args{fecha_inicio},$_args{fecha_fin},));}
+}); # non xsp tag
+$parent = __mk_element_node($document, $parent, q|saldo_inicial|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();
+						 $_args{fecha} = ""
+ . do {$fecha_inicio};
+
+					; die 'Required arg "fecha" for tag saldo_inicial is missing' if not defined $_args{fecha};
+ Apache::AxKit::Language::XSP::TaglibHelper::handle_result('saldo_inicial($fecha)', undef(), 0, $document, $parent, CA::BaseTaglib::saldo_inicial($_args{fecha},));}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|saldo_final|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();
+						 $_args{fecha_inicio} = ""
+ . do {$fecha_inicio};
+
+						 $_args{fecha_fin} = ""
+ . do {$fecha_fin};
+
+					; die 'Required arg "fecha_inicio" for tag saldo_final is missing' if not defined $_args{fecha_inicio};
+ die 'Required arg "fecha_fin" for tag saldo_final is missing' if not defined $_args{fecha_fin};
+ Apache::AxKit::Language::XSP::TaglibHelper::handle_result('saldo_final($fecha_inicio,$fecha_fin)', undef(), 0, $document, $parent, CA::BaseTaglib::saldo_final($_args{fecha_inicio},$_args{fecha_fin},));}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|moneda|);
+__mk_text_node($document, $parent, "" . do {$simbolo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|cc_exportar|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, q|/cuenta/csv/cuenta_corriente.csv|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_inicio|);
+__mk_text_node($document, $parent, "" . do {$fecha_inicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_fin|);
+__mk_text_node($document, $parent, "" . do {$fecha_fin}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|cc_imprimir|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_inicio|);
+__mk_text_node($document, $parent, "" . do {$fecha_inicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_fin|);
+__mk_text_node($document, $parent, "" . do {$fecha_fin}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|cc_enviar_mail|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_inicio|);
+__mk_text_node($document, $parent, "" . do {$fecha_inicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_fin|);
+__mk_text_node($document, $parent, "" . do {$fecha_fin}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+		} else {
+			# Mostrar errores
+			$r->pnotes('errores', $errores);
+			do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('errores(;$errores):itemtag=error:listtag=errores', undef(), 0, $document, $parent, CA::AdminTaglib::errores($_args{errores},));}
+}
+		}
+	}
+} elsif ($usuario->esAgente()) {
+	# Mostrar el listado de clientes
+	{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/listar_clientes_de_agente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+}
+$parent = $parent->getParentNode;
+
+	
+return OK;
+}

@@ -1,0 +1,61 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Solicitud de servicio adicional
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.hola/top1.gif" width="500" height="64"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de Cliente:
+                [CODIGO]<br>
+Estimado/a  
+              [TITULAR]:
+</strong>
+             <br>
+<br>
+Hemos recibido su solicitud de alta para el servicio [SERVICE_NAME].<br /><br>En breve procederemos a la activación y le enviaremos un e-mail de confirmación.</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Por  consultas, ingresa a nuestra <a href="http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html" title="Consulta las preguntas frecuentes del servicio aquí" target="_blank" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">secci&oacute;n de preguntas  frecuentes</a>, o comun&iacute;cate con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@holatel.com" title="Por consultas, escríbenos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">asistencia@holatel.com</a>.  <br />
+                <br />
+Estamos a tu disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	           HolaTel<br>
+	           <a href="http://www.holatel.com" target="_blank" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;" title="Visita el sitio de HolaTel">www.holatel.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

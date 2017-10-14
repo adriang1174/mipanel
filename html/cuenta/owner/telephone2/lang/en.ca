@@ -1,0 +1,6 @@
+<?
+
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La información es presentada al sólo efecto informativo. Los datos surgen de los registros en HOLA ARGENTINA, salvo error u omisión involuntaria. Ante cualquier duda o discrepancia, por favor comuníquese a asistencia@holatel.com o telefónicamente, con nuestro Centro de Atención al Cliente, a través del 54-11-6393-0150.');
+define( "OWNER_TPL_RATE_MAINTENANCE", "");
+define( "OWNER_TPL_RATE_ACLARATION2", "Las tarifas no incluyen recargos por accesos");
+?>

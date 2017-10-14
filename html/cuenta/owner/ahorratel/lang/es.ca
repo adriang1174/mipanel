@@ -1,0 +1,14 @@
+<?
+
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La información es presentada al sólo efecto informativo. Los datos surgen de los registros en Ahorratel, salvo error u omisión involuntaria. Ante cualquier duda o discrepancia, por favor comuníquese a asistencia@ahorratel.com');
+define( "OWNER_TPL_RATE_MAINTENANCE", "");
+define( "OWNER_TPL_RATE_ACLARATION2", "Las tarifas no incluyen recargos por accesos");
+define("TPL_RATE_NO_IVA", "");
+
+define("TPL_FILE_EDIT_INVOICEDATA_COMPANY_FORMULARIO", "downloads/ahorratel/Solicitud Cambio de Razon Social.doc");
+define("TPL_FILE_EDIT_INVOICEDATA_COMPANY_INSTRUCTIVO", "downloads/ahorratel/Instructivo para el cambio de Razon Social.doc");
+
+define("TPL_MSG_EDIT_INVOICEDATA_COMPANY", "Para modificar los datos de su raz&#243;n social, por favor descargue el siguiente formulario, compl&#233;telo y env&#237;elo por fax al +54 11 5254-5838.");
+
+define( "TPL_NEWS_6_1", "<b>Marzo 2009</b><br><br><strong>Toda la información que necesita, a sólo un clic.</strong><br><br><strong>AhorraTel</strong> presenta <strong>Mi Panel</strong>, su centro de consulta online. En <strong>Mi Panel</strong>, usted puede acceder al detalle actualizado de sus servicios las 24 horas, desde cualquier computadora. Y conocer al instante novedades y promociones exclusivas para usted.");
+?>

@@ -1,0 +1,114 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+require_once( INCLUDE_PATH . 'ca_list.php');
+require_once( INCLUDE_PATH . 'data/config.php');
+require_once( INCLUDE_PATH . 'ca_form.php');
+require_once( INCLUDE_PATH . 'clientcontrol.php');
+require_once( INCLUDE_PATH . 'ca_email.php');
+require_once( INCLUDE_PATH . 'csv.php');
+require_once( INCLUDE_PATH . 'data/profile.php');
+require_once( INCLUDE_PATH . 'eml_confirm.php');
+
+// Intializing the session.
+ca_session::init( );
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+$user_id = null;
+$user_name = null;
+$user_phone = null;
+if ( eml_confirm::hash_verify( $user_id, $user_name, $user_phone) === true)
+{    
+    // This user has verified his e-mail.
+    $user_id = strtoupper( $user_id);
+    
+    // Get the "profile" object, then we get the e-mail.
+    $profile = new profile( $user_id);
+    $user_email = $profile->get_mail_admin( );
+
+    // If the user is verifying his e-mail for the first time, this function will
+    // leave him logged in into the system. For concurrent calls, the login screen
+    // will be prompted.
+    ca_session::login_by_activation( $user_id);
+
+    if ( !$profile->is_mail_verif( ))
+    {
+
+        // Setting the "verified" flag into the database.
+        // PARCHE !!!!
+        $profile->set_mail_verif( );
+        if ( false)
+        {
+            ca_session::logout( ); // Just in case (if we have logged in this user).
+            $smarty->assign( "error", "db_set_failed");
+        }
+        else
+        {
+        
+
+			
+			misc::create_vtiger_tt($user_id, 'cambio_email', array('email' => $user_email));
+
+				
+			// VIEJO METODO DE NOTIFICACION DE CAMBIO DE MAILS
+			/*
+            // Sending the confirmation e-mail to the GoldMine CRM.
+			if($_SESSION["ownerId"] != 7){ // Se envia la confirmacion a todos los owner menos a T2
+				$ca_email = new ca_email( CA_EMAIL_TEMPLATE_EML_CONFIRM_GOLDMINE, "es", true); // The language does not matter for the GoldMine template.
+				$ca_email->add_to( CA_EMAIL_RECIPIENT_TYPE_TO, new ca_email_recipient( DEF_GOLDMINE_EMAIL, DEF_GOLDMINE_EMAIL, DEF_GOLDMINE_EMAIL_PREFIX . DEF_GOLDMINE_EMAIL . DEF_GOLDMINE_EMAIL_SUFIX));
+				$ca_email->set_tag_replacement( "[MAIL_FROM]", "importaciongm@grupoalternativa.com");
+			
+		        $ca_email->set_tag_replacement( "[USER_ID]", $user_id);
+		        $ca_email->set_tag_replacement( "[USER_NAME]", $user_name);
+		        $ca_email->set_tag_replacement( "[USER_PHONE]", $user_phone);
+		        $ca_email->set_tag_replacement( "[USER_EMAIL]", $user_email);
+		        if ( !$ca_email->send_pear( )){
+		            trigger_error( "ERROR: Unable to send user confirmation e-mail. user_id=$user_id, user_name=$user_name, user_phone=$user_phone, user_email=$user_email");
+		        }
+            }
+			// FIN VIEJO METODO DE NOTIFICACION DE CAMBIO DE MAILS
+            */
+        }
+    }
+
+    // Loading the owner.
+    base_owner::detect_and_load( );
+
+    if ( defined( "OWNER"))
+    {
+        $smarty->assign( "owner", OWNER);
+        $smarty->assign( "panel_name", owner::panel_name( ));
+    }
+}
+else
+{
+    $smarty->assign( "error", "invalid_hash");
+}
+
+// Seting up the template set to use.
+if ( !smarty_setup( "default"))
+{
+	trigger_error( "FATAL: Unable to setup smarty.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+//echo "<hr /><pre>" . var_export($_SESSION, true) . "</pre><hr />";
+
+$smarty->display( "confirm.tpl");
+?>

@@ -1,0 +1,67 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: [PANEL_NAME]: [BTITLE]
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.hola/top1.gif" width="500" height="64"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de Cliente:
+                [CODIGO]<br>
+Estimado/a  
+              [TITULAR]:
+</strong>
+             <br>
+<br>
+Te informamos - seg&uacute;n lo solicitaste a trav&eacute;s de <strong>Mi Panel</strong> - te enviamos adjunto el informe de Centro de costos. Encontrarás el informe en un archivo de formato CSV, que puedes abrir con cualquier planilla de cálculo. </td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td>&nbsp;</td>
+            <td width="5%" align="center"><img src="http://71.6.197.240/imagenes-news/mipanel.hola/bullet.gif" width="8" height="11"></td>
+            <td width="89%" height="20" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">
+            <%alerta%>
+            </strong></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Ante cualquier consulta, comun&iacute;cate por esta misma v&iacute;a a <a href="mailto:asistencia@holatel.com" class="fuente" title="Por consultas, escríbenos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">asistencia@holatel.com</a>. O telef&oacute;nicamente con el Centro de Atenci&oacute;n al Cliente, <strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">+54 11 5273 0150 </strong>	         de lunes a viernes de 9 a 18 hs. (hora de la Argentina).<br>
+<br>
+Estamos a tu disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	           HolaTel<br>
+	           <a href="http://www.holatel.com" target="_blank" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;" title="Visita el sitio de HolaTel">www.holatel.com</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+

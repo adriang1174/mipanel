@@ -1,0 +1,36 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::logout_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::logout_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+
+	my $sesion = $r->pnotes('sesion');
+	my $if = $r->pnotes('if');
+	$sesion->logout() if (defined $sesion);
+	$r->header_out('Location' => ($if eq 'hola') ? 'http://www.holaargentina.com/' : 'http://www.red-alternativa.com/');
+	$r->status(302);
+	$r->send_http_header;
+	$parent = $parent->getParentNode;
+
+	
+return OK;
+}

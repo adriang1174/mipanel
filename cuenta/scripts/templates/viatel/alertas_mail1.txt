@@ -1,0 +1,26 @@
+Código de Cliente: <%cliente_id%>
+Prezado(a) Senhor(a) <%rsocial%>:
+
+
+De acordo com sua solicitação através do Meu Painel, informamos que seu consumo não faturado até a data de <%fecha_hasta%> excedeu os limites estabelecidos por você.
+
+<%alerta%>       
+	
+
+Para quaisquer dúvidas, responda a este mesmo email para atendimento@latinatel.net ou entre em contato conosco através dos telefones abaixo, de segunda a sexta-feira, das 9 às 18 horas (hora de Brasília).
+
+ 
+
+São Paulo:     (5511) 3711-5737 
+Curitiba:         (5541) 3941-2653 
+Buenos Aires: (5411) 5254-5633
+Miami:            (1) 786 329-7169
+
+
+Estamos a sua disposição. Atenciosamente, 
+
+ 
+
+Centro de Atendimento ao Cliente
+
+Latinatel

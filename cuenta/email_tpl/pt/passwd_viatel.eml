@@ -1,0 +1,70 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Meu painel - Dados lembrete
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.lat/top.gif" width="500" height="64" alt="Latinatel"></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Prezado/a Sr/a: [TITULAR]<br>
+Codigo do Cliente: [USER_ID]
+</strong>
+             <br>
+<br>Segundo o pedido, nós começamos o processo de criar uma senha para o <b>Meu painel</b>.<br><br>
+
+Para gerar uma nova chave, clique <a href="[LINK]">neste link</a>, que estará activo nas próximas 48 horas. <br />
+Se você não possa acessá-lo a partir da cópia link o seguinte texto
+no navegador [LINK]<br />
+<br />Se não tivesse solicitado a alteração da senha, ignore este e-mail.<br /><br />
+            
+</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Tem alguma dúvida, escreva ou ligue para Latinatel, de segunda a sexta, das
+9 às 18 horas. <br>
+<br>
+Estamos&nbsp;a sua disposi&ccedil;&atilde;o.&nbsp;Atenciosamente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atendimento ao Cliente</strong><br>
+	          Latinatel
+
+
+ <br>
+	          <a href="http://www.latinatel.net" target="_blank" class="fuente" title="Latinatel" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">www.latinatel.net</a></td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

@@ -1,0 +1,15 @@
+From: [MAIL_FROM]
+Reply-To: importaciongm@grupoalternativa.com
+Subject: MiPanel - Cambio baja de un servicio
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web cambio de datos
+OnDupAttachTrack=Web cambio de datos
+SaveThis=MiPanel - Baja de un servicio
+
+[Data]
+key3=[CLIENT_ID]
+
+[DATOS_ENCUESTA]
+Fecha_envio=[FECHA_ENVIO]

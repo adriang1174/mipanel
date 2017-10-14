@@ -1,0 +1,142 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<!--{if !$print}-->
+		<tr style="height: 25px;"><td style="padding: 5px; padding-left: 10px;" class="scr_header"><font class="scr_header2"><!--{section_title title=TITLE_TICKET replacement=$ticket->ticketid}--></td></tr>
+		<tr><td style="padding-top: 10px; padding-bottom: 10px;"><!--{lang k=SELECT_BY_MONTH}--></td></tr>
+        <!--{if $ticket_months}-->
+            <tr><td style="padding: 5px;" class="scr_resalt">
+                <form name="months" action="ticket.ca" method="GET" style="margin: 0px;">
+                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                        <tr>
+                            <td align="left"><!--{lang k=SELECT_THE_MONTH}--></td>
+                            <td align="right">
+                                <select name="month" onchange="document.forms.months.submit( );">
+                                    <!--{foreach name=ticket_months from=$ticket_months key=key item=ticket_month}-->
+                                        <option value="<!--{$key}-->"<!--{if $key == $ticket_sel_month}--> selected="selected"<!--{/if}-->><!--{$ticket_month}--></option>
+                                    <!--{/foreach}-->
+                                </select>
+                            </td>
+                            <td align="right" width="66" style="padding-left: 5px;"><input type="image" src="<!--{ipath name="bt-aceptar.gif" owner="1" lang="1"}-->"></td>
+                        </tr>
+                    </table>
+                </form>
+            </td></tr>
+        <!--{/if}-->
+        <!--{include file="email.tpl"}-->
+	<!--{/if}-->
+
+	<tr><td style="padding-top: 35px; padding-right: 10px;">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tr>
+				<td width="265"><img src="<!--{ipath name="clogo.gif" owner="1" lang="1"}-->" width="265" height="68" /></td>
+                <!--{capture assign="imgname"}--><!--{if $ticket->factura_tipo == "FA"}-->A<!--{elseif $ticket->factura_tipo == "FB"}-->B<!--{elseif $ticket->factura_tipo == "FE"}-->E<!--{/if}-->.gif<!--{/capture}-->
+				<td style="padding-left: 10px;"><img src="<!--{ipath name=$imgname owner="1" lang="1"}-->" /></td>
+				<td align="right">
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr><td style="padding-right: 30px;" class="ticket_row_title" align="right"><!--{lang k=TICKET_N}--></td><td align="right"><b><!--{$ticket->factura_nro}--></b></td></tr>
+						<tr><td style="padding-right: 30px; padding-top: 5px;" class="ticket_row_title" align="right"><!--{lang k=DATE}--></td><td align="right"><!--{$ticket->date}--></td></tr>
+						<tr><td style="padding-right: 30px; padding-top: 5px;" class="ticket_row_title" align="right"><!--{lang k=EXPIRE_DATE}--></td><td align="right"><!--{$ticket->date_expire}--></td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding-right: 10px;">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tr valign="top">
+				<td class="ticket_owner_info" width="275"><!--{foreach name=info_contact from=$info_contact key=key item=line}-->
+					<!--{$line}--><br />
+				<!--{/foreach}--></td>
+				<td class="ticket_owner_info" style="padding-left: 10px;"><!--{foreach name=info_contact from=$info_facturation key=key item=line}-->
+					<!--{$line}--><br />
+				<!--{/foreach}--></td>
+				<td align="right" style="padding-top: 15px;">
+					<table border="0" cellspacing="0" cellpadding="0" width="100%">
+						<tr><td align="right"><!--{lang k=BANELCO_KEY}-->&nbsp;<!--{$ticket->passwd_banelco}--></td></tr>
+						<tr><td align="right" style="padding-top: 10px;"><!--{lang k=LINK_KEY}-->&nbsp;<!--{$ticket->passwd_link}--></td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding-top: 40px;">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<tr valign="top">
+				<td><b><!--{lang k=TITULAR}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->titular}--></td>
+				<td style="padding-left: 10px;"><b><!--{lang k=CUIT}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->cuit}--></td>
+			</tr>
+			<tr style="height: 10px;"><td colspan="4">&nbsp;</td></tr>
+			<tr valign="top">
+				<td><b><!--{lang k=ADDRESS}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->address}--><br /><!--{$ticket->city}--><br /><!--{$ticket->state}--></td>
+				<td style="padding-left: 10px;"><b><!--{lang k=PAY_COND}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->condpago}--></td>
+			</tr>
+			<tr style="height: 10px;"><td colspan="4">&nbsp;</td></tr>
+			<tr valign="top">
+				<td><b><!--{lang k=CLIENT_CODE}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->userid}--></td>
+				<td style="padding-left: 10px;"><b><!--{lang k=IVA_COND}--></b></td>
+				<td style="padding-left: 10px;"><!--{$ticket->condiva}--></td>
+			</tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding-top: 30px;">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<thead>
+				<tr style="height: 20px;">
+					<td class="ticket_detail_header" style="padding-left: 5px;"><!--{lang k=DESCRIPTION}--></td>
+					<td class="ticket_detail_header"><!--{lang k=UNITS}--></td>
+					<td class="ticket_detail_header" align="right" style="padding-right: 5px;"><!--{lang k=PRICE}--></td>
+				</tr>
+			</thead>
+			<tbody>
+				<!--{foreach name=comsumo_list from=$ticket->comsumo_list key=key item=consumo_item}-->
+					<tr style="height: 20px;">
+						<td class="ticket_detail_body" style="padding-left: 5px;"><!--{if $consumo_item->isdetailed}--><a href="ticket_item.ca?ticketid=<!--{$ticket->ticketid}-->&itemid=<!--{$consumo_item->itemid}-->"><!--{/if}--><!--{$consumo_item->description}--><!--{if $consumo_item->isdetailed}--></a><!--{/if}-->
+						<td class="ticket_detail_body"><!--{$consumo_item->units}--></td>
+						<td class="ticket_detail_body" align="right" style="padding-right: 5px;"><!--{$consumo_item->importe}--></td>
+					</tr>
+				<!--{foreachelse}-->
+					<tr><td colspan="3" class="ticket_detail_body" style="padding-left: 5px; padding-right: 5px;"><!--{lang k=NO_TICKET_DETAILS}--></td></tr>
+				<!--{/foreach}-->
+					<tr><td colspan="3" style="padding-top: 20px; padding-left: 5px; padding-right: 5px; padding-bottom: 5px;" class="ticket_detail_body">
+						<table border="0" cellspacing="0" cellpadding="0" width="100%">
+							<!--{if $show_iva_details}-->
+								<tr style="height: 20px;">
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">Neto 21%</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">Neto 27%</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">IVA 21%</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">IVA 27%</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">IVA 21% NI</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="center">IVA 27% NI</td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" align="right"><!--{lang k=SUBTOTAL}--></td>
+								</tr>
+								<tr style="height: 20px;">
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->neto21}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->neto27}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->iva21}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->iva27}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->iva21ni}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black;" align="right"><!--{$ticket->iva27ni}--></td>
+									<td style="border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" align="right"><!--{$ticket->subtotal}--></td>
+								</tr>
+							<!--{/if}-->
+								<tr style="height: 20px;">
+									<td style="border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; padding-left: 5px;" colspan="5"><!--{$ticket->total_string}--></td>
+									<td style="border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; padding-right: 5px;" align="right"><b><!--{lang k=TOTAL}-->:</b></td>
+									<td style="border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; padding-right: 5px;" align="right"><b><!--{$ticket->total}--></b></td>
+								</tr>
+						</table>
+					</td></tr>
+			</tbody>
+		</table>
+	</td></tr>
+	<tr><td style="padding-top: 15px;"><!--{lang k=TICKET_DISCLAIMER}--></td></tr>
+	<!--{if !$print}-->
+        <tr><td style="padding-top: 10px;">
+            <!--{include file="buttons.tpl" button_print="1" button_pay="1" button_email="1"}-->
+        </td></tr>
+	<!--{/if}-->
+</table>

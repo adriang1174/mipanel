@@ -1,0 +1,56 @@
+<?
+
+session_start();
+
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+require_once( INCLUDE_PATH . 'clientcontrol.php');
+require_once( INCLUDE_PATH . 'data/profile.php');
+
+// Intializing the session.
+ca_session::init( );
+
+
+// Get the username and password.
+$username = filter::username( varconn::POST( "username"));
+$password = filter::password( varconn::POST( "password"));
+
+if ( !$username || !$password){
+    clientcontrol::redirect( "login.ca?error=1");
+}
+$res = ca_session::login( $username, $password);
+
+if ( !$res[0] ){
+    clientcontrol::redirect( "login.ca?error=". $res[1]);
+}    
+
+
+
+// Sucessfull login!
+
+// If the user does not have the e-mail verified, then we send him
+// to the "administrative e-mail" screen.
+$username = strtoupper( $username);
+$profile = new profile( $username);
+echo "login exitoso";
+
+if ( !$profile->is_mail_verif( )){
+
+    clientcontrol::redirect( "email.ca");
+
+    }
+    
+
+clientcontrol::redirect( "home.ca");
+
+?>

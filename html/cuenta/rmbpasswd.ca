@@ -1,0 +1,153 @@
+<?
+require_once( 'includepath.ca');
+require_once( INCLUDE_PATH . 'defines.php');
+require_once( INCLUDE_PATH . 'varconn.php');
+require_once( INCLUDE_PATH . 'misc.php');
+require_once( INCLUDE_PATH . 'base_owner.php');
+require_once( INCLUDE_PATH . 'language.php');
+require_once( INCLUDE_PATH . 'smarty.php');
+require_once( INCLUDE_PATH . 'ca_session.php');
+require_once( INCLUDE_PATH . 'basescr.php');
+require_once( INCLUDE_PATH . 'filter.php');
+require_once( INCLUDE_PATH . 'data/user.php');
+require_once( INCLUDE_PATH . 'pagination.php');
+require_once( INCLUDE_PATH . 'ca_list.php');
+require_once( INCLUDE_PATH . 'data/config.php');
+require_once( INCLUDE_PATH . 'ca_form.php');
+require_once( INCLUDE_PATH . 'clientcontrol.php');
+require_once( INCLUDE_PATH . 'ca_email.php');
+require_once( INCLUDE_PATH . 'csv.php');
+require_once( INCLUDE_PATH . 'data/profile.php');
+require_once( INCLUDE_PATH . 'eml_confirm.php');
+
+// Intializing the session.
+ca_session::init( );
+
+// Loading the corresponding language.
+if ( !language::load( ca_session::language_get( )))
+{
+	trigger_error( "FATAL: Unable to load the language.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+// Loading the owner.
+
+$user_arr = user_getData($_GET['username']);
+base_owner::detect_and_load( $user_arr['folderName'] );
+
+if ( defined( "OWNER"))
+{
+    $smarty->assign( "owner", OWNER);
+    $smarty->assign( "panel_name", owner::panel_name( ));
+}
+
+// Seting up the template set to use.
+if ( !smarty_setup( "default"))
+{
+	trigger_error( "FATAL: Unable to setup smarty.");
+    clientcontrol::redirect( "init_error.ca");
+}
+
+$smarty->assign( "owner_phone", owner::phone_support( ));
+$smarty->assign( "owner_email", owner::addr_support_display( ));
+
+$username = trim( ( string)$_GET[ 'username']);
+$profile = new profile( $username);
+
+$res = $profile->fixLoginWithCuit(); // :(
+
+if(!$res){
+	$smarty->assign( "error", "error_use_client_id");
+    display( );
+}
+
+
+if ( strlen( $username) <= 0 || !$profile->is_valid_user( ))
+{
+    $smarty->assign( "error", "error_invalid_user");
+    display( );
+}
+
+if ( !$profile->is_mail_verif( ))
+{
+    $smarty->assign( "error", "error_email_not_verified");
+    display( );
+}
+
+/*
+$email = $profile->get( );
+$password = $profile->get_password( );
+if ( strlen( $email) <= 0 || strlen( $password) <= 0)
+{
+    $smarty->assign( "error", "error_send_email");
+    display( );
+}
+*/
+
+$email = $profile->get( );
+if ( strlen( $email) <= 0)
+{
+
+    $smarty->assign( "error", "error_send_email");
+    display( );
+}
+
+switch(OWNER){
+	case 'red':
+		$owner_id = 1;
+	break;
+	case 'holared':
+		$owner_id = 2;
+	break;
+	case 'hola':
+		$owner_id = 3;
+	break;
+	case 'viatel':
+		$owner_id = 4;
+	break;
+	case 'holatel':
+		$owner_id = 5;
+	break;
+	case 'ahorratel':
+		$owner_id = 6;
+	break;
+	case 'telephone2':
+		$owner_id = 7;
+	break;
+}
+
+
+$codigo = sendChangePasswordEmail($username);
+
+if(!$codigo){
+	$smarty->assign( "error", "error_send_email");
+}
+
+
+$ca_email = new ca_email( CA_EMAIL_TEMPLATE_PASSWD, ca_session::language_get( ), false, $owner_id);
+$ca_email->add_to( CA_EMAIL_RECIPIENT_TYPE_TO, new ca_email_recipient( DEF_HARDCODED_USER_EMAIL ? DEF_HARDCODED_USER_EMAIL : $email, DEF_HARDCODED_USER_EMAIL ? DEF_HARDCODED_USER_EMAIL : $email));
+$ca_email->set_tag_replacement( "[ADDR_SUPPORT]", owner::owner_name() . '<'.owner::addr_support( ) .'>');
+$ca_email->set_tag_replacement( "[ADDR_WWW]", owner::addr_www( ));
+$ca_email->set_tag_replacement( "[SUPPORT_TELEFONO]", owner::phone_support( ));
+$ca_email->set_tag_replacement( "[SUPPORT_EMAIL]", owner::addr_support( ));
+$ca_email->set_tag_replacement( "[TITULAR]", $user_arr['rsocial']);
+$ca_email->set_tag_replacement( "[USER_ID]", $username);
+$ca_email->set_tag_replacement( "[LINK]", 'https://'. $_SERVER['HTTP_HOST'] . str_replace('rmbpasswd', 'change_password', $_SERVER['SCRIPT_NAME']) .'?k='. $codigo);
+$ca_email->set_tag_replacement( "[USER_PASSWORD]", $password);
+$ca_email->set_tag_replacement( "[INFO_SUPPORT]", implode( '<br />', owner::info_support( )));
+
+if ( !$ca_email->send_pear( )){
+
+    $smarty->assign( "error", "error_send_email");
+}
+display( );
+
+function display( )
+{
+    global $smarty;
+    $smarty->assign('email_asistencia', owner::info_support( ));
+    $smarty->display( "rmbpasswd.tpl");
+    exit;
+}
+
+?>

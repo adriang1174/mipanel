@@ -1,0 +1,12 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Datos para ingreso
+
+<p>Código de Cliente: <b>[USER_ID]</b></p>
+<p>Estimado/a <b>[TITULAR]</b>,</p>
+
+<p>De acuerdo a lo solicitado le recordamos los datos para ingresar a Mi Panel</p>
+
+<p><a href="http://[ADDR_WWW]/">[ADDR_WWW]</a><br /><b>Usuario</b>: [USER_ID]<br /><b>Contraseña</b>: [USER_PASSWORD]</p>
+
+<p>Saludos cordiales, <br /><br />[INFO_SUPPORT]</p>

@@ -1,0 +1,20 @@
+From: [MAIL_FROM]
+Reply-To: [MAIL_FROM]
+Subject: Alta Contacto Administrativo Verificado desde Mi Panel
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web Alta Centralizada
+SaveThis=Alta Contacto Administrativo Verificado desde Mi Panel
+
+[Data]
+key3=[USER_ID]
+
+[ContSupp]
+CS1_RecType=C
+CS1_Contact=[USER_NAME]
+CS1_title=** Administrador **
+CS1_reference=Alta desde Mi Panel
+CS1_phone=[USER_PHONE]
+CS1_mail=[USER_EMAIL]
+

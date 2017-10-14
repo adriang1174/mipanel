@@ -1,0 +1,12 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Meu Painel - Dados para acesso
+
+<p>Código de Cliente: <b>[USER_ID]</b></p>
+<p>Prezado(a) <b>[TITULAR]</b>,</p>
+
+<p>De acordo com o solicitado, recordamos aqui quais são os dados necessários para acessar o Meu Painel</p>
+
+<p><a href="http://[ADDR_WWW]/">[ADDR_WWW]</a><br /><b>Usuário</b>: [USER_ID]<br /><b>Senha</b>: [USER_PASSWORD]</p>
+
+<p>Atenciosamente,<br /><br /> [INFO_SUPPORT]</p>

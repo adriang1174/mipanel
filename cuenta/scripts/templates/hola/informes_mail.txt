@@ -1,0 +1,27 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a <%rsocial%>:
+
+Este es un envío semanal de carácter meramente informativo. 
+
+Te enviamos adjunto a este e-mail el informe de llamadas no facturadas hasta el <%fecha_hasta%>. Encontrarás el informe en un archivo de formato CSV, que puedes abrir con cualquier planilla de cálculo. 
+
+Si el archivo adjunto está vacío, es porque no hay llamadas pendientes de facturar.
+   
+Además, ingresando a Mi Panel en https://webseg.latinatel.net/cuenta/login.ca, puedes:
+
+- Optar por recibir Alarmas de Consumo y ver el detalle de llamadas al momento  
+- Configurar los reportes por Proyectos y Descripción de Destinos.  
+- En el ítem Facturas, puedes ver todos los comprobantes, imprimirlos, enviártelos por e-mail, efectuar el pago con tu Tarjeta de Crédito y a través de DineroMail en los países en que este servicio está habilitado. 
+   
+Para dejar de recibir estos informes, ingresa en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo.
+
+Recuerda que para ingresar a Mi Panel debes hacerlo con tu usuario, que es tu código de cliente, y tu contraseña. 
+
+Por consultas, ingresa a nuestra sección de preguntas frecuentes en http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html, o comunícate con nuestro Centro de Atención al Cliente por e-mail a asistencia@holatel.com.
+
+Estamos a tu disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+HolaTel
+www.holatel.com
+ 

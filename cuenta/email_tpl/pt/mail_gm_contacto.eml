@@ -1,0 +1,16 @@
+From: [MAIL_FROM]
+Reply-To: importaciongm@grupoalternativa.com
+Subject: MiPanel - Contacto
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web cambio de datos
+OnDupAttachTrack=Web cambio de datos
+SaveThis=MiPanel - Contacto
+
+[Data]
+key3=[CLIENT_ID]
+
+Nombre=[NOMBRE]
+Comentario=[COMENTARIO]
+Fecha_envio=[FECHA_ENVIO]

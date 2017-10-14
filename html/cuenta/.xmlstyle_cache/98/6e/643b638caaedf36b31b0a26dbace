@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ca><form id="login"><if>red</if><error>Usuario desconocido o clave incorrecta</error><action>facturas.xsp</action><login></login></form></ca>

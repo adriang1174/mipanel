@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Autoloader.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Builder.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="ChannelFile.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Command.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Common.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Config.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Dependency.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Dependency2.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="DependencyDB.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Downloader.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="ErrorStack.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Exception.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Frontend.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Installer.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="PackageFile.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Packager.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Registry.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Remote.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="REST.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="RunTest.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Validate.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="XMLParser.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+</dwsync>

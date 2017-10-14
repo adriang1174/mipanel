@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ca><xsl-template>facturas</xsl-template><cliente><cliente_id>C109093</cliente_id><rsocial>Roberto Michan</rsocial><cuit>11802433</cuit><cpebanelco>109093186</cpebanelco><cpelink>308109093186</cpelink><email>rdmichan@bezeqint.net</email><agente>102</agente><tipo>C         </tipo></cliente>
+<botonera><opcion id="1">
+  <titulo>Facturas</titulo><href>facturas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="2">
+  <titulo>Tarifas</titulo><href>tarifas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="3">
+  <titulo>Cuenta Corriente</titulo><href>cc.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="4">
+  <titulo>Consumo no facturado</titulo><href>trafico.xsp?fact=0&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="5">
+  <titulo>Consumo facturado</titulo><href>trafico.xsp?fact=1&amp;filt=0</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="6">
+  <titulo>Consumo por periodo</titulo><href>trafico.xsp?fact=1&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="7">
+  <titulo>Avisos de consumo</titulo><href>avisos.xsp</href><selected>0</selected><seccion>admin</seccion></opcion><opcion id="8">
+  <titulo>Referencia de llamadas</titulo><href>proyectos.xsp</href><selected>0</selected></opcion><opcion id="9">
+  <titulo>Centro de costos</titulo><href>centrocostos.xsp</href><selected>0</selected></opcion><opcion id="10">
+  <titulo>Modificacion de datos</titulo><href>cambiodatos.xsp</href><selected>0</selected></opcion><opcion id="11">
+  <titulo>Salir</titulo><href>logout.xsp</href><selected>0</selected></opcion></botonera><title id="1" href="facturas.xsp">Consultas de facturas</title><if>hola</if><form id="facturas_meses"><action>/cuenta/facturas-old.xsp</action>
+	if ($comprobante_id) {
+		<comprobante_id></comprobante_id>
+	}
+	
+<meses><mes id="1">
+  <nombre>Diciembre</nombre><mes>12</mes><ano>2005</ano></mes><mes id="2">
+  <comprobante_id>FB-0001-00049158</comprobante_id><nombre>Noviembre</nombre><mes>11</mes><ano>2005</ano></mes><mes id="3">
+  <comprobante_id>FB-0001-00047142</comprobante_id><nombre>Octubre</nombre><mes>10</mes><ano>2005</ano></mes><mes id="4">
+  <comprobante_id>FB-0001-00042976</comprobante_id><nombre>Septiembre</nombre><mes>9</mes><ano>2005</ano></mes><mes id="5">
+  <nombre>Agosto</nombre><mes>8</mes><ano>2005</ano></mes><mes id="6">
+  <nombre>Julio</nombre><mes>7</mes><ano>2005</ano></mes><mes id="7">
+  <nombre>Junio</nombre><mes>6</mes><ano>2005</ano></mes><mes id="8">
+  <nombre>Mayo</nombre><mes>5</mes><ano>2005</ano></mes><mes id="9">
+  <nombre>Abril</nombre><mes>4</mes><ano>2005</ano></mes><mes id="10">
+  <nombre>Marzo</nombre><mes>3</mes><ano>2005</ano></mes><mes id="11">
+  <nombre>Febrero</nombre><mes>2</mes><ano>2005</ano></mes><mes id="12">
+  <nombre>Enero</nombre><mes>1</mes><ano>2005</ano></mes></meses></form><seccion_descripcion>Para consultar una factura, selecciónela por número de factura o por mes de emisión</seccion_descripcion><form id="facturas_listado"><action>/cuenta/facturas-old.xsp</action><fecha_ultima_actualizacion></fecha_ultima_actualizacion>
+<facturas><factura id="1">
+  <condventa>Contado</condventa><usuario>SP        </usuario><domicilio>Saaragay 5 Piso - Depto 4</domicilio><condpago>Tarjeta MC</condpago><total_letras>  veintid�s con  noventa y  cinco centavos</total_letras><last_update>2005-12-06 16:55:00</last_update><condiva>Consumidor Final</condiva><fechemision>2005-11-30</fechemision><fechvto>2005-12-19</fechvto><sucdoc>1</sucdoc><discrimina_iva>0</discrimina_iva><neto>18.97</neto><provincia>Jerusalem - Israel</provincia><localidad>() Beer Sheva</localidad><tipo_factura>B</tipo_factura><iva27ni>0.00</iva27ni><iva27>0.00</iva27><iva>3.98</iva><numdoc>49158</numdoc><tipodoc>FB</tipodoc><cliente_id>C109093</cliente_id><moneda_id>1</moneda_id><neto27>0.00</neto27><contacto>Roberto Michan</contacto><comprobante_id>FB-0001-00049158</comprobante_id><cotizacion>2.9900</cotizacion><programa>SMS       </programa><total>22.95</total><moneda>USD </moneda><ivani>0.00</ivani></factura><factura id="2">
+  <condventa>Contado</condventa><usuario>SP        </usuario><domicilio>Saaragay 5 Piso - Depto 4</domicilio><condpago>Tarjeta MC</condpago><total_letras>  veintisiete con  setenta y  siete centavos</total_letras><last_update>2005-11-04 13:35:35</last_update><condiva>Consumidor Final</condiva><fechemision>2005-10-31</fechemision><fechvto>2005-11-17</fechvto><sucdoc>1</sucdoc><discrimina_iva>0</discrimina_iva><neto>22.95</neto><provincia>Jerusalem - Israel</provincia><localidad>() Beer Sheva</localidad><tipo_factura>B</tipo_factura><iva27ni>0.00</iva27ni><iva27>0.00</iva27><iva>4.82</iva><numdoc>47142</numdoc><tipodoc>FB</tipodoc><cliente_id>C109093</cliente_id><moneda_id>1</moneda_id><neto27>0.00</neto27><contacto>Roberto Michan</contacto><comprobante_id>FB-0001-00047142</comprobante_id><cotizacion>3.0150</cotizacion><programa>SMS       </programa><total>27.77</total><moneda>USD </moneda><ivani>0.00</ivani></factura><factura id="3">
+  <condventa>Contado</condventa><usuario>SP        </usuario><domicilio>Saaragay 5 Piso - Depto 4</domicilio><condpago>Tarjeta MC</condpago><total_letras>  diecinueve con  noventa y  ocho centavos</total_letras><last_update>2005-10-07 11:55:02</last_update><condiva>Consumidor Final</condiva><fechemision>2005-09-30</fechemision><fechvto>2005-10-17</fechvto><sucdoc>1</sucdoc><discrimina_iva>0</discrimina_iva><neto>16.51</neto><provincia>Jerusalem - Israel</provincia><localidad>() Beer Sheva</localidad><tipo_factura>B</tipo_factura><iva27ni>0.00</iva27ni><iva27>0.00</iva27><iva>3.47</iva><numdoc>44227</numdoc><tipodoc>FB</tipodoc><cliente_id>C109093</cliente_id><moneda_id>1</moneda_id><neto27>0.00</neto27><contacto>Roberto Michan</contacto><comprobante_id>FB-0001-00044227</comprobante_id><cotizacion>2.9140</cotizacion><programa>SMS       </programa><total>19.98</total><moneda>USD </moneda><ivani>0.00</ivani></factura><factura id="4">
+  <condventa>Contado</condventa><usuario>SP        </usuario><domicilio>Saaragay 5 Piso - Depto 4</domicilio><condpago>Tarjeta MC</condpago><total_letras>  treinta y  un con  setenta y  seis centavos</total_letras><last_update>2005-09-06 14:00:09</last_update><condiva>Consumidor Final</condiva><fechemision>2005-09-06</fechemision><fechvto>2005-09-13</fechvto><sucdoc>1</sucdoc><discrimina_iva>0</discrimina_iva><neto>26.25</neto><provincia>Jerusalem - Israel</provincia><localidad>() Beer Sheva</localidad><tipo_factura>B</tipo_factura><iva27ni>0.00</iva27ni><iva27>0.00</iva27><iva>5.51</iva><numdoc>42976</numdoc><tipodoc>FB</tipodoc><cliente_id>C109093</cliente_id><moneda_id>1</moneda_id><neto27>0.00</neto27><contacto>Roberto Michan</contacto><comprobante_id>FB-0001-00042976</comprobante_id><cotizacion>2.9070</cotizacion><programa>SMS       </programa><total>31.76</total><moneda>USD </moneda><ivani>0.00</ivani></factura></facturas></form></ca>

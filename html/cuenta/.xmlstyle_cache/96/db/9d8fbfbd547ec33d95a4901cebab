@@ -1,0 +1,539 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::tarifas_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::tarifas_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|tarifas.xsp|);
+__mk_text_node($document, $parent, q|Tarifas|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|xsl-template|);
+__mk_text_node($document, $parent, q|tarifas|);
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('botonera():listtag=botonera:itemtag=opcion', undef(), 0, $document, $parent, CA::BaseTaglib::botonera());}
+}); # non xsp tag
+
+
+my $PAGE_SIZE = 25;
+my %args = $r->args;
+my $cliente = $r->pnotes('cliente');
+my $if = $r->pnotes('if');
+my $pagina = $args{'pagina'} || 1;
+my $cuentas = $cliente->cuentasConTarifas;
+
+$parent = __mk_element_node($document, $parent, q|if|);
+__mk_text_node($document, $parent, "" . do {$if}); # non xsp tag
+$parent = $parent->getParentNode;
+
+if ((defined $args{imprimir}) and ($args{imprimir} eq '1')) {
+	$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+}
+
+if (scalar(@$cuentas) == 0) {
+	# No tiene cuentas habilitadas, por lo tanto no puede
+	# consultar tarifas
+	$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|No tiene cuentas habilitadas para consultar tarifas.|);
+$parent = $parent->getParentNode;
+
+} else {
+	my $cuenta; # La cuenta cuyas tarifas se van a consultar
+	if (scalar(@$cuentas) == 1) {
+		# Tiene una sola cuenta.
+		$cuenta = $cuentas->[0];
+	} else {
+		# Debe elegir una
+		if ($args{cuenta}) {
+			my ($servicio, $login) = split(/_/, $args{cuenta});
+			if (defined($servicio) and defined($login)) {
+				$cuenta = CA::Cuenta->buscarPorClienteIdServicioLogin($cliente->cliente_id, $servicio, $login);
+				warn "cuenta inexistente $servicio/$login\n" unless(defined($cuenta));
+			}
+		}
+
+		if ((not defined($cuenta)) and (scalar(@$cuentas) > 1)) {
+			# Form para elegir una cuenta
+			$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifa_elegir_cuenta|);
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$args{cuenta}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuentas|);
+
+				foreach my $cuenta (@$cuentas) {
+				
+					$parent = __mk_element_node($document, $parent, q|cuenta|);
+$parent = __mk_element_node($document, $parent, q|servicio|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$cuenta->servicio};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|producto|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$cuenta->producto};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|login|);
+__mk_text_node($document, $parent, "" . do {$cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|id_cliprod|);
+__mk_text_node($document, $parent, "" . do {$cuenta->id_cliprod}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cliente_id|);
+__mk_text_node($document, $parent, "" . do {$cuenta->cliente_id}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|solicitud|);
+__mk_text_node($document, $parent, "" . do {$cuenta->solicitud}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|origen|);
+__mk_text_node($document, $parent, "" . do {$cuenta->origen}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|codigoplan|);
+__mk_text_node($document, $parent, "" . do {$cuenta->codigoplan}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+				}
+				$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+		}
+	}
+
+	if (defined($cuenta)) {
+		# Form para ingresar numero destino
+		$r->pnotes('cuenta', $cuenta);
+		my $disclaimer_servicio = CA::Config->getValue('Disclaimer_' . $cuenta->servicio);
+		if (defined($disclaimer_servicio)) {
+			$parent = __mk_element_node($document, $parent, q|disclaimer_servicio|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$disclaimer_servicio};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+
+		}
+		if (not ($args{acc} eq 'mail')) {
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_busqueda_tarifas_numero.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_busqueda_tarifas_prefijo.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+		}
+
+		$parent = __mk_element_node($document, $parent, q|title|);$parent->setAttribute(q|id|, "". q|2|);
+$parent->setAttribute(q|href|, "" . do {$r->uri . '?cuenta=' . $cuenta->servicio . '_' . $cuenta->login});
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . ' (' . $cuenta->login . ')'}); # xsp tag
+$parent = $parent->getParentNode;
+
+		# Mostrar tarifas para la cuenta elegida
+		if ($args{numero}) {
+			# Buscar la tarifa para el numero especificado
+			my $numero = $args{numero};
+			$numero =~ s/\D//g;
+			my $ok = length($numero) >= $CA::Tarifa::MINLEN_NUMERO;
+			if (not $ok) { 
+				my $msg = 'El número debe tener al menos ' .  $CA::Tarifa::MINLEN_NUMERO . ' dígitos.';
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, "" . do {$msg}); # non xsp tag
+$parent = $parent->getParentNode;
+
+			} else {
+				my $tarifa = $cuenta->tarifaParaNumero($numero);
+
+				$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|3|);
+__mk_text_node($document, $parent, q|Número |);
+__mk_text_node($document, $parent, "" . do {$numero}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				if (defined($tarifa)) {
+					$r->pnotes('tarifa', $tarifa);
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_tarifa.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|No existe una tarifa para el número |);
+__mk_text_node($document, $parent, "" . do {$numero}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+				}
+			}
+		} elsif ($args{prefijo}) {
+			# Buscar todas las tarifas para el prefijo
+			my $prefijo = $args{prefijo};
+			$prefijo =~ s/\D//g;
+			my $ok = length($prefijo) >= $CA::Tarifa::MINLEN_PREFIJO;
+			if (not $ok) { 
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|El prefijo debe tener al menos |);
+__mk_text_node($document, $parent, "" . do {$CA::Tarifa::MINLEN_PREFIJO}); # non xsp tag
+__mk_text_node($document, $parent, q| dígitos.|);
+$parent = $parent->getParentNode;
+
+			} else {
+				my $tarifas = $cuenta->tarifasPorPrefijo($prefijo);
+				my $paginas = ((scalar(@$tarifas) % $PAGE_SIZE) == 0) ? (scalar(@$tarifas) / $PAGE_SIZE) : ((scalar(@$tarifas) / $PAGE_SIZE) + 1);
+				$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|3|);
+__mk_text_node($document, $parent, q|Prefijo |);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				if (defined($tarifas)) {
+					if (@$tarifas) {
+					$parent = __mk_element_node($document, $parent, q|tarifas|);
+$parent = __mk_element_node($document, $parent, q|fecha_validez|);
+__mk_text_node($document, $parent, "" . do {CA::Fecha->timestamp2sql(time())}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|pagina|);
+__mk_text_node($document, $parent, "" . do {$pagina}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|prefijo|);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|servicio|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|login|);
+__mk_text_node($document, $parent, "" . do {$cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|paginas|);
+$parent = __mk_element_node($document, $parent, q|total|);
+__mk_text_node($document, $parent, "" . do {int($paginas)}); # non xsp tag
+$parent = $parent->getParentNode;
+
+					foreach my $p (1..int($paginas)) {
+					$parent = __mk_element_node($document, $parent, q|pagina|);
+$parent = __mk_element_node($document, $parent, q|numero|);
+__mk_text_node($document, $parent, "" . do {$p}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+					}
+					$parent = $parent->getParentNode;
+
+					foreach my $tarifa (@$tarifas) {
+					$parent = __mk_element_node($document, $parent, q|tarifa|);
+$parent = __mk_element_node($document, $parent, q|destino|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{destino}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|destinotxt|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$tarifa->{destinotxt}};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|moneda|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$tarifa->{moneda}};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|tarifa|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{tarifa}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|especial|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{especial}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+							if (defined($tarifa->{fechadesde})) {
+								$parent = __mk_element_node($document, $parent, q|fechadesde|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{fechadesde}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+							}
+							if (defined($tarifa->{fechahasta})) {
+								$parent = __mk_element_node($document, $parent, q|fechahasta|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{fechahasta}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+							}
+							$parent = $parent->getParentNode;
+
+					}
+					if (not ($args{imprimir} eq '1')) {
+					$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_exportar|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, q|/cuenta/csv/tarifas.csv|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|servicio|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|login|);
+__mk_text_node($document, $parent, "" . do {$cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|prefijo|);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+					$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_imprimir|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|prefijo|);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+					$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_enviar_mail|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|prefijo|);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+					}
+					$parent = $parent->getParentNode;
+
+					} else {
+				$parent = __mk_element_node($document, $parent, q|error|);__mk_text_node($document, $parent, q|
+						No hay tarifas para el prefijo |);
+__mk_text_node($document, $parent, "" . do {(5+2)}); # xsp tag
+__mk_text_node($document, $parent, q|.
+						|);
+$parent = $parent->getParentNode;
+
+					}
+				} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+$parent->setAttribute(q|tipo|,q|interno|);
+__mk_text_node($document, $parent, q|Ocurrió un error al buscar las tarifas para el prefijo |);
+__mk_text_node($document, $parent, "" . do {$prefijo}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+				}
+			}
+		} elsif ($args{acc} eq 'mail') {
+			# Form para enviar por mail las tarifas
+			my $errors = {};
+			my $vars = {};
+			my $ok = 0;
+			if ($args{email}) {
+				if (! CA::Util->esEmailValido($args{email})) {
+					$errors->{email} = 'Dirección inválida';
+					$vars->{email} = $args{email};
+				} else {
+					$ok = 1; 
+				}
+			} else {
+				$vars->{email} = $cliente->email;
+			}
+			my $prefijo;
+			if ($args{prefijo} and ($args{prefijo} =~ /\d/)) {
+				$prefijo = $args{prefijo};
+				$prefijo =~ s/\D//g;
+			}
+			if ($ok) {
+				if (CA::Email->enviarTarifas($cliente, $args{email}, $cuenta, $prefijo)) {	
+					$parent = __mk_element_node($document, $parent, q|mensaje|);
+$parent->setAttribute(q|tipo|,q|ok|);
+__mk_text_node($document, $parent, q|Las tarifas fueron enviadas exitosamente a su casilla de correo.|);
+$parent = $parent->getParentNode;
+
+				} else {	
+					$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Ocurrió un error al enviar las tarifas por e-mail a la direccion |);
+__mk_text_node($document, $parent, "" . do {$args{email}}); # non xsp tag
+__mk_text_node($document, $parent, q|.|);
+$parent = $parent->getParentNode;
+
+				}
+			} else {
+				# Mostrar form
+				$r->pnotes('errores', $errors);
+				$r->pnotes('vars', $vars);
+				$r->pnotes('cuenta', $cuenta);
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_tarifas_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			}
+		} else {
+			# Mostrar todas las tarifas
+			my $tarifas = $cuenta->tarifas;
+			my $paginas = ((scalar(@$tarifas) % $PAGE_SIZE) == 0) ? (scalar(@$tarifas) / $PAGE_SIZE) : ((scalar(@$tarifas) / $PAGE_SIZE) + 1);
+			if (defined($tarifas) and (@$tarifas)) {
+				$parent = __mk_element_node($document, $parent, q|tarifas|);
+$parent = __mk_element_node($document, $parent, q|fecha_validez|);
+__mk_text_node($document, $parent, "" . do {CA::Fecha->timestamp2sql(time())}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|servicio|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|login|);
+__mk_text_node($document, $parent, "" . do {$cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|paginas|);
+$parent = __mk_element_node($document, $parent, q|total|);
+__mk_text_node($document, $parent, "" . do {int($paginas)}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				foreach my $p (1..int($paginas)) {
+				$parent = __mk_element_node($document, $parent, q|pagina|);
+$parent = __mk_element_node($document, $parent, q|numero|);
+__mk_text_node($document, $parent, "" . do {$p}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+				}
+				$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|pagina|);
+__mk_text_node($document, $parent, "" . do {$pagina}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				foreach my $tarifa (@$tarifas) {
+				$parent = __mk_element_node($document, $parent, q|tarifa|);
+$parent = __mk_element_node($document, $parent, q|destino|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{destino}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|destinotxt|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$tarifa->{destinotxt}};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|moneda|);
+{ #start charset-convert
+  my $charconv = Apache::AxKit::CharsetConv->new('iso-8859-1','utf-8');
+  my $to_convert = '' . do {$tarifa->{moneda}};
+__mk_text_node($document, $parent, "" . do {  $charconv->convert($to_convert);}); # non xsp tag
+} # end of charset-convs
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|tarifa|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{tarifa}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|especial|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{especial}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+						if (defined($tarifa->{fechadesde})) {
+							$parent = __mk_element_node($document, $parent, q|fechadesde|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{fechadesde}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+						}
+						if (defined($tarifa->{fechahasta})) {
+							$parent = __mk_element_node($document, $parent, q|fechahasta|);
+__mk_text_node($document, $parent, "" . do {$tarifa->{fechahasta}}); # non xsp tag
+$parent = $parent->getParentNode;
+
+						}
+						$parent = $parent->getParentNode;
+
+				}
+				$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_exportar|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, q|/cuenta/csv/tarifas.csv|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|servicio|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|login|);
+__mk_text_node($document, $parent, "" . do {$cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_imprimir|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|tarifas_enviar_mail|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cuenta|);
+__mk_text_node($document, $parent, "" . do {$cuenta->servicio . '_' . $cuenta->login}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+
+			} else {
+				$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|No hay tarifas asignadas a la cuenta.|);
+$parent = $parent->getParentNode;
+
+			}
+		}
+	}
+}
+
+
+$parent = $parent->getParentNode;
+
+	
+return OK;
+}

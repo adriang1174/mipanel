@@ -1,0 +1,593 @@
+
+package Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::facturas_2exsp;
+use Apache;
+use Apache::Constants qw(:common);
+use XML::LibXML;
+Apache::AxKit::Language::XSP::Page->import( qw(__mk_text_node __mk_comment_node __mk_ns_element_node __mk_element_node) );
+#initialize xsp namespace
+use Apache::AxKit::Plugin::Session;
+use Time::Piece;
+# Evil hack to globally prepare a session object. Actually, it is quite waterproof...
+my $session;
+{ my $handler = \&xml_generator;
+*xml_generator = sub { $session = Apache->request->pnotes("SESSION"); goto $handler; }; }
+
+#initialize xsp namespace
+
+
+@Apache::AxKit::Language::XSP::ROOT::home::httpd::zonasegura_2egrupoalternativa_2ecom::html::cuenta::facturas_2exsp::ISA = ('Apache::AxKit::Language::XSP::Page');
+sub xml_generator {
+my $class = shift;
+my ($r, $cgi, $document, $parent) = @_;
+
+$parent = __mk_element_node($document, $parent, q|ca|);
+$parent = __mk_element_node($document, $parent, q|xsl-template|);
+__mk_text_node($document, $parent, q|facturas|);
+$parent = $parent->getParentNode;
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cliente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('botonera():listtag=botonera:itemtag=opcion', undef(), 0, $document, $parent, CA::BaseTaglib::botonera());}
+}); # non xsp tag
+
+#hola
+my %args = $r->args;
+my $mes = $args{'mes'};
+my $if = $r->pnotes('if');
+my $comprobante_id = $args{'comprobante_id'};
+my $usuario = $r->pnotes('usuario');
+my $sesion = $r->pnotes('sesion');
+my $mostrarPopUp;
+{
+	my $mostroLoginPop = $sesion->getVar('MostroLoginPop') || 0;
+	my $textoPop = CA::Config->getValue('loginpopup');
+        if (not $textoPop) {
+                $textoPop = CA::Config->getValue('loginpopup_'.$if);
+        }
+	$mostrarPopUp = ((not $mostroLoginPop) and (defined($textoPop))) ? 1 : 0;
+	if ($mostrarPopUp) {
+$parent = __mk_element_node($document, $parent, q|popup_aviso|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+	}
+}
+my $cliente;
+if ($usuario->esAgente) {
+	if (defined($args{cliente_id}) and (CA::Util->esClienteIdValido($args{cliente_id}))) {
+		my $c = CA::Cliente->load($args{cliente_id});
+		if ($usuario->esAgenteDe($c)) {
+			$cliente = $c;
+		}
+	} 
+	  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|facturas.xsp|);
+__mk_text_node($document, $parent, q|Facturación|);
+$parent = $parent->getParentNode;
+
+} else {
+	$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|,q|1|);
+$parent->setAttribute(q|href|,q|facturas.xsp|);
+__mk_text_node($document, $parent, q|Consultas de facturas|);
+$parent = $parent->getParentNode;
+
+	$cliente = $usuario;
+}
+my $form_mail = ((defined $args{acc}) and ($args{acc} eq 'mail'));
+my $pago_universal = (($usuario->esClienteFinal()) and (((defined $args{acc}) and ($args{acc} eq 'pu'))));
+my $dinero_mail = (($usuario->esClienteFinal()) and (((defined $args{acc}) and ($args{acc} eq 'dm'))));
+my $pago_facil = (($usuario->esClienteFinal()) and (((defined $args{acc}) and ($args{acc} eq 'pf'))));
+my $pagar = (($usuario->esClienteFinal()) and (((defined $args{acc}) and ($args{acc} eq 'pagar'))));
+my $mail = ((defined $args{mail}) and ($args{mail} eq '1'));
+my $cupon = ($usuario->esClienteFinal and ((defined $args{acc}) and ($args{acc} eq 'cupon')));
+my $mail_cupon = ($usuario->esClienteFinal and ((defined $args{acc}) and ($args{acc} eq 'mail_cupon')));
+my $appUrl = CA::Config->getValue('App_URL');
+
+
+$parent = __mk_element_node($document, $parent, q|if|);
+__mk_text_node($document, $parent, "" . do {$if}); # non xsp tag
+$parent = $parent->getParentNode;
+
+$parent = __mk_element_node($document, $parent, q|seccion_descripcion|);
+__mk_text_node($document, $parent, q|Para consultar una factura, selecciónela por número de factura o por mes de emisión|);
+$parent = $parent->getParentNode;
+
+if ($usuario->esAgente()) {
+	$parent = __mk_element_node($document, $parent, q|agente|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+}
+if ((defined $args{imprimir}) and ($args{imprimir} eq '1')) {
+	$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+}
+if ($mail) {
+	$parent = __mk_element_node($document, $parent, q|mail|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+	$parent = __mk_element_node($document, $parent, q|app_server|);
+__mk_text_node($document, $parent, "" . do {$appUrl}); # non xsp tag
+$parent = $parent->getParentNode;
+
+}
+if ($pago_universal or $dinero_mail) {
+	$parent = __mk_element_node($document, $parent, q|no_header|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+}
+
+if (not ($cupon or $mail_cupon or $mail or $pagar or  $pago_universal or $dinero_mail or $usuario->esAgente())) {
+$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|facturas_meses|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+__mk_text_node($document, $parent, q|
+	if ($comprobante_id) {
+		|);
+$parent = __mk_element_node($document, $parent, q|comprobante_id|);
+__mk_text_node($document, $parent, "" . do {$comprobante_id}); # non xsp tag
+$parent = $parent->getParentNode;
+__mk_text_node($document, $parent, q|
+	}
+	|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('meses_facturas(;$cliente_id):listtag=meses:itemtag=mes', undef(), 0, $document, $parent, CA::BaseTaglib::meses_facturas($_args{cliente_id},));}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+
+}
+
+if (defined $comprobante_id) {
+	# Mostrar un comprobante
+	my $factura;
+	if (not CA::Factura->esCodigoValido($comprobante_id)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Código de comprobante inválido|);
+$parent = $parent->getParentNode;
+
+	} elsif (not defined($factura = CA::Factura->buscarPorComprobanteId($comprobante_id))) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente|);
+$parent = $parent->getParentNode;
+
+	} elsif (not $usuario->puedeVerComprobante($factura)) {
+		$parent = __mk_element_node($document, $parent, q|error|);
+__mk_text_node($document, $parent, q|Comprobante inexistente|);
+$parent = $parent->getParentNode;
+
+	} else {
+		$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|2|);
+$parent->setAttribute(q|href|, "" . do {$r->uri . '?comprobante_id=' . $factura->comprobante_id});
+__mk_text_node($document, $parent, "" . do {$factura->comprobante_id}); # non xsp tag
+$parent = $parent->getParentNode;
+
+		if ((defined $args{acc}) and ($args{acc} eq 'mail')) {
+			$r->pnotes('factura', $factura);
+			if ($args{enviar_mail}) {
+				# Comprobar la direccion ingresada y realizar el envio
+				my $error;
+				my $email;
+				if (CA::Util->esEmailValido($args{email})) {
+					$email = $args{email};	
+				} else {
+					$error = 'Direccion inválida';
+				}
+				if (not $error) {
+					my $cookie = $r->pnotes('cookie');
+					my $result = CA::Email->enviarFactura($email, $cookie, $factura);
+					$parent = __mk_element_node($document, $parent, q|mail_factura|);
+__mk_text_node($document, $parent, "" . do {$result}); # non xsp tag
+$parent = $parent->getParentNode;
+
+				} else {
+					# Mostrar formulario nuevamente
+					my $errores = { email => $error };
+					$r->pnotes('errores', $errores);
+					$r->pnotes('factura', $factura);
+					$r->pnotes('vars', { email => $args{email} });
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_factura_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				}
+			} else {
+				# Formulario para ingresar la direccion
+				$r->pnotes('errores', {});
+				$r->pnotes('factura', $factura);
+				$r->pnotes('vars', { email => $usuario->email });
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_factura_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			}
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_factura.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+		} elsif (defined($args{acc}) and ($args{acc} eq 'mail_cupon')) {
+			# Enviar por email el cupon
+			$r->pnotes('factura', $factura);
+			  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|3|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=cupon&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|
+				Cupón de pago
+			|);
+$parent = $parent->getParentNode;
+
+			  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|4|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=mail_cupon&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|
+				Envío por e-mail
+			|);
+$parent = $parent->getParentNode;
+
+			if ($args{enviar_mail}) {
+				# Comprobar la direccion ingresada y realizar el envio
+				my ($email, $importe);
+				my $errors = {};
+				if (CA::Util->esEmailValido($args{email})) {
+					$email = $args{email};	
+				} else {
+					$errors->{email} = 'Dirección de e-mail inválida';
+				}
+				if (CA::Util->esImporteValido($args{importe})) {
+					$importe = $args{importe};	
+				} else {
+					$errors->{importe} = 'Importe inválido';
+				}
+				if (not %$errors) {
+					my $cookie = $r->pnotes('cookie');
+					my $result = CA::Email->enviarCuponPago($email, $cookie, $factura, $importe, $if);
+					$parent = __mk_element_node($document, $parent, q|mail_cupon|);
+__mk_text_node($document, $parent, "" . do {$result}); # non xsp tag
+$parent = $parent->getParentNode;
+
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_factura.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				} else {
+					# Mostrar formulario nuevamente
+					$r->pnotes('errores', $errors);
+					$r->pnotes('factura', $factura);
+					$r->pnotes('vars', { email => $args{email}, importe => $args{importe} });
+					{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_cupon_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				}
+			} else {
+				# Formulario para ingresar la direccion
+				$r->pnotes('errores', {});
+				$r->pnotes('factura', $factura);
+				my $aux_importe = $args{'importe'} ? $args{'importe'} : $factura->total;
+				#print STDERR $aux_importe."\n".$args{'importe'}."\n";
+				$r->pnotes('vars', { email => $usuario->email, importe => $aux_importe });
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_envio_cupon_mail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			}
+		} elsif ((defined $args{acc}) and ($args{acc} eq 'pagar') and $usuario->esClienteFinal()) {
+			# Menu de pago de factura - link a los medios de pago
+			$r->pnotes('factura', $factura);
+			my $medios = CA::MedioCobranza->findByPaisMercado($cliente->pais, $cliente->mercado);
+			$parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|3|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=pagar&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|
+				Pago
+			|);
+$parent = $parent->getParentNode;
+
+			$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|factura_pagar|);
+{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_factura.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+$parent = __mk_element_node($document, $parent, q|medios|);
+
+					my $data_factura = {
+						comprobante_id	=>	$factura->comprobante_id
+					};
+					foreach my $m (@$medios) {
+						my $logo = $m->logo;
+				$parent = __mk_element_node($document, $parent, q|medio|);$parent->setAttribute(q|href|, "" . do {$m->url($data_factura)});
+$parent->setAttribute(q|logo_src|, "" . do {$logo->[0]});
+$parent->setAttribute(q|logo_width|, "" . do {$logo->[1]});
+$parent->setAttribute(q|logo_height|, "" . do {$logo->[2]});
+$parent->setAttribute(q|logo_align|, "" . do {$logo->[3]});
+$parent->setAttribute(q|logo_alt|, "" . do {$logo->[4]});
+$parent = $parent->getParentNode;
+
+					}	
+				$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+	
+		} elsif ((defined $args{acc}) and ($args{acc} eq 'pu') and $usuario->esClienteFinal()) {
+			# Pago universal	
+			my $trans_id = $factura->getPaysTransId();
+			if (defined($args{total})) {
+				$args{total} =~ s/\,/./;
+			}
+			if ($args{total} and ($args{total} =~ /^\d+(\.\d+)?$/)) {
+				if (defined($trans_id)) {
+					$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|factura_pago_universal|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, q|/cuenta/PU/pu_sendpayorder.php|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|trans_id|);
+__mk_text_node($document, $parent, "" . do {$trans_id}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|total|);
+__mk_text_node($document, $parent, "" . do {$args{total}}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+	
+				} else {
+					$parent = __mk_element_node($document, $parent, q|error|);
+$parent->setAttribute(q|tipo|,q|interno|);
+__mk_text_node($document, $parent, q|No es posible pagar la factura seleccionada.|);
+$parent = $parent->getParentNode;
+
+				}
+			} else {
+				my $conversion = ($factura->moneda_id != $CA::Moneda::PESO) ? 1 : 0;
+				my $cotizacion = CA::Cotizacion->findUltimaByMoneda_id($factura->moneda_id);
+				my $total = $args{total} || $factura->total;
+				my $total_pesos = $conversion ? ($cotizacion->cotizacion * $total): $total;
+				  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|3|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=pu&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|Pago Universal|);
+$parent = $parent->getParentNode;
+
+					
+				$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|factura_pago_universal_importe|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|acc|);
+__mk_text_node($document, $parent, q|pu|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|comprobante_id|);
+__mk_text_node($document, $parent, "" . do {$factura->comprobante_id}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|moneda|);
+__mk_text_node($document, $parent, "" . do {$factura->moneda->simbolo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|cotizacion|);
+__mk_text_node($document, $parent, "" . do {$cotizacion->cotizacion}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fechemision|);
+__mk_text_node($document, $parent, "" . do {$cotizacion->fecha}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|conversion|);
+__mk_text_node($document, $parent, "" . do {$conversion}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|total|);
+__mk_text_node($document, $parent, "" . do {$total}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|total_pesos|);
+__mk_text_node($document, $parent, "" . do {$total_pesos}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+	
+			}
+		} elsif ((defined $args{acc}) and ($args{acc} eq 'pf') and $usuario->esClienteFinal()) {
+			# Pago facil
+
+			$r->pnotes('factura', $factura);
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_pago_facil.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+		} elsif ((defined $args{acc}) and ($args{acc} eq 'dm') and $usuario->esClienteFinal()) {
+			# Dinero mail	
+
+			if ($args{total} and ($args{total} =~ /^\d+(\.\d+)?$/)) {
+				my $medio_cobranza = CA::MedioCobranza->load('DineroMail', $cliente->pais, $cliente->mercado);
+
+				$r->pnotes('factura', $factura);
+				$r->pnotes('importe', $args{total});
+				$r->pnotes('medio_cobranza', $medio_cobranza);
+				if ((defined $args{enviar_mail}) and ($args{enviar_mail} eq '1')) {
+					if (defined $args{email}) {
+						# Comprobar la direccion ingresada y realizar el envio
+						my $error;
+						my $email;
+						if (CA::Util->esEmailValido($args{email})) {
+							$email = $args{email};	
+						} else {
+							$error = 'Direccion inválida';
+						}
+						if (not $error) {
+							my $cookie = $r->pnotes('cookie');
+							my $result = CA::Email->enviarCuponPagoDineroMail($email, $cookie, $factura, $args{total}, $if);
+							$r->pnotes('ok_msg', 'El cupon de dinero mail fue enviado exitosamente a su casilla de correo');
+						} else {
+							# Mostrar formulario nuevamente
+							$r->pnotes('error', $error);
+							$r->pnotes('show_mail_form', 1);
+						}
+					} else {
+						$r->pnotes('show_mail_form', 1);
+					}
+				}
+
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cupon_pago_dineromail.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			} else {
+				  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|3|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=dm&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|Dinero Mail|);
+$parent = $parent->getParentNode;
+
+					
+				$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|factura_dinero_mail_importe|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|acc|);
+__mk_text_node($document, $parent, q|dm|);
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|comprobante_id|);
+__mk_text_node($document, $parent, "" . do {$factura->comprobante_id}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|moneda|);
+__mk_text_node($document, $parent, "" . do {$factura->moneda->simbolo}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|total|);
+__mk_text_node($document, $parent, "" . do {$args{total} || $factura->total}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = $parent->getParentNode;
+	
+			}
+		} elsif ((defined $args{acc}) and ($args{acc} eq 'cupon') and $usuario->esClienteFinal()) {
+			$r->pnotes('factura', $factura);
+			if (defined($args{imprimir_cupon}) and ($args{imprimir_cupon} == 1)) {
+				my $importe = sprintf("%.2f", $factura->total);
+				if ($args{importe}) {
+					$args{importe} =~ s/,/./;
+					if ($args{importe} =~ /^\d+(\.\d*)?$/) {
+						$importe = sprintf("%.2f", $args{importe});
+					} 
+				}
+				$r->pnotes('importe', $importe);
+					
+				$parent = __mk_element_node($document, $parent, q|imprimir|);
+__mk_text_node($document, $parent, q|1|);
+$parent = $parent->getParentNode;
+
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cupon_pago.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			} else {
+				my $vars = { importe => ($args{importe} ? $args{importe} : $factura->total) };
+				$r->pnotes('vars', $vars);
+				  $parent = __mk_element_node($document, $parent, q|title|);
+$parent->setAttribute(q|id|, "". q|3|);
+$parent->setAttribute(q|href|, "". q|facturas.xsp?acc=cupon&comprobante_id=| . do {$factura->comprobante_id});
+__mk_text_node($document, $parent, q|
+					Cupón de pago
+				|);
+$parent = $parent->getParentNode;
+
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_cupon_pago.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+				{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_cupon_pago.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+			
+			}
+		} else {
+			$r->pnotes('factura', $factura);
+			{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_factura.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+		}
+	}
+} elsif (defined($cliente)) {
+	# Mostrar el listado de comprobantes
+	$r->pnotes('cliente', $cliente);
+	$parent = __mk_element_node($document, $parent, q|form|);
+$parent->setAttribute(q|id|,q|facturas_listado|);
+$parent = __mk_element_node($document, $parent, q|action|);
+__mk_text_node($document, $parent, "" . do {$r->uri}); # non xsp tag
+$parent = $parent->getParentNode;
+$parent = __mk_element_node($document, $parent, q|fecha_ultima_actualizacion|);
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('ultima_actualizacion_facturas()', undef(), 0, $document, $parent, CA::InformesTaglib::ultima_actualizacion_facturas());}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+__mk_text_node($document, $parent, "" . do {{ my %_args = ();; Apache::AxKit::Language::XSP::TaglibHelper::handle_result('facturas_por_cliente(;$cliente_id):listtag=facturas:itemtag=factura', undef(), 0, $document, $parent, CA::BaseTaglib::facturas_por_cliente($_args{cliente_id},));}
+}); # non xsp tag
+$parent = $parent->getParentNode;
+
+} elsif ($usuario->esAgente()) {
+	# Mostrar listado de facturas por periodo
+	# Form para elegir fechas
+	my ($fecha_inicio, $fecha_fin);
+	if (defined($args{op}) and ($args{op} eq 'l')) {
+		$fecha_inicio = $args{fecha_inicio};
+		$fecha_fin = $args{fecha_fin};
+		# Comprobar que las fechas sean correctas.
+		if (not CA::Fecha->esFecha($fecha_inicio)) {
+			$fecha_inicio = CA::FechasSistema->getFechaDesde('fact');
+		} else {
+			$fecha_inicio = CA::Fecha->user2sql($fecha_inicio);
+		}
+		if (not CA::Fecha->esFecha($fecha_fin)) {
+			$fecha_fin = CA::FechasSistema->getFechaHasta('fact') || CA::FechasSistema->getFechaActual();
+		} else {
+			$fecha_fin = CA::Fecha->user2sql($fecha_fin);
+		}
+		$sesion->setVar('Fact_fecha_inicio', $fecha_inicio);
+		$sesion->setVar('Fact_fecha_fin', $fecha_fin);
+	} else {
+		# Tratar de obtener las fechas de la sesion, y si no, del sistema	
+		$fecha_inicio = $sesion->getVar('Fact_fecha_inicio');
+		if (not defined($fecha_inicio)) {
+			$fecha_inicio = CA::FechasSistema->getFechaDesde('fact');
+		}
+		$fecha_fin = $sesion->getVar('Fact_fecha_fin');
+		if (not defined($fecha_fin)) {
+			$fecha_fin = CA::FechasSistema->getFechaHasta('fact') || CA::FechasSistema->getFechaActual();
+		}
+	}
+	my $vars = { fecha_inicio => $fecha_inicio, fecha_fin => $fecha_fin };
+	$r->pnotes('vars', $vars);
+	{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/form_elegir_fechas_facturacion.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+
+	# Listar todos los clientes y sus facturas
+	$r->pnotes('fecha_inicio', $fecha_inicio);
+	$r->pnotes('fecha_fin', $fecha_fin);
+	{# start include-uri
+my ($_uri);$_uri = q|axkit:includes/mostrar_facturacion_de_agente.exsp|;;
+AxKit::XSP::Util::include_uri(
+$document, $parent, $_uri);}
+
+}
+$parent = $parent->getParentNode;
+
+	
+return OK;
+}

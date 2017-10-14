@@ -1,0 +1,16 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+
+Le informamos -según usted lo solicitó a través de Mi Panel- que su consumo no facturado hasta la fecha <%fecha_hasta%> ha superado los límites establecidos por usted. 
+
+<%alerta%>       
+
+Para dejar de recibir estos avisos, o modificar el límite establecido, ingrese en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo.
+	
+Por consultas, ingrese a nuestra sección de preguntas frecuentes en http://www.telephone2.com/seccion/486/preguntas-frecuentes.html, o comuníquese con nuestro Centro de Atención al Cliente por e-mail a asistencia@telephone2.com.
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Telephone 2
+www.telephone2.com

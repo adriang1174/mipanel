@@ -1,0 +1,408 @@
+﻿Array
+(
+    [0] => Array
+        (
+            [id] => 18616
+            [ca_cnro] => 1374996
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [1] => Array
+        (
+            [id] => 18617
+            [ca_cnro] => 1796994
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [2] => Array
+        (
+            [id] => 18618
+            [ca_cnro] => 2000717
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [3] => Array
+        (
+            [id] => 18619
+            [ca_cnro] => 2024772
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [4] => Array
+        (
+            [id] => 18620
+            [ca_cnro] => 2073641
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [5] => Array
+        (
+            [id] => 18621
+            [ca_cnro] => C103137
+            [Usuario] => 20x49
+            [Referencia] => S - Problemas con Servicio
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. Verificar consumo online. Existe dificultad
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:00:17
+        )
+
+    [6] => Array
+        (
+            [id] => 18626
+            [ca_cnro] => 5001411
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado HOLA. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:44
+        )
+
+    [7] => Array
+        (
+            [id] => 18627
+            [ca_cnro] => 5001397
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado HOLA. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:44
+        )
+
+    [8] => Array
+        (
+            [id] => 18628
+            [ca_cnro] => 9001141
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado HOLA. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:44
+        )
+
+    [9] => Array
+        (
+            [id] => 18629
+            [ca_cnro] => C505634
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado HOLA. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:44
+        )
+
+    [10] => Array
+        (
+            [id] => 18630
+            [ca_cnro] => C112133
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado HOLA. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:44
+        )
+
+    [11] => Array
+        (
+            [id] => 18622
+            [ca_cnro] => 1725048
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:19
+        )
+
+    [12] => Array
+        (
+            [id] => 18623
+            [ca_cnro] => 1047939
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:19
+        )
+
+    [13] => Array
+        (
+            [id] => 18624
+            [ca_cnro] => 1445360
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:19
+        )
+
+    [14] => Array
+        (
+            [id] => 18625
+            [ca_cnro] => 1725170
+            [Usuario] => 20x49
+            [Referencia] => S - Sin Consumo
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Incidencia automatica. No tiene consumo en ultimos 7 dias. Enviar mail Verificacion de Baja en Consumo
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:19
+        )
+
+    [15] => Array
+        (
+            [id] => 18631
+            [ca_cnro] => 4002573
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado RED. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:46
+        )
+
+    [16] => Array
+        (
+            [id] => 18632
+            [ca_cnro] => 4002160
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado RED. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:46
+        )
+
+    [17] => Array
+        (
+            [id] => 18633
+            [ca_cnro] => 4000904
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado RED. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:46
+        )
+
+    [18] => Array
+        (
+            [id] => 18634
+            [ca_cnro] => 3005487
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado RED. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:46
+        )
+
+    [19] => Array
+        (
+            [id] => 18635
+            [ca_cnro] => 3005273
+            [Usuario] => 20x49
+            [Referencia] => Cliente Cortado RED. Analizar la situacion
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Cortado. Analizar la situacion
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:46
+        )
+
+    [20] => Array
+        (
+            [id] => 18636
+            [ca_cnro] => 1072840
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [21] => Array
+        (
+            [id] => 18637
+            [ca_cnro] => 2161613
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [22] => Array
+        (
+            [id] => 18638
+            [ca_cnro] => 2165476
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [23] => Array
+        (
+            [id] => 18639
+            [ca_cnro] => 2176305
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [24] => Array
+        (
+            [id] => 18640
+            [ca_cnro] => 2215244
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [25] => Array
+        (
+            [id] => 18641
+            [ca_cnro] => 4002627
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+    [26] => Array
+        (
+            [id] => 18642
+            [ca_cnro] => C114168
+            [Usuario] => 20x49
+            [Referencia] => Cliente Rehabilitado RED. Avisar
+            [Categoria] => Atencion
+            [SubCategoria] => Consulta
+            [IncidenciaEstado] => Open
+            [Texto] => Cliente Rehabilitado. Avisar
+            [Estado] => 0
+            [FechaCreacion] => 2016-02-02 11:01:47
+        )
+
+)
+ENVIO OK. ID: 18616
+ENVIO OK. ID: 18617
+ENVIO OK. ID: 18618
+ENVIO OK. ID: 18619
+ENVIO OK. ID: 18620
+ENVIO OK. ID: 18621
+ENVIO OK. ID: 18626
+ENVIO OK. ID: 18627
+ENVIO OK. ID: 18628
+ENVIO OK. ID: 18629
+ENVIO OK. ID: 18630
+ENVIO OK. ID: 18622
+ENVIO OK. ID: 18623
+ENVIO OK. ID: 18624
+ENVIO OK. ID: 18625
+ENVIO OK. ID: 18631
+ENVIO OK. ID: 18632
+ENVIO OK. ID: 18633
+ENVIO OK. ID: 18634
+ENVIO OK. ID: 18635
+ENVIO OK. ID: 18636
+ENVIO OK. ID: 18637
+ENVIO OK. ID: 18638
+ENVIO OK. ID: 18639
+ENVIO OK. ID: 18640
+ENVIO OK. ID: 18641
+ENVIO OK. ID: 18642

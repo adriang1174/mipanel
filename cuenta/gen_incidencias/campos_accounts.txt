@@ -1,0 +1,69 @@
+ï»¿Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [ca_cnro] => 9001333
+            [ca_cnom] => Sebastian Gil
+            [ca_mail] => sebastian@promaker.com.ar
+            [Mercado] => Alternativa
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-13 13:05:07
+        )
+
+    [1] => Array
+        (
+            [id] => 3
+            [ca_cnro] => 4001939
+            [ca_cnom] => Masashi MIZUKAMI
+            [ca_mail] => mari.yamauchi@bn.mofa.go.jp
+            [Mercado] => Telephone2
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-13 15:27:44
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [ca_cnro] => 9001334
+            [ca_cnom] => Luis Dartiguelongue
+            [ca_mail] => luis@dartiguelongue.com.ar
+            [Mercado] => HolaTel
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-14 17:15:05
+        )
+
+    [3] => Array
+        (
+            [id] => 5
+            [ca_cnro] => 4001949
+            [ca_cnom] => PESL ANALÍA
+            [ca_mail] => analiapesl@hotmail.com
+            [Mercado] => Telephone2
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-15 10:01:42
+        )
+
+    [4] => Array
+        (
+            [id] => 7
+            [ca_cnro] => 5000589
+            [ca_cnom] => PRICEWATERHOUSE COOPERS - 8151
+            [ca_mail] => elza.modesto@br.pwc.com
+            [Mercado] => LatinaTel
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-16 10:53:27
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [ca_cnro] => 4001954
+            [ca_cnom] => RIVERA MARIA ISABEL
+            [ca_mail] => 
+            [Mercado] => Telephone2
+            [Estado] => 1
+            [FechaCreacion] => 2012-03-15 15:46:28
+        )
+
+)

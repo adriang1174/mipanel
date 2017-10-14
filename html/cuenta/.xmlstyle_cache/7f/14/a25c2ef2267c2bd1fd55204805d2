@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ca><title id="1" href="serviciosonline.xsp">Pedido de CallBack</title><xsl-template>serviciosonline</xsl-template><if>red</if><cliente><cliente_id>C106377</cliente_id><rsocial>Maldonado Cucaro Silvia Ines</rsocial><cuit>27-92295975-2</cuit><cpebanelco>106377102</cpebanelco><cpelink>308106377102</cpelink><email>claveriehogar@telpin.com.ar</email><agente>132</agente><tipo>C         </tipo></cliente>
+<botonera><opcion id="1">
+  <titulo>Facturas</titulo><href>facturas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="2">
+  <titulo>Tarifas</titulo><href>tarifas.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="3">
+  <titulo>Cuenta Corriente</titulo><href>cc.xsp</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="4">
+  <titulo>Consumo no facturado</titulo><href>trafico.xsp?fact=0&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="5">
+  <titulo>Consumo facturado</titulo><href>trafico.xsp?fact=1&amp;filt=0</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="6">
+  <titulo>Consumo por periodo</titulo><href>trafico.xsp?fact=1&amp;filt=1</href><selected>0</selected><seccion>info</seccion></opcion><opcion id="7">
+  <titulo>Avisos de consumo</titulo><href>avisos.xsp</href><selected>0</selected><seccion>admin</seccion></opcion><opcion id="8">
+  <titulo>Referencia de llamadas</titulo><href>proyectos.xsp</href><selected>0</selected></opcion><opcion id="9">
+  <titulo>Centro de costos</titulo><href>centrocostos.xsp</href><selected>0</selected></opcion><opcion id="10">
+  <titulo>Modificacion de datos</titulo><href>cambiodatos.xsp</href><selected>0</selected></opcion><opcion id="11">
+  <titulo>Pedido de CallBack</titulo><href>serviciosonline.xsp</href><selected>1</selected></opcion><opcion id="12">
+  <titulo>Salir</titulo><href>logout.xsp</href><selected>0</selected></opcion></botonera><form id="serviciosOnLineListar"><cuenta></cuenta><action>/cuenta/serviciosonline.xsp</action><cuentas><cuenta><servicio>CallBack Nacional</servicio><producto>CallBack Nacional</producto><idform>1</idform><login>2254400798</login><id_cliprod>11846</id_cliprod><cliente_id>C106377</cliente_id><solicitud>5593</solicitud><origen>011</origen><codigoplan>41</codigoplan></cuenta><cuenta><servicio>CallBack Nacional</servicio><producto>CallBack Nacional</producto><idform>2</idform><login>2267420719</login><id_cliprod>11846</id_cliprod><cliente_id>C106377</cliente_id><solicitud>5593</solicitud><origen>011</origen><codigoplan>41</codigoplan></cuenta><cuenta><servicio>CallBack Nacional</servicio><producto>CallBack Nacional</producto><idform>3</idform><login>2267550055</login><id_cliprod>11846</id_cliprod><cliente_id>C106377</cliente_id><solicitud>5593</solicitud><origen>011</origen><codigoplan>41</codigoplan></cuenta></cuentas></form></ca>

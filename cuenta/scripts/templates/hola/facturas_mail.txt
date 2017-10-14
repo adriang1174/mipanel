@@ -1,0 +1,17 @@
+Código de Cliente: <%cliente_id%> 
+Estimado/a <%rsocial%>:
+
+Te enviamos adjunta la imagen de la factura emitida a tu nombre y el detalle de consumo correspondiente.
+
+Le enviamos adjunta la factura emitida a su nombre y el detalle de consumo correspondiente. Para poder visualizar su comprobante, deberá tener instalada la aplicación Adobe Acrobat Reader. Si no cuenta con esta aplicación puede descargarla desde http://www.adobe.com/.
+También puede visualizar su factura y ver más reportes, accediendo a MiPanel con su usuario y contraseña.
+
+Para dejar de recibir la factura vía e-mail, ingresa en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo.
+     
+Por consultas, ingresa a nuestra sección de preguntas frecuentes en http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html, o comunícate con nuestro Centro de Atención al Cliente por e-mail a asistencia@holatel.com.
+
+Estamos a tu disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+HolaTel
+www.holatel.com

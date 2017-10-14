@@ -1,0 +1,8 @@
+<?
+
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La información es presentada al sólo efecto informativo. Los datos surgen de los registros en Alternativa, salvo error u omisión involuntaria. Ante cualquier duda o discrepancia, por favor comuníquese a <a href="mailto:asistencia@alternativa.com.ar">asistencia@alternativa.com.ar</a> o telefónicamente, con nuestro Centro de Atención al Cliente, a través del 0-810-3210-733.');
+
+define( "OWNER_TPL_RATE_MAINTENANCE", "Cargo por Mantenimiento de Cuenta $8.90.-");
+
+
+?>

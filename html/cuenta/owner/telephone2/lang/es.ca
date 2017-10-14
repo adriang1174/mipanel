@@ -1,0 +1,40 @@
+<?
+
+define("OWNER_TPL_TEXTO_CUPON_PAGO", "Este cup&oacute;n le permitir&aacute; abonar el total de su saldo, tanto en Pago F&aacute;cil (en efectivo o con cheque) como en Rapipago (en efectivo).");
+
+define( "OWNER_TPL_TICKET_DISCLAIMER", 'La información es presentada al sólo efecto informativo. Los datos surgen de los registros en Telephone 2, salvo error u omisión involuntaria. Ante cualquier duda o discrepancia, por favor comuníquese a asistencia@telephone2.com o telefónicamente, con nuestro Centro de Atención al Cliente, a través del 0800-345-1070.');
+define( "OWNER_TPL_RATE_MAINTENANCE", "");
+define( "OWNER_TPL_RATE_ACLARATION2", "Las tarifas no incluyen recargos por accesos");
+
+/* Temas de Interés -> Novedades  ------TEMPORAL------ */
+	
+define( "OWNER_TPL_NEWS_7_1", "<b>Marzo 2009</b><br><br><strong>Ahora Mi Cuenta se llama Mi Panel.</strong><br><br>Telephone 2 presenta <strong>Mi Panel</strong>, su centro de consulta online. En <strong>Mi Cuenta</strong>, usted podía verificar el detalle de sus consumos y su saldo. En <strong>Mi Panel</strong> podrá, además, dar de alta servicios y modificar su configuración, conocer las tarifas de su plan, generar reportes de sus consumos, abonar online, conocer al instante novedades y promociones exclusivas para usted ¡y mucho más!");
+
+define("TPL_FILE_EDIT_INVOICEDATA_COMPANY_FORMULARIO", "downloads/telephone2/Solicitud Cambio de Razon Social.doc");
+define("TPL_FILE_EDIT_INVOICEDATA_COMPANY_INSTRUCTIVO", "downloads/telephone2/Instructivo para el cambio de Razon Social.doc");
+
+define("TPL_MSG_EDIT_INVOICEDATA_COMPANY", "Para modificar los datos de su raz&#243;n social, por favor descargue el siguiente formulario, compl&#233;telo y env&#237;elo por fax al +54 11 4032 1266.");
+
+
+
+/* INSTRUCTIONS */
+define("OWNER_TPL_PLATEADA_TITLE", "TARJETA PLATEADA");
+define('OWNER_TPL_PLATEADA_INSTRUCTIONS', '
+<div style="width:450px">
+<p><b class="ticket_row_title">Instrucciones de uso</b></p><p>&nbsp;</p>
+<p><b class="ticket_row_title">1.</b> Marque el número de acceso correspondiente al país donde se encuentra.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">2.</b> Cuando el sistema se lo indique, ingrese su clave de seguridad de 12 dígitos, seguida de la tecla numeral (#).</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">3.</b> Marque el número telefónico completo al cual desea llamar + la tecla numeral (#).</p><p>&nbsp;</p>
+<p>- Para llamadas de larga distancia nacional a fijos, marque: 00 + 54 + código de ciudad + número.</p><p>&nbsp;</p>
+<p>- Para llamadas de larga distancia nacional a celular, marque: 00 + 54 + código de ciudad + 15 + número. O bien 00 + 54 + 9 + código de ciudad + número.</p><p>&nbsp;</p>
+<p>- Para llamadas de larga distancia internacional, marque: 00 + código de país + número. </p><p>&nbsp;</p>
+</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">4.</b> En unos segundos se comunicará con el destino solicitado.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">Importante: La Tarjeta Plateada no ofrece descuentos para llamadas a números locales.</b> Si la utiliza para destinos locales, deberá sumar al costo del pulso telefónico, el cargo del número de acceso.</p><p>&nbsp;</p>
+</div>
+');
+
+
+
+
+?>

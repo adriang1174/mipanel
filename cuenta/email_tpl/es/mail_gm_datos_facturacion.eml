@@ -1,0 +1,23 @@
+From: [MAIL_FROM]
+Reply-To: importaciongm@grupoalternativa.com
+Subject: MiPanel - Cambio en la configuracion de Servicios
+
+[Instructions]
+DupCheck1=key3
+OnNewAttachTrack=Web cambio de datos
+OnDupAttachTrack=Web cambio de datos
+SaveThis=MiPanel - Cambio en datos de facturacion
+
+[Data]
+key3=[CLIENT_ID]
+
+Razon_Social=[RAZON_SOCIAL]
+Calle=[user_calle]
+Numero=[user_nro]
+Piso=[user_piso]
+Dpto=[user_dpto]
+Ciudad=[user_ciudad]
+Localidad=[user_localidad]
+Codigo_postal=[user_cp]
+Provincia=[user_pcia]
+Fecha_envio=[FECHA_ENVIO]

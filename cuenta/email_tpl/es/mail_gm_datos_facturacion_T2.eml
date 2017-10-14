@@ -1,0 +1,16 @@
+From: [MAIL_FROM]
+Reply-To: importaciongm@grupoalternativa.com
+Subject: MiPanel - Cambio en la configuracion de Servicios
+
+Formulario=MiPanel - Cambio en datos de facturacion
+
+Razon_Social=[RAZON_SOCIAL]
+Calle=[user_calle]
+Numero=[user_nro]
+Piso=[user_piso]
+Dpto=[user_dpto]
+Ciudad=[user_ciudad]
+Localidad=[user_localidad]
+Codigo_postal=[user_cp]
+Provincia=[user_pcia]
+Fecha_envio=[FECHA_ENVIO]

@@ -1,0 +1,17 @@
+<?
+
+require_once( 'includepath.ca');
+
+require_once( INCLUDE_PATH . "PEAR/Image/Barcode.php");
+require_once( INCLUDE_PATH . "varconn.php");
+require_once( INCLUDE_PATH . "clientcontrol.php");
+
+$id = varconn::GET( "id");
+$hash = varconn::GET( "h");
+
+if ( sha1( $id . "casec*911") != $hash)
+    clientcontrol::forbidden( );
+
+Image_Barcode::draw( $id, 'int25', 'gif');
+
+?>

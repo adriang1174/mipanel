@@ -1,0 +1,5 @@
+<?
+
+echo "Has been ocurred an initialization internal error!.";
+
+?>

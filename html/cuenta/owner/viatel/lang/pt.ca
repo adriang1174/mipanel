@@ -1,0 +1,390 @@
+<?
+
+define('OWNER_TPL_TITLE_VIEW_INFO', 'Ver / Alterar dados');
+
+/* INSTRUCTIONS */
+define("OWNER_TPL_PLATEADA_TITLE", "TARJETA PLATEADA");
+define('OWNER_TPL_PLATEADA_INSTRUCTIONS', '
+<div style="width:450px">
+<p><b class="ticket_row_title">Instruções de utilização:</b></p><p>&nbsp;</p>
+<p><b class="ticket_row_title">1.</b> Disque o número de acesso do país/cidade de onde você está chamando. <br /> Por exemplo, se estiver nos Estados Unidos disque: 1-866-355-0349.</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">2.</b> Ao ouvir a gravação pedindo seu número PIN, disque seu número de Prateada (senha) seguido pela tecla # (jogo da velha).</p><p>&nbsp;</p>
+<p><b class="ticket_row_title">3.</b> Durante a gravação com as instruções de discagem, disque o número de telefone de destino que deseja chamar, seguido pela tecla # (jogo da velha). </p><p>&nbsp;</p>
+<p>CÓDIGO PAIS + CÓDIGO DE ÁREA + NÚMERO DE TELEFONE + # (jogo da velha) </p><p>&nbsp;</p>
+<p>Por exemplo, para chamar o número 555-8080 em Nova Iorque - Estados Unidos, disque: 1 212 555 8080 #.</p><p>&nbsp;</p>
+<p>Observação: </p><p>&nbsp;</p>
+<p>Todos os países com senha adicional, após a discagem do número de Toll Free será requisitada uma senha para acessar o sistema. Disque a senha indicada (ex. 0733) para o país onde se encontra de acordo com a lista divulgada. </p><p>&nbsp;</p>
+
+
+<p>Chamadas Consecutivas: </p><p>&nbsp;</p>
+<p>- Se o telefone chamado estiver ocupado ou ninguém atende, pressione * (asterísco) duas vezes. O sistema pedirá um novo número de destino. Pressionando três vezes o *, o sistema será desconectado automaticamente.</p><p>&nbsp;</p>
+
+<p>Dicas: </p><p>&nbsp;</p>
+<p>- Se cometer um engano ao discar seu número PIN ou o número de destino que deseja falar, disque * (asterísco) para apagar o que discou e disque o número novamente.</p><p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+');
+
+
+/* El titulo (nombre del producto). */
+define( "TPL_TITLE", "Conta Viatel");
+
+/* Los nombres de los tipos de links. */
+define( "TPL_INFORMACION", "Informação");
+define( "TPL_ADMINISTRACION", "Administração");
+
+/* Los nombres de las pantallas. */
+define( "TPL_TICKETS", "Faturas");
+define( "TPL_TARIFAS", "Tarifas");
+define( "TPL_TRAFF_NF", "Cons. não faturado");
+define( "TPL_TRAFF_F", "Cons. faturado");
+define( "TPL_CC", "Conta Corrente");
+define( "TPL_CONSUMONOfaturaDO", "Consumo não faturado");
+define( "TPL_CONSUMOfaturaDO", "Cons. faturado");
+define( "TPL_CONSUMOPORPERIODO", "Consumo por período");
+define( "TPL_AVISOSDECONSUMO", "Avisos de consumo");
+define( "TPL_ReferênciaDEchamadaS", "Referência de chamadas");
+define( "TPL_CENTRODECOSTOS", "Centro de custos");
+define( "TPL_MODIFICACIONDEDATOS", "Modificação de dados");
+define( "TPL_PEDIDODECALLBACK", "Pedido de Callback");
+define( "TPL_LOGOUT", "Sair");
+
+/* Los nombres de los meses. */
+define( "TPL_JANUARY", "Janeiro");
+define( "TPL_FEBRUARY", "Fevereiro");
+define( "TPL_MARCH", "Março");
+define( "TPL_APRIL", "Abril");
+define( "TPL_MAY", "Maio");
+define( "TPL_JUNE", "Junho");
+define( "TPL_JULY", "Julho");
+define( "TPL_AUGOUST", "Agosto");
+define( "TPL_SEPTEMBER", "Setembro");
+define( "TPL_OCTOBER", "Outubro");
+define( "TPL_NOVEMBER", "Novembro");
+define( "TPL_DECEMBER", "Dezembro");
+
+/* Iniciales de los dias de la semana. */
+define( "TPL_SUNDAY_FIRST_LETTER", "D");
+define( "TPL_MONDAY_FIRST_LETTER", "S");
+define( "TPL_TUESDAY_FIRST_LETTER", "T");
+define( "TPL_WEDNESDAY_FIRST_LETTER", "Q");
+define( "TPL_THURSDAY_FIRST_LETTER", "Q");
+define( "TPL_FRIDAY_FIRST_LETTER", "S");
+define( "TPL_SATURDAY_FIRST_LETTER", "S");
+
+/* scr: ticket */
+define( "TPL_TICKET_DISCLAIMER", 'A informação apresentada com caráter meramente informativo.');
+define( "TPL_NO_IVA", 'Os valores não incluem impostos.');
+
+define( "TPL_TITLE_TICKETS", "Consultas de faturas");
+define( "TPL_TITLE_TICKET", "Consultas de faturas,, &gt; [REPLACEMENT]");
+define( "TPL_TITLE_TICKET_ITEM", "Faturas por data de emissão. Detalhe");
+define( "TPL_TITLE_TICKET_ITEM_TRAFF", "Faturas por data de emiss~ao. Demonstrativo de chamadas");
+define( "TPL_TITLE_CHECKING_ACCOUNT", "Conta Corrente");
+define( "TPL_TITLE_RECEIPT", "Conta Corrente ,, &gt; [REPLACEMENT]");
+
+define( "TPL_SELECT_BY_MONTH", "Para consultar uma fatura, selecione por número de fatura ou por mês de emissão");
+define( "TPL_SELECT_THE_MONTH", "Selecione o mês da fatura que deseja visualizar");
+
+define( "TPL_TITULAR", "Senhor(a):");
+define( "TPL_ADDRESS", "Endereço:");
+define( "TPL_CLIENT_CODE", "Código de cliente:");
+define( "TPL_CUIT", "CPF/CNPJ:");
+define( "TPL_PAY_COND", "Cond. de pagamento:");
+define( "TPL_IVA_COND", "Cond. de imposto:");
+
+define( "TPL_DESCRIPTION", "DESCRIÇÃO");
+define( "TPL_UNITS", "UNIDADES");
+define( "TPL_PRICE", "VALOR");
+
+define( "TPL_NETO21", "Neto 21%");
+define( "TPL_NETO27", "Neto 27%");
+define( "TPL_IVA21", "IMPOSTO 21%");
+define( "TPL_IVA27", "IMPOSTO 27%");
+define( "TPL_IVA21NI", "IMPOSTO 21% NI");
+define( "TPL_IVA27NI", "IMPOSTO 27% NI");
+define( "TPL_SUBTOTAL", "Subtotal");
+define( "TPL_TOTAL", "Total");
+
+define( "TPL_BANELCO_KEY", "Senha de Pagamento Eletrônico <b>Banelco</b>:");
+define( "TPL_LINK_KEY", "Senha de Pagamento Eletrônico <b>Link</b>:");
+
+define( "TPL_TICKET_N", "Fatura N");
+define( "TPL_DATE", "Data");
+define( "TPL_EXPIRE_DATE", "Vencimento");
+
+define( "TPL_NO_TICKET_DETAILS", "Não existe demonstrativo de consumo para esta fatura.");
+
+define( "TPL_fatura", "Fatura:");
+define( "TPL_RSOCIAL", "Razão social:");
+define( "TPL_RELEASE_DATE", "Data de emissão");
+
+define( "TPL_LINE_PIN", "Linha/Pin");
+define( "TPL_CALLS", "Chamadas");
+define( "TPL_DURATION", "Duração");
+define( "TPL_PRICE2", "Valor");
+
+define( "TPL_HOUR", "Hora");
+define( "TPL_SOURCE", "Origem");
+define( "TPL_CALLED", "N. Discado");
+define( "TPL_TARGET", "Destino");
+
+define( "TPL_COMPROBANT", "Comprovante");
+
+define( "TPL_LOGIN", "Login:");
+define( "TPL_PASSWORD", "Password:");
+define( "TPL_LOGIN_ERROR", "Usuário ou senha inválida, ou sessão expirada.");
+define( "TPL_CHECKING_ACCOUNT", "Conta Corrente");
+
+define( "TPL_PAGINATE_SEPARATOR", "&nbsp;-&nbsp;");
+define( "TPL_PAGINATE_OF", "&nbsp;de&nbsp;");
+define( "TPL_PAGINATE_BY_PAGE", "por página:");
+
+define( "TPL_RELEASE", "Emissão");
+define( "TPL_NEGATIVE", "Deve");
+define( "TPL_POSITIVE", "Há");
+define( "TPL_BALANCE", "Saldo");
+define( "TPL_INITIAL_BALANCE", "Saldo inicial:");
+define( "TPL_TOTAL_BALANCE", "Saldo total:");
+
+define( "TPL_CHECKING_ACCOUNT_DESC", "Aqui poderá ver as faturas emitidas, os pagamentos que recebemos em sua conta e seu saldo final.");
+define( "TPL_RECEIPT_N", "Recibo N");
+define( "TPL_NO_RECEIPT_DETAILS", "Não há demonstrativo para este recibo.");
+define( "TPL_PAY_DATE", "Data de Pagamento:");
+define( "TPL_BANK", "BANCO");
+define( "TPL_PAYCHECK", "CHEQUE");
+
+define( "TPL_DATE_UPPER", "DATA");
+define( "TPL_TITLE_TRAFF_NF", "Relatórios de consumo não faturado");
+define( "TPL_TITLE_TRAFF_NF_CENTRO_COSTOS", "Relatórios de consumo não faturado,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_NF_DESC", "Nesta sessão, poderá consultar o demonstrativo de chamadas realizadas este mês, que ainda não foram faturadas.");
+
+define( "TPL_REPORT_WITH_FILTER", "Relatórios com filtro");
+define( "TPL_REPORTS", "Relatórios:");
+define( "TPL_DATE_FROM", "Data de início:");
+define( "TPL_DATE_TO", "Data final:");
+define( "TPL_DIALED_NUMBER", "Número discado:");
+
+/* Trafico No faturado */
+define( "TPL_TRAFF_NF_DETAIL_BY_CENTRO_DE_COSTO", "Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_NF_DETAIL_BY_LINE_PIN", "Demonstrativo por Linha/PIN");
+define( "TPL_TRAFF_NF_DETAIL_BY_CALL_REFERENCE", "Demonstrativo por Referência de chamada");
+define( "TPL_TRAFF_NF_DETAIL_BY_LAST_CALLS", "Últimas chamadas");
+define( "TPL_TRAFF_NF_RESUME_BY_CENTRO_DE_COSTO", "Resumo por Centro de Custos");
+define( "TPL_TRAFF_NF_RESUME_BY_LINE_PIN", "Resumo por Linha/PIN");
+define( "TPL_TRAFF_NF_RESUME_BY_DIALED_NUMBER", "Resumo por Número Discado");
+define( "TPL_TRAFF_NF_RESUME_BY_CALL_REFERENCE", "Resumo por Referência de Chamadas");
+define( "TPL_TRAFF_NF_RESUME_BY_ORIGIN_OF_CALL", "Resumo por nº de origem de chamada");
+define( "TPL_TRAFF_NF_RESUME_BY_LOCATION", "Resumen por país/localidade");
+
+define( "TPL_TITLE_TRAFF_NF_DETAIL_BY_CENTRO_DE_COSTO", "Relatórios de consumo não faturado,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_NF_DETAIL_BY_LINE_PIN", "Relatórios de consumo não faturado,, &gt; Demonstrativo por Linha/PIN");
+define( "TPL_TITLE_TRAFF_NF_DETAIL_BY_CALL_REFERENCE", "Relatórios de consumo não faturado,, &gt; Demonstrativo por Referência de Chamadas");
+define( "TPL_TITLE_TRAFF_NF_DETAIL_BY_LAST_CALLS", "Relatórios de consumo não faturado,, &gt; Últimas Chamadas");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_CENTRO_DE_COSTO", "Relatórios de consumo não faturado,, &gt; Resumo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_LINE_PIN", "Relatórios de consumo não faturado,, &gt; Resumo por Linha/PIN");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_DIALED_NUMBER", "Relatórios de consumo não faturado,, &gt; Resumo por Número Discado");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_CALL_REFERENCE", "Relatórios de consumo não faturado,, &gt; Resumo por Referência de Chamadas");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_ORIGIN_OF_CALL", "Relatórios de consumo não faturado,, &gt; Resumo por nº de origem de chamada");
+define( "TPL_TITLE_TRAFF_NF_RESUME_BY_LOCATION", "Relatórios de consumo não faturado,, &gt; Resumo por país/localidade");
+
+
+define( "TPL_DIALED_NUMBER_ACLARATION", "Ingresse o número de destino tal qual foi discado");
+define( "TPL_NO_ROWS", "No se han encontrado registros.");
+
+define( "TPL_NOTICES", "Avisos de consumo");
+
+define( "TPL_YES", "S&iacute;");
+define( "TPL_NO", "No");
+define( "TPL_RECEIVE_REPORT_DESC", "Receber um relatório semanal de consumo por email");
+define( "TPL_RECEIVE_ALERT_DESC", "Receber alertas por email quando seu consumo superar um limite");
+define( "TPL_LIMIT_MINUTES_DESC", "Limite em minutos");
+define( "TPL_LIMIT_PRICE_DESC", "Limite em valores");
+define( "TPL_RECEIVE_IMAGE_DESC", "Receber a imagem da fatura mensal por email");
+define( "TPL_RECEIVE_DETAIL_DESC", "Receber o demonstrativo de consumo por email (junto a imagem da fatura mensal)");
+
+define( "TPL_MINUTES", "minutos");
+define( "TPL_TITLE_NOTICES", "Avisos de consumo");
+define( "TPL_NOTICES_ERROR", "Ocorreu um erro na atualização da configuração");
+
+/* Trafico por Periodo */
+define( "TPL_TRAFF_P", "Cons. por período");
+
+define( "TPL_TITLE_TRAFF_P", "Relatórios de consumo faturado por período");
+define( "TPL_TITLE_TRAFF_P_CENTRO_COSTOS", "Relatórios de consumo não faturado,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_P_DESC", "Nesta sessão, você poderá consultar o resumo das chamadas realizadas em meses anteriores e já faturadas, assim como o detalhe de cada uma delas.");
+
+define( "TPL_TRAFF_P_REPORT_ABC_BY_DEST", "ABC por Destino");
+define( "TPL_TRAFF_P_REPORT_ABC_BY_DIALED_NUMBER", "ABC por Número Discado");
+define( "TPL_TRAFF_P_REPORT_ABC_BY_ORIGIN", "ABC por Origem");
+define( "TPL_TRAFF_P_REPORT_DETAIL_BY_COST_CENTER", "Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_P_REPORT_DETAIL_BY_LINE_PIN", "Demonstrativo por Linha/PIN");
+define( "TPL_TRAFF_P_REPORT_DETAIL_BY_PROYECT", "Demonstrativo por Projeto");
+define( "TPL_TRAFF_P_REPORT_SUMMARY_BY_COST_CENTER", "Resumo por Centro de Custo");
+define( "TPL_TRAFF_P_REPORT_SUMMARY_BY_CALL_REFERENCE", "Resumo por Referência de Chamadas");
+
+define( "TPL_TITLE_TRAFF_P_REPORT_ABC_BY_DEST", "Relatórios de consumo faturado por período,, &gt; ABC por Destino");
+define( "TPL_TITLE_TRAFF_P_REPORT_ABC_BY_DIALED_NUMBER", "Relatórios de consumo faturado por período,, &gt; ABC por Número Discado");
+define( "TPL_TITLE_TRAFF_P_REPORT_ABC_BY_ORIGIN", "Relatórios de consumo faturado por período,, &gt; ABC por Origem");
+define( "TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_COST_CENTER", "Relatórios de consumo faturado por período,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_LINE_PIN", "Relatórios de consumo faturado por período,, &gt; Demonstrativo por Linha/PIN");
+define( "TPL_TITLE_TRAFF_P_REPORT_DETAIL_BY_PROYECT", "Relatórios de consumo faturado por período,, &gt; Demonstrativo por Projeto");
+define( "TPL_TITLE_TRAFF_P_REPORT_SUMMARY_BY_COST_CENTER", "Relatórios de consumo faturado por período,, &gt; Resumo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_P_REPORT_SUMMARY_BY_CALL_REFERENCE", "Relatórios de consumo faturado por período,, &gt; Resumo por Referência de Chamadas");
+
+/* Trafico faturado */
+define( "TPL_TRAFF_F_REPORT_DETAIL_BY_COST_CENTER", "Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_F_REPORT_DETAIL_BY_ACCOUNT", "Demonstrativo por Conta");
+define( "TPL_TRAFF_F_REPORT_DETAIL_BY_CALL_REFERENCE", "Demonstrativo por Referência de Chamadas");
+define( "TPL_TRAFF_F_REPORT_SUMMARY_BY_COST_CENTER", "Resumo por Centro de Custo");
+define( "TPL_TRAFF_F_REPORT_SUMMARY_BY_CALL_REFERENCE", "Resumo por Referência de Chamadas");
+define( "TPL_TRAFF_F_REPORT_SUMMARY_BY_ORIGIN_OF_CALL", "Resumo por nº de origem de chamada");
+define( "TPL_TRAFF_F_REPORT_SUMMARY_BY_DIALED_NUMBER", "Resumo por nº de destino");
+define( "TPL_TRAFF_F_REPORT_SUMMARY_BY_LOCATION", "Resumo por país/localidade");
+
+define( "TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_COST_CENTER", "Faturas por data de emissão e nº,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_ACCOUNT", "Faturas por data de emissão e nº,, &gt; Demonstrativo por Conta");
+define( "TPL_TITLE_TRAFF_F_REPORT_DETAIL_BY_CALL_REFERENCE", "Faturas por data de emissão e nº,, &gt; Demonstrativo por Referência de Chamada");
+define( "TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_COST_CENTER", "Faturas por data de emissão e nº,, &gt; Resumo por Centro de Custo");
+define( "TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_CALL_REFERENCE", "Faturas por data de emissão e nº,, &gt; Resumo por Referência de Chamadas");
+define( "TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_ORIGIN_OF_CALL", "Faturas por data de emissão e nº,, &gt; Resumo por nº de origem de chamada");
+define( "TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_DIALED_NUMBER", "Faturas por data de emissão e nº,, &gt; Resumo por nº de destino");
+define( "TPL_TITLE_TRAFF_F_REPORT_SUMMARY_BY_LOCATION", "Faturas por data de emissão e nº,, &gt; Resumo por país/localidade");
+
+define( "TPL_TITLE_TRAFF_F", "Faturas por data de emissão e nº");
+define( "TPL_TITLE_TRAFF_F_CENTRO_COSTOS", "Faturas por data de emissão e nº,, &gt; Demonstrativo por Centro de Custo");
+define( "TPL_TRAFF_F_DESC", "Nesta sessão, você poderá consultar o resumo das chamadas realizadas em meses anteriores e ja faturadas, assim como o detalhe de cada uma delas.");
+
+
+
+
+
+define( "TPL_DETAIL", "Detalhe");
+define( "TPL_DIALED_NUMBER2", "Número discado");
+
+define( "TPL_DATMOD", "Alterar Dados");
+define( "TPL_TITLE_DATMOD", "Troca de dados");
+define( "TPL_DATMOD_ERROR", "Ocorreu um erro na atualização da configuração");
+
+define( "TPL_EMAIL", "email");
+define( "TPL_PASSWORD2", "Senha");
+define( "TPL_PASSWORD2_CONFIRMATION", "Repita a senha");
+
+define( "TPL_DATMOD_WRONG_CONFIRMATION", "A senha e sua verificação não são iguais");
+define( "TPL_DATMOD_INVALID_EMAIL", "email inválido");
+define( "TPL_DATMOD_INVALID_PASSWORD", "Senha inválida");
+
+/* Centro de costos -> Novo Centro de Custo. */
+define( "TPL_TITLE_CCADD", "Centros de Custo,, &gt; Novo centro de custo");
+define( "TPL_TITLE_CCEDIT", "Centros de Custo,, &gt; Edição");
+
+define( "TPL_CCADD_ERROR", "Ocorreu um erro ao criar o centro de custo.");
+define( "TPL_ACCOUNT", "Conta");
+define( "TPL_TITLE_CCENTER", "Centros de Custo");
+define( "TPL_ACTIONS", "Ações");
+define( "TPL_CCDEL_CONFIRM", "Tem certeza que deseja apagar este centro de custo?");
+define( "TPL_CCADD_NOFREELINES", "Não há contas disponíveis");
+define( "TPL_CCEDIT_ERROR", "Ocorreu um erro na atualização do centro de custo.");
+define( "TPL_NOELEMENTS", "Não encontramos dados disponíveis.");
+
+
+/* Referência de chamada. */
+define( "TPL_TITLE_RCALL", "Referência de chamadas");
+define( "TPL_TITLE_RCALLADD", "Referência de chamadas,, &gt; Novo Projeto");
+define( "TPL_TITLE_RCALLEDIT", "Referência de chamadas,, &gt; Edição");
+
+define( "TPL_RCALLADD_ERROR", "Ocorreu um erro ao criar o projeto.");
+define( "TPL_RCALLDEL_CONFIRM", "Tem certeza que deseja apagar este projeto?");
+define( "TPL_PROJECT", "Projeto");
+define( "TPL_FIRST_NAME", "Nome");
+define( "TPL_LAST_NAME", "Sobrenome");
+define( "TPL_COMPANY", "Empresa");
+define( "TPL_COMPANY_TITLE", "Cargo");
+
+define( "TPL_RCALLEDIT_ERROR", "Ocorreu um erro na atualização do projeto.");
+
+/* Tarifas. */
+define( "TPL_SERVICE", "Serviço");
+define( "TPL_TITLE_RATES", "Tarifas");
+define( "TPL_RATES_TIP", "Selecione uma conta para visualizar as tarifas:");
+define( "TPL_RATE_PERMINUTE", "Tarifa (por minuto)");
+define( "TPL_VIGENCY", "Vigência");
+define( "TPL_RATES", "Tarifas");
+define( "TPL_TARGET_NUMBER", "Número de destino");
+define( "TPL_VIGENCY_FORMAT", "[FROM] - [TO]");
+define( "TPL_SPECIAL_RATE", "(Tarifa Especial)");
+define( "TPL_PREFIX", "Prefixo");
+
+DEFINE( "TPL_TITLE_RATE", "Tarifas,, &gt; [REPLACEMENT]");
+define( "TPL_RATE_ACLARATION", "Se o destino chamado é um número de telefone celular, a tarifa mostra o valor adicional correspondente.");
+define( "TPL_RATE_ACLARATION2", "As tarifas correspondem às chamadas efetuadas pelos acessos locais. Não incluem valores adicionais para chamadas efetuadas desde acessos Toll Free 800 ou telefones públicos.");
+define( "TPL_RATE_NO_IVA", "As tarifas com impostos inclusos.");
+define( "TPL_TARGET_PREFIX", "Prefixo destino");
+define( "TPL_TOTAL2", "TOTAL");
+
+define( "TPL_EMAIL_SEND", "Envio por email");
+define( "TPL_EMAIL_ADDRESS", "Endereço de email");
+define( "TPL_CHOOSE_PAYMENT", "Escolha uma forma de pagamento");
+define( "TPL_CUPON_PAGO_FACIL", "Boleto de pagamento para <b>Pago Fácil</b>");
+define( "TPL_IMPORT_TO_PAY", "Valor a pagar:");
+define( "TPL_PAGO_UNIVERSAL_TIP", "Indique o valor a pagar, e quando clicar em pagar, a página será automaticamente direcionada a Pago Universal.");
+
+define( "TPL_CUPON_DINERO_MAIL", "Boleto de pagamento para <b>Dinheiro Mail</b>");
+define( "TPL_CLIENT", "Cliente");
+define( "TPL_TOTAL_TO_PAY", "Total a pagar");
+define( "TPL_PAY_IN_BANKS", "Pagamento em agências bancárias");
+define( "TPL_PRINT_THIS", "Imprimir este boleto");
+define( "TPL_PRESENT_THIS", "Apresentar em qualquer agência bancária indicando que deseja realizar un Depósito Referenciado. Realização do depósito em nome de <b>Digicuenta S.A. de C.V.</b>");
+
+define( "TPL_HSBC", "HSBC (Bital)");
+define( "TPL_BANAMEX", "Banamex");
+
+define( "TPL_KEY_N", "Senha nº");
+define( "TPL_ACCOUNT_N", "Conta nº");
+define( "TPL_REFERENCE", "Referência");
+define( "TPL_DINERO_MAIL_ACLARATION", "Os pagamentos em Pesos Mexicanos são registrados em %currency%, convertendo os valores com a taxa de câmbio da referida moeda, do dia de efetivação do pagamento.");
+
+define( "TPL_EMAIL_SENT_SUCESSFULLY", "O email foi enviado com sucesso.");
+define( "TPL_EMAIL_SEND_FAILED", "Ocorreu um erro no envio do email.");
+
+define( "TPL_PAGO_UNIVERSAL_ACLARATION", "Para que este pagamento seja efetivado por Pago Universal, o mesmo foi convertido a Pesos, com a taxa de câmbio vigente do dia em que o pagamento foi efetivado.");
+define( "TPL_RECHARGE", "Adicional celular");
+define( "TPL_COLSULTE", "Consulte");
+
+/* email confirmation messages */
+define( "TPL_EML_CONFIRM_OK", "Seu email foi confirmado. Obrigado!");
+define( "TPL_EML_CONFIRM_OK_TXT2", 'Por favor, clique <a href="index.ca" class="ticket_row_title">aqu&iacute;</a> para continuar.');
+define( "TPL_EML_CONFIRM_ERROR_DB_SET_FAILED", "Ocorreu um erro na confirmação de seu email. Por favor, tente novamente.");
+define( "TPL_EML_CONFIRM_ERROR_INVALID_HASH", "Não foi possível confirmar seu email. Por favor, verifique o \"link\" que enviamos para seu endereço de email e tente novamente.");
+define( "TPL_TITLE_EMAIL", "email administrativo");
+
+define( "TPL_EML_ADMIN_TIP", '<span class="ticket_row_title">IMPORTANTE: </span>Para melhorar a segurança e facilitar futuros contatos, pedimos que registre aqui um <b>endereço de email válido</b> para assuntos administrativos.');
+define( "TPL_EMAIL_SET_ERROR", "Ocorreu um erro na atualização de seu email. Por favor, tente novamente.");
+define( "TPL_EMAIL_SEND_ERROR", "Ocorreu um erro ao enviar o email de confirmação. Por favor, tente novamente.");
+define( "TPL_PASSWORD_SET_ERROR", "Ocorreu um erro ao atualizar sua senha. Por favor, tente novamente.");
+define( "TPL_PROFILE_DATA_SAVED_EML_CONFIRM", "Obrigado por completar seus dados. Você receberá em seu email um pedido de confirmação. Assim que esta confirmação for feita, seu endereço de email será validado para futuros contatos administrativos.");
+define( "TPL_PROFILE_DATA_SAVED", "Obrigada por completar seus dados!");
+
+/* Services */
+
+define( "TPL_TITLE_SERVICES_WITH_NAME", "Habilitar serviço,, &gt; [REPLACEMENT]");
+define( "TPL_ACCEPT", "Aceitar");
+define( "TPL_CANCEL", "Cancelar");
+define( "TPL_SERVICES_TIP", "Por favor, selecione o serviço que deseja habilitar:");
+define( "TPL_ERR_EMAIL_NOT_VERIFIED", 'Prezado Cliente, este formulário não pode ser acessado porque seu email ainda não foi verificado. Deseja acessar o formulário de registro de email?</a>');
+define( "TPL_EMAIL_SEND_ERROR_2", "Ocorreu um erro no envio do email. Por favor, tente novamente.");
+define( "TPL_SERVICE_ACTION_COMPLETED", "Em breve daremos resposta a sua solicitação. Ante qualquer consulta entre em contato com nosso Departamento de Atendimento ao Cliente pelo email [OWNER_EMAIL] ou pelo telefone [OWNER_PHONE]. Se deseja habilitar outro serviço, por favor, use o formulário a seguir.");
+define( "TPL_SERVICE_ACTION_COMPLETED_ONLY_EMAIL", "Em breve daremos resposta a sua solicitação. Ante qualquer consulta entre em contato com nosso Departamento de Atendimento ao Cliente pelo email [OWNER_EMAIL] ou pelo telefone [OWNER_PHONE]. Se deseja habilitar outro serviço, por favor, use o formulário a seguir.");
+
+/* Remember my password */
+define( "TPL_REMEMBER_PASSWORD", "Lembrar minha senha");
+define( "TPL_ENTER_USERNAME", "Ingresse seu usuário e senha. Se não lembra sua senha, ingresse apenas o usuário e clique em Lembrar Senha");
+
+define( "TPL_PASSWD_INVALID_USER", "Ingresse seu usuário e senha. Se não lembra sua senha, ingresse apenas o usuário e clique em Lembrar Senha");
+define( "TPL_PASSWD_UNABLE_TO_SEND_EMAIL", "Ocorreu um erro no envio de sua senha por email");
+define( "TPL_PASSWD_EMAIL_NOT_VERIFIED", "Você não está habilitado para lembrar sua senha. Por favor entre em contato com nosso Departamento de Atendimento ao Cliente pelo email [OWNER_EMAIL] ou pelo telefone [OWNER_PHONE]");
+define( "TPL_PASSWD_EMAIL_NOT_VERIFIED_ONLY_EMAIL", "Ud. no esta habilitado para recordar la contrase&ntilde;a. Por favor comun&iacute;quese con el Centro de Atenci&oacute;n al Cliente a [OWNER_EMAIL]");
+define( "TPL_PASSWD_SENT", "Prezado Cliente, enviamos um email informando a senha para acessar Meu Painel");
+
+?>

@@ -1,0 +1,18 @@
+Código de cliente: <%cliente_id%>
+Estimado/a Sr./a.: <%rsocial%> 
+
+Le enviamos adjunta la factura emitida a su nombre y el detalle de consumo correspondiente. Para poder visualizar su comprobante, deberá tener instalada la aplicación Adobe Acrobat Reader. Si no cuenta con esta aplicación puede descargarla desde http://www.adobe.com/.
+También puede visualizar su factura y ver más reportes, accediendo a MiPanel con su usuario y contraseña.
+
+     
+Ante cualquier consulta, comuníquese por esta misma vía a asistencia@latinatel.net. O a los siguientes teléfonos:
+Miami: +1 786 329 7169
+Buenos Aires: +54 11 5219 3258
+San Pablo (BRA): +55 11 3711 5737
+Curitiba (BRA): +55 41 3941 2653
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Latinatel
+www.latinatel.net

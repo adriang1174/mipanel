@@ -1,0 +1,374 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => 5033
+            [ca_cnro] => 9000778
+            [tipo] => MC
+            [numero] => 5489850358701438
+            [vto] => 0218
+            [importe] => 1215
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => VERONICA B COLASANTO
+            [Telefono] => 556235655079
+            [Direccion] => 603 SUL ALAMEDA 06 LOTE 03 Piso 169
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 77016-363      
+            [pais] => BR
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [1] => Array
+        (
+            [id] => 5036
+            [ca_cnro] => C111587
+            [tipo] => TOKEN
+            [numero] => 1981000152045060
+            [vto] => 0415
+            [importe] => 2552
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => caceres manfredi a.h.
+            [Telefono] => 0041227770308
+            [Direccion] => rampe de chavant 8   - 1232 - confi
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 1232           
+            [pais] => CH
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [2] => Array
+        (
+            [id] => 5032
+            [ca_cnro] => C504233
+            [tipo] => VI
+            [numero] => 4906982001057138
+            [vto] => 0713
+            [importe] => 4380
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => Vanina L Macias
+            [Telefono] => 0111553080143
+            [Direccion] => Alvear 3785   - 1824 - Lanus Este -
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 1824           
+            [pais] => AR
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [3] => Array
+        (
+            [id] => 5034
+            [ca_cnro] => C110003
+            [tipo] => MC
+            [numero] => 5316810144130143
+            [vto] => 0214
+            [importe] => 15377
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => marcelo fabian lejarraga
+            [Telefono] => 00552433615063
+            [Direccion] => getulio vargas 638   - 23960-000 - 
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 23960-000      
+            [pais] => BR
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [4] => Array
+        (
+            [id] => 5035
+            [ca_cnro] => C507528
+            [tipo] => MC
+            [numero] => 5566150002017984
+            [vto] => 0916
+            [importe] => 550
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => DANIELA  K F  ARAUJO
+            [Telefono] => 00551155324584
+            [Direccion] => AV. PROF. VICENTE RAO, 90   - 04636
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 04636-000      
+            [pais] => BR
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [5] => Array
+        (
+            [id] => 5037
+            [ca_cnro] => C504068
+            [tipo] => AX
+            [numero] => 377616507886008
+            [vto] => 1116
+            [importe] => 2416
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => ORLANDO SAPORITI
+            [Telefono] => 0034928826901
+            [Direccion] => AV. EL MAR 20 Piso 2 Depto. 4304 - 
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 35508          
+            [pais] => ES
+            [f_fecha_carga] => 12/04/2013
+        )
+
+    [6] => Array
+        (
+            [id] => 5038
+            [ca_cnro] => 9000528
+            [tipo] => TOKEN
+            [numero] => 1931000163290862
+            [vto] => 0615
+            [importe] => 3374
+            [estado_presentacion] => 1
+            [fecha_carga] => 2013-04-12 09:10:10
+            [estado_recibo] => 0
+            [fecha_recibo] => 
+            [litle_estado] => 0
+            [litle_fecha] => 
+            [litle_token] => 
+            [litle_observacion] => 
+            [Nombre] => sparnochia gabriela noemi
+            [Telefono] => 003901433488
+            [Direccion] => Localita Rapallino Amione 14   - 15
+            [tipo_transac] => 1
+            [litle_id] => 
+            [zip] => 15070          
+            [pais] => IT
+            [f_fecha_carga] => 12/04/2013
+        )
+
+)
+Procesa pago ID 5033
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5033"><orderId>5033</orderId><amount>1215</amount><orderSource>ecommerce</orderSource><billToAddress><name>VERONICA B COLASANTO</name><addressLine1>603 SUL ALAMEDA 06 LOTE 03 Piso 169</addressLine1><zip>77016-363</zip><country>BR</country><phone>556235655079</phone></billToAddress><card><type>MC</type><number>5489850358701438</number><expDate>0218</expDate></card></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5033" reportGroup="Default Report Group">
+        <litleTxnId>817159677301394509</litleTxnId>
+        <orderId>5033</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:20</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>022763</authCode>
+        <fraudResult>
+            <avsResult>20</avsResult>
+        </fraudResult>
+        <tokenResponse>
+            <litleToken>1632000118951438</litleToken>
+            <tokenResponseCode>801</tokenResponseCode>
+            <tokenMessage>Account number was successfully registered</tokenMessage>
+            <type>MC</type>
+            <bin>548985</bin>
+        </tokenResponse>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 1632000118951438
+litle_id: 817159677301394509
+Procesa pago ID 5036
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5036"><orderId>5036</orderId><amount>2552</amount><orderSource>ecommerce</orderSource><billToAddress><name>caceres manfredi a.h.</name><addressLine1>rampe de chavant 8   - 1232 - confi</addressLine1><phone>0041227770308</phone></billToAddress><token><litleToken>1981000152045060</litleToken><expDate>0415</expDate></token></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5036" reportGroup="Default Report Group">
+        <litleTxnId>817423560092795359</litleTxnId>
+        <orderId>5036</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:21</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>542378</authCode>
+        <fraudResult>
+            <avsResult>32</avsResult>
+        </fraudResult>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 
+litle_id: 817423560092795359
+Procesa pago ID 5032
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5032"><orderId>5032</orderId><amount>4380</amount><orderSource>ecommerce</orderSource><billToAddress><name>Vanina L Macias</name><addressLine1>Alvear 3785   - 1824 - Lanus Este -</addressLine1><zip>1824</zip><country>AR</country><phone>0111553080143</phone></billToAddress><card><type>VI</type><number>4906982001057138</number><expDate>0713</expDate></card></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5032" reportGroup="Default Report Group">
+        <litleTxnId>817599481953566847</litleTxnId>
+        <orderId>5032</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:22</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>240436</authCode>
+        <fraudResult>
+            <avsResult>34</avsResult>
+        </fraudResult>
+        <tokenResponse>
+            <litleToken>1681000121097138</litleToken>
+            <tokenResponseCode>801</tokenResponseCode>
+            <tokenMessage>Account number was successfully registered</tokenMessage>
+            <type>VI</type>
+            <bin>490698</bin>
+        </tokenResponse>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 1681000121097138
+litle_id: 817599481953566847
+Procesa pago ID 5034
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5034"><orderId>5034</orderId><amount>15377</amount><orderSource>ecommerce</orderSource><billToAddress><name>marcelo fabian lejarraga</name><addressLine1>getulio vargas 638   - 23960-000 - </addressLine1><zip>23960-000</zip><country>BR</country><phone>00552433615063</phone></billToAddress><card><type>MC</type><number>5316810144130143</number><expDate>0214</expDate></card></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5034" reportGroup="Default Report Group">
+        <litleTxnId>817599481953566995</litleTxnId>
+        <orderId>5034</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:23</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>005783</authCode>
+        <fraudResult>
+            <avsResult>20</avsResult>
+        </fraudResult>
+        <tokenResponse>
+            <litleToken>1682000120230143</litleToken>
+            <tokenResponseCode>801</tokenResponseCode>
+            <tokenMessage>Account number was successfully registered</tokenMessage>
+            <type>MC</type>
+            <bin>531681</bin>
+        </tokenResponse>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 1682000120230143
+litle_id: 817599481953566995
+Procesa pago ID 5035
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5035"><orderId>5035</orderId><amount>550</amount><orderSource>ecommerce</orderSource><billToAddress><name>DANIELA  K F  ARAUJO</name><addressLine1>AV. PROF. VICENTE RAO, 90   - 04636</addressLine1><zip>04636-000</zip><country>BR</country><phone>00551155324584</phone></billToAddress><card><type>MC</type><number>5566150002017984</number><expDate>0916</expDate></card></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5035" reportGroup="Default Report Group">
+        <litleTxnId>817423560092795813</litleTxnId>
+        <orderId>5035</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:25</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>016322</authCode>
+        <fraudResult>
+            <avsResult>00</avsResult>
+        </fraudResult>
+        <tokenResponse>
+            <litleToken>1662000121237984</litleToken>
+            <tokenResponseCode>801</tokenResponseCode>
+            <tokenMessage>Account number was successfully registered</tokenMessage>
+            <type>MC</type>
+            <bin>556615</bin>
+        </tokenResponse>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 1662000121237984
+litle_id: 817423560092795813
+Procesa pago ID 5037
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5037"><orderId>5037</orderId><amount>2416</amount><orderSource>ecommerce</orderSource><billToAddress><name>ORLANDO SAPORITI</name><addressLine1>AV. EL MAR 20 Piso 2 Depto. 4304 - </addressLine1><zip>35508</zip><country>ES</country><phone>0034928826901</phone></billToAddress><card><type>AX</type><number>377616507886008</number><expDate>1116</expDate></card></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5037" reportGroup="Default Report Group">
+        <litleTxnId>817423560092795961</litleTxnId>
+        <orderId>5037</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:26</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>791429</authCode>
+        <fraudResult>
+            <avsResult>32</avsResult>
+        </fraudResult>
+        <tokenResponse>
+            <litleToken>166300140886008</litleToken>
+            <tokenResponseCode>801</tokenResponseCode>
+            <tokenMessage>Account number was successfully registered</tokenMessage>
+            <type>AX</type>
+            <bin></bin>
+        </tokenResponse>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 166300140886008
+litle_id: 817423560092795961
+Procesa pago ID 5038
+<?xml version="1.0" encoding="utf-8"?>
+<litleOnlineRequest merchantId="100700" version="8.13" merchantSdk="PHP;8.13.1" xmlns="http://www.litle.com/schema"><authentication><user>WWPSTKN</user><password>Q5YHtY29</password></authentication><sale reportGroup="Default Report Group" id="5038"><orderId>5038</orderId><amount>3374</amount><orderSource>ecommerce</orderSource><billToAddress><name>sparnochia gabriela noemi</name><addressLine1>Localita Rapallino Amione 14   - 15</addressLine1><phone>003901433488</phone></billToAddress><token><litleToken>1931000163290862</litleToken><expDate>0615</expDate></token></sale></litleOnlineRequest>
+<litleOnlineResponse version="8.13" xmlns="http://www.litle.com/schema"
+    response="0" message="Valid Format">
+    <saleResponse id="5038" reportGroup="Default Report Group">
+        <litleTxnId>817599481953567407</litleTxnId>
+        <orderId>5038</orderId>
+        <response>000</response>
+        <responseTime>2013-04-12T14:02:27</responseTime>
+        <postDate>2013-04-12</postDate>
+        <message>Approved</message>
+        <authCode>257747</authCode>
+        <fraudResult>
+            <avsResult>32</avsResult>
+        </fraudResult>
+    </saleResponse>
+</litleOnlineResponse>
+response: 000
+message: Approved
+token: 
+litle_id: 817599481953567407

@@ -1,0 +1,61 @@
+From: [ADDR_SUPPORT]
+Reply-To: [ADDR_SUPPORT]
+Subject: Mi Panel - Imagen de recibo
+
+
+
+
+<table width="500" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="http://71.6.197.240/imagenes-news/mipanel.red/top.gif" width="500" height="70" alt=""></td>
+      </tr>
+      <tr>
+        <td><table width="487"  border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td></td>
+            <td width="94%" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="4%">&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;"><strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">C&oacute;digo de cliente:
+                [CODIGO]<br>
+Estimado/a Sr./a. 
+              [TITULAR]:
+</strong>
+             <br>
+<br>Tal como solicitó a través de Mi Panel, le enviamos adjunta a este e-mail la imagen del Recibo de referencia.</td>
+            <td width="2%">&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" class="fuente" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Por  consultas, ingrese a nuestra <a href="http://www.alternativa.com.ar/Seccion/422/Preguntas-frecuentes.html" title="Consulte las preguntas frecuentes del servicio aquí" target="_blank" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">secci&oacute;n de preguntas frecuentes</a>, o comun&iacute;quese con nuestro Centro de Atenci&oacute;n al Cliente por e-mail a <a href="mailto:asistencia@alternativa.com.ar" title="Por consultas, escríbanos a nuestro e-mail de Asistencia" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">asistencia@alternativa.com.ar</a>.
+	        <br>
+<br>
+Estamos a su disposici&oacute;n. Cordialmente, <br>
+<br>
+<strong style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif;">Centro de Atenci&oacute;n al Cliente</strong><br>
+	          Alternativa<br>
+	          <a href="http://www.alternativa.com.ar" target="_blank" class="fuente" title="Ingrese al sitio de Alternativa" style="font-size: 11px; color: #333333; font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: underline;">www.alternativa.com.ar</a></td>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td height="15" colspan="2"><img src="http://71.6.197.240/imagenes-news/1pix.gif" height="15" width="1" alt="" /></td>
+
+            <td></td>
+          </tr>
+        </table>          </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

@@ -1,0 +1,19 @@
+<?
+
+date_default_timezone_set('America/Buenos_Aires');
+
+define( "INCLUDE_PATH", "../../cuenta/inc/");
+define( 'TPL_DIR', "../../cuenta/tpl/");
+define( 'TPL_COMPILE_DIR', "../../cuenta/tpl_compile/");
+define( 'PATH_LANG', INCLUDE_PATH . "lang/");
+
+define( "ABSOLUTE_PATH", "/cuenta/");
+define( "COOKIE_PATH", "/cuenta");
+define( "COOKIE_SECURE", true);
+define( "PATH_EMAIL_TPL", "../../cuenta/email_tpl/");
+define( "PATH_IMG", "/cuenta/img/");
+define( "PATH_OWNER", "/cuenta/owner/");
+
+define( "PATH_HTDOCS_FROM_INC", "../../html");
+
+?>

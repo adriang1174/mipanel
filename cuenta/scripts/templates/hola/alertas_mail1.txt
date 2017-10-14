@@ -1,0 +1,16 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a <%rsocial%>:
+
+Te informamos -según lo solicitaste a través de Mi Panel- que tu consumo no facturado hasta la fecha <%fecha_hasta%> ha superado los límites establecidos por ti. 
+
+<%alerta%>       
+	
+Para dejar de recibir estos avisos, o modificar el límite establecido, ingresa en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo.
+
+Por consultas, ingresa a nuestra sección de preguntas frecuentes en http://www.holatel.com/Seccion/311/PreguntasFrecuentes.html, o comunícate con nuestro Centro de Atención al Cliente por e-mail a asistencia@holatel.com.
+
+Estamos a tu disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+HolaTel
+www.holatel.com

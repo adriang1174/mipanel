@@ -1,0 +1,186 @@
+body
+{
+	color: black;
+	background-color: white;
+}
+
+.header-logo
+{
+	border-top: 3px solid #5B4AB5;
+}
+
+.header-datos
+{
+	background-color: #6359A5;
+}
+
+.botonera-topbottom
+{
+	background-color: White;
+}
+
+.botonera-separator
+{
+	color: white;
+	background-color: #6359A5;
+	padding-left: 0px;
+	font-size: 8px;
+}
+
+.botonera-label
+{
+	color: white;
+	background-color: #5B4AB5;
+	padding-left: 10px;
+	height: auto;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.botonera-tit-sep
+{
+	padding-top: 4px; 
+	padding-bottom: 4px; 
+	heigth: 30px;
+	border-bottom: 1Px solid #6359A5;
+}
+
+.botonera-lastitem
+{
+	border-bottom: 1px solid #6359A5;
+}
+
+.botonera-selected
+{
+	color: #043EAA;
+	background-color: #6359A5;
+	padding-left: 10px;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+ul#ul_menu li ul {
+	background-color:#6359A5;
+}
+
+.botonera-selected
+{
+	color: #345C04;
+	background-color: #6359A5;
+}
+
+.botonera-nonselected
+{
+	color: white;
+	background-color: #6359A5;
+	padding-left: 10px;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.botonera-contacto
+{
+	background-color: #6359A5;
+}
+
+.ticket_row_title
+{
+	color: #6359A5;
+	font-weight: bold;
+}
+
+a.ticket_row_title:link    { text-decoration: underline; color: #6359A5; }
+a.ticket_row_title:visited { text-decoration: underline; color: #6359A5; }
+a.ticket_row_title:hover   { text-decoration: underline; color: red; }
+a.ticket_row_title:active  { text-decoration: underline; color: red; }
+
+.ticket_owner_info
+{
+	font-family: Arial;
+	font-size: 9px;
+}
+
+.scr_header
+{
+	color: white;
+	font-weight: bold;
+	background-color: #6359A5;
+}
+
+.scr_header2
+{
+	color: #3F7300;
+	font-weight: bold;
+	background-color: #6359A5;
+	text-decoration: underline;
+}
+
+.ticket_detail_header
+{
+	color: black;
+	font-weight: bold;
+	background-color: #5B4AB5;
+}
+
+.ticket_detail_body
+{
+	background-color: #6359A5;
+}
+
+.login_table
+{
+	border-bottom: 1px solid #658937;
+	border-right: 1px solid #658937;
+	background-color: #94D146;
+}
+
+.info_table
+{
+    border: 1px solid #003300;
+}
+
+.logout_link
+{
+	font-family:verdana;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+/* BOTONERA */
+
+ul#ul_menu {
+	margin:0;
+	padding:0;
+	font-weight: bold;
+	width: 167px;
+}
+/* FACTURACION, SERVICIOS */
+ul#ul_menu li {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	padding-top: 4px;
+}
+/* 2 NIVEL*/
+ul#ul_menu li ul {
+	margin:0;
+	padding:0;
+	background-color:#6359A5;
+}
+/* ITEMS DEL 2º NIVEL */
+ul#ul_menu li ul li{
+	padding-left:2px;
+}
+/* 3º NIVEL */
+ul#ul_menu li ul li ul {
+	padding-left:16px;
+	font-weight: normal;
+}
+/* ITEMS DEL 3º NIVEL*/
+ul#ul_menu li ul li ul li{
+}

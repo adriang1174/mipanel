@@ -1,0 +1,28 @@
+Código de Cliente: <%cliente_id%>
+Estimado/a Sr./a. <%rsocial%>:
+    
+Este es un envío semanal de carácter meramente informativo. 
+
+Le enviamos adjunto a este mail el informe de llamadas no facturadas hasta el <%fecha_hasta%>. Encontrará el informe en un archivo de formato CSV, que puede abrir con cualquier planilla de cálculo. 
+
+Si el archivo adjunto está vacío, es porque no hay llamadas pendientes de facturar.  
+
+Además, ingresando a Mi Panel en https://zonasegura.grupoalternativa.com/cuenta/login.ca, usted puede:
+
+- Optar por recibir Alarmas de Consumo y ver el detalle de llamadas al momento  
+- Configurar los reportes por Proyectos y Descripción de Destinos.  
+- En el ítem Facturas, puede ver todos los comprobantes, imprimirlos, enviárselos por e-mail, efectuar el pago con su Tarjeta de Crédito y a través de DineroMail en los países en que este servicio está habilitado.  
+ 
+Recuerde que para ingresar a Mi Panel debe hacerlo con su usuario, que es su código de cliente, y su contraseña. 
+
+Ante cualquier consulta, comuníquese por esta misma vía a asistencia@ahorratel.com. O a los siguientes teléfonos:
+Argentina (Buenos Aires): (+54) 11 5983 9598
+Brasil (São Paulo): (+55) 11 3957 0332
+Chile (Santiago): (+56) 2 582 1390
+México (Ciudad de México): (+52) 55 1168 9815
+   
+Estamos a su disposición. Cordialmente, 
+   
+Centro de Atención al Cliente
+Ahorratel
+www.ahorratel.com

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="cliente.inc.php" local="128226026340000000" remote="128226026340000000" testing="0" />
+<file name="comun.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="config.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Config.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="csvGenerator.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="CSVHandler.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="currency.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="db.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="DB.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Email.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="EnvioEmail.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Error.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="fecha.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Fecha.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="GeneradorCSV.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="log.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Log.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="mailer.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="nocache.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="Util.pm" local="127989339860000000" remote="127989339860000000" testing="0" />
+<file name="validacion.inc.php" local="127989339860000000" remote="127989339860000000" testing="0" />
+</dwsync>

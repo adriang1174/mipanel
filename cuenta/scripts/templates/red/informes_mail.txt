@@ -1,0 +1,27 @@
+Código de Cliente: <%cliente_id%>    
+Estimado/a Sr./a.: <%rsocial%> 
+      
+Este es un envío semanal de carácter meramente informativo. 
+
+Le enviamos adjunto a este e-mail el informe de llamadas no facturadas hasta el <%fecha_hasta%>. Encontrará el informe en un archivo de formato CSV, que puede abrir con cualquier planilla de cálculo. 
+
+Si el archivo adjunto está vacío, es porque no hay llamadas pendientes de facturar.
+
+Además, ingresando a Mi Panel en https://webseg.alternativa.com.ar/cuenta/login.ca usted puede:
+   
+- Optar por recibir Alarmas de Consumo y ver el detalle de llamadas al momento.
+- Configurar los reportes por Proyectos y Descripción de Destinos.  
+- En el item Facturas, puede ver todos los comprobantes, imprimirlos, recibirlos por mail, efectuar el pago on line o imprimir el cupón para Pago Fácil.  
+   
+Recuerde que para ingresar a Mi Panel debe hacerlo con su usuario, que es su código de cliente, y su contraseña.
+  
+Para dejar de recibir estos informes, ingrese en Mi Panel en la solapa Reportes > Configurar reportes > Avisos de consumo. 
+
+Por consultas, ingrese a nuestra sección de preguntas frecuentes en http://www.alternativa.com.ar/Seccion/422/Preguntas-frecuentes.html, o comuníquese con nuestro Centro de Atención al Cliente por e-mail a asistencia@alternativa.com.ar.
+
+Estamos a su disposición. Cordialmente, 
+
+Centro de Atención al Cliente
+Alternativa
+www.alternativa.com.ar
+ 
