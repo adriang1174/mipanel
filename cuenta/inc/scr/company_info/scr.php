@@ -46,6 +46,7 @@ class scr {
 			
 				case 'mp_paypage':
 				
+					/*
 					require_once (INCLUDE_PATH .'litle/LitleOnline.php');  
 					
 						$token_info = array(
@@ -63,8 +64,11 @@ class scr {
 						
 
 						if($response == '802'){
+					*/
 							global $dbh;
-							$res = $dbh->execute("INSERT INTO clientes_medios_pago (cliente_id, medio, cuenta, fecha, calle, numero, piso, depto, ciudad, cp, provincia, pais, titular, vencimiento) VALUES (?, 'little', ?, current_timestamp, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?)", array(ca_session::get_userid( ), $token, $_POST['mp_calle'],
+
+							$res = $dbh->execute("INSERT INTO clientes_medios_pago (cliente_id, medio, cuenta, fecha, calle, numero, piso, depto, ciudad, cp, provincia, pais, titular, vencimiento,cbu) VALUES (?, 'WWPS', ?, current_timestamp, ?, ?, ?, ?, ?, ?,  ?, ?, ?, ?,?)", array(ca_session::get_userid( ), $_POST['ccNum'], 
+											$_POST['mp_calle'],
 											$_POST['mp_numero'],
 											$_POST['mp_piso'],
 											$_POST['mp_departamento'],
@@ -73,14 +77,15 @@ class scr {
 											$_POST['mp_provincia'],
 											$_POST['mp_pais'],
 											$_POST['fName'] . ' ' . $_POST['lName'],
-											$_POST['expDate']
+											$_POST['expDate'],
+											$_POST['cvv2num'],
 											));	
 											
-							
+					/*		
 						}else{
 							echo "ERROR: ". XmlParser::getNode($tokenResponse ,'message');
 						}
-						
+					*/	
 						/*
 						#display results
 						echo ("Response: " . (XmlParser::getNode($tokenResponse ,'response')) . "<br>");
