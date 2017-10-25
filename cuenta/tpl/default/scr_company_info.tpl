@@ -548,8 +548,9 @@ var formFields = {
 };
 $("#submitId").click(
 function(){
+	document.forms['mediopago_form'].submit();
 // clear test fields
-setLitleResponseFields({"response":"", "message":""});
+/*setLitleResponseFields({"response":"", "message":""});
 
 var litleRequest = {
 "paypageId" : document.getElementById("request$paypageId").value,
@@ -562,6 +563,7 @@ var litleRequest = {
 new LitlePayPage().sendToLitle(litleRequest, formFields, submitAfterLitle,
 onErrorAfterLitle, timeoutOnLitle, 5000);
 return false;
+*/
 }
 );
 }
